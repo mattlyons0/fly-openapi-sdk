@@ -8,6 +8,7 @@ Gemfile
 README.md
 Rakefile
 docs/ApiDNSConfig.md
+docs/ApiDnsOption.md
 docs/ApiFile.md
 docs/ApiHTTPOptions.md
 docs/ApiHTTPResponseOptions.md
@@ -67,6 +68,7 @@ lib/fly-sdk-ruby/api_client.rb
 lib/fly-sdk-ruby/api_error.rb
 lib/fly-sdk-ruby/configuration.rb
 lib/fly-sdk-ruby/models/api_dns_config.rb
+lib/fly-sdk-ruby/models/api_dns_option.rb
 lib/fly-sdk-ruby/models/api_file.rb
 lib/fly-sdk-ruby/models/api_http_options.rb
 lib/fly-sdk-ruby/models/api_http_response_options.rb
@@ -117,9 +119,8 @@ lib/fly-sdk-ruby/version.rb
 spec/api/apps_api_spec.rb
 spec/api/machines_api_spec.rb
 spec/api/volumes_api_spec.rb
-spec/api_client_spec.rb
-spec/configuration_spec.rb
 spec/models/api_dns_config_spec.rb
+spec/models/api_dns_option_spec.rb
 spec/models/api_file_spec.rb
 spec/models/api_http_options_spec.rb
 spec/models/api_http_response_options_spec.rb

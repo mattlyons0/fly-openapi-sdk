@@ -4,22 +4,23 @@ All URIs are relative to *https://api.machines.dev/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apps_create**](AppsApi.md#apps_create) | **POST** /apps | 
-[**apps_delete**](AppsApi.md#apps_delete) | **DELETE** /apps/{app_name} | 
-[**apps_list**](AppsApi.md#apps_list) | **GET** /apps | 
-[**apps_show**](AppsApi.md#apps_show) | **GET** /apps/{app_name} | 
+[**apps_create**](AppsApi.md#apps_create) | **POST** /apps | Create App
+[**apps_delete**](AppsApi.md#apps_delete) | **DELETE** /apps/{app_name} | Destroy App
+[**apps_list**](AppsApi.md#apps_list) | **GET** /apps | List Apps
+[**apps_show**](AppsApi.md#apps_show) | **GET** /apps/{app_name} | Get App
 
 
 # **apps_create**
 > apps_create(request)
 
+Create App
 
+Create an app with the specified details in the request body. 
 
 ### Example
 
+
 ```python
-import time
-import os
 import fly_sdk
 from fly_sdk.models.create_app_request import CreateAppRequest
 from fly_sdk.rest import ApiException
@@ -39,6 +40,7 @@ with fly_sdk.ApiClient(configuration) as api_client:
     request = fly_sdk.CreateAppRequest() # CreateAppRequest | App body
 
     try:
+        # Create App
         api_instance.apps_create(request)
     except Exception as e:
         print("Exception when calling AppsApi->apps_create: %s\n" % e)
@@ -47,6 +49,7 @@ with fly_sdk.ApiClient(configuration) as api_client:
 
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -66,6 +69,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | Created |  -  |
@@ -76,13 +80,14 @@ No authorization required
 # **apps_delete**
 > apps_delete(app_name)
 
+Destroy App
 
+Delete an app by its name. 
 
 ### Example
 
+
 ```python
-import time
-import os
 import fly_sdk
 from fly_sdk.rest import ApiException
 from pprint import pprint
@@ -101,6 +106,7 @@ with fly_sdk.ApiClient(configuration) as api_client:
     app_name = 'app_name_example' # str | Fly App Name
 
     try:
+        # Destroy App
         api_instance.apps_delete(app_name)
     except Exception as e:
         print("Exception when calling AppsApi->apps_delete: %s\n" % e)
@@ -109,6 +115,7 @@ with fly_sdk.ApiClient(configuration) as api_client:
 
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -128,6 +135,7 @@ No authorization required
  - **Accept**: Not defined
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **202** | Accepted |  -  |
@@ -137,13 +145,14 @@ No authorization required
 # **apps_list**
 > ListAppsResponse apps_list(org_slug)
 
+List Apps
 
+List all apps with the ability to filter by organization slug. 
 
 ### Example
 
+
 ```python
-import time
-import os
 import fly_sdk
 from fly_sdk.models.list_apps_response import ListAppsResponse
 from fly_sdk.rest import ApiException
@@ -163,6 +172,7 @@ with fly_sdk.ApiClient(configuration) as api_client:
     org_slug = 'org_slug_example' # str | The org slug, or 'personal', to filter apps
 
     try:
+        # List Apps
         api_response = api_instance.apps_list(org_slug)
         print("The response of AppsApi->apps_list:\n")
         pprint(api_response)
@@ -173,6 +183,7 @@ with fly_sdk.ApiClient(configuration) as api_client:
 
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -192,6 +203,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -201,13 +213,14 @@ No authorization required
 # **apps_show**
 > App apps_show(app_name)
 
+Get App
 
+Retrieve details about a specific app by its name. 
 
 ### Example
 
+
 ```python
-import time
-import os
 import fly_sdk
 from fly_sdk.models.app import App
 from fly_sdk.rest import ApiException
@@ -227,6 +240,7 @@ with fly_sdk.ApiClient(configuration) as api_client:
     app_name = 'app_name_example' # str | Fly App Name
 
     try:
+        # Get App
         api_response = api_instance.apps_show(app_name)
         print("The response of AppsApi->apps_show:\n")
         pprint(api_response)
@@ -237,6 +251,7 @@ with fly_sdk.ApiClient(configuration) as api_client:
 
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -256,6 +271,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |

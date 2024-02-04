@@ -2,11 +2,13 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cpu_kind** | **str** |  | [optional] 
 **cpus** | **int** |  | [optional] 
 **gpu_kind** | **str** |  | [optional] 
+**gpus** | **int** |  | [optional] 
 **host_dedication_id** | **str** |  | [optional] 
 **kernel_args** | **List[str]** |  | [optional] 
 **memory_mb** | **int** |  | [optional] 

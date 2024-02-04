@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Config** | Pointer to [**ApiMachineConfig**](ApiMachineConfig.md) |  | [optional] 
+**Config** | Pointer to [**ApiMachineConfig**](ApiMachineConfig.md) | An object defining the Machine configuration | [optional] 
 **CurrentVersion** | Pointer to **string** |  | [optional] 
 **LeaseTtl** | Pointer to **int32** |  | [optional] 
 **Lsvd** | Pointer to **bool** |  | [optional] 

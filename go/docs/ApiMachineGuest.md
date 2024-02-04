@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **CpuKind** | Pointer to **string** |  | [optional] 
 **Cpus** | Pointer to **int32** |  | [optional] 
 **GpuKind** | Pointer to **string** |  | [optional] 
+**Gpus** | Pointer to **int32** |  | [optional] 
 **HostDedicationId** | Pointer to **string** |  | [optional] 
 **KernelArgs** | Pointer to **[]string** |  | [optional] 
 **MemoryMb** | Pointer to **int32** |  | [optional] 
@@ -104,6 +105,31 @@ SetGpuKind sets GpuKind field to given value.
 `func (o *ApiMachineGuest) HasGpuKind() bool`
 
 HasGpuKind returns a boolean if a field has been set.
+
+### GetGpus
+
+`func (o *ApiMachineGuest) GetGpus() int32`
+
+GetGpus returns the Gpus field if non-nil, zero value otherwise.
+
+### GetGpusOk
+
+`func (o *ApiMachineGuest) GetGpusOk() (*int32, bool)`
+
+GetGpusOk returns a tuple with the Gpus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGpus
+
+`func (o *ApiMachineGuest) SetGpus(v int32)`
+
+SetGpus sets Gpus field to given value.
+
+### HasGpus
+
+`func (o *ApiMachineGuest) HasGpus() bool`
+
+HasGpus returns a boolean if a field has been set.
 
 ### GetHostDedicationId
 

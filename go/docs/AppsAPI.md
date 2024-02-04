@@ -4,16 +4,18 @@ All URIs are relative to *https://api.machines.dev/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AppsCreate**](AppsAPI.md#AppsCreate) | **Post** /apps | 
-[**AppsDelete**](AppsAPI.md#AppsDelete) | **Delete** /apps/{app_name} | 
-[**AppsList**](AppsAPI.md#AppsList) | **Get** /apps | 
-[**AppsShow**](AppsAPI.md#AppsShow) | **Get** /apps/{app_name} | 
+[**AppsCreate**](AppsAPI.md#AppsCreate) | **Post** /apps | Create App
+[**AppsDelete**](AppsAPI.md#AppsDelete) | **Delete** /apps/{app_name} | Destroy App
+[**AppsList**](AppsAPI.md#AppsList) | **Get** /apps | List Apps
+[**AppsShow**](AppsAPI.md#AppsShow) | **Get** /apps/{app_name} | Get App
 
 
 
 ## AppsCreate
 
 > AppsCreate(ctx).Request(request).Execute()
+
+Create App
 
 
 
@@ -23,22 +25,22 @@ Method | HTTP request | Description
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
-    request := *openapiclient.NewCreateAppRequest() // CreateAppRequest | App body
+	request := *openapiclient.NewCreateAppRequest() // CreateAppRequest | App body
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AppsAPI.AppsCreate(context.Background()).Request(request).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AppsAPI.AppsCreate``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.AppsAPI.AppsCreate(context.Background()).Request(request).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AppsAPI.AppsCreate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -77,6 +79,8 @@ No authorization required
 
 > AppsDelete(ctx, appName).Execute()
 
+Destroy App
+
 
 
 ### Example
@@ -85,22 +89,22 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
-    appName := "appName_example" // string | Fly App Name
+	appName := "appName_example" // string | Fly App Name
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AppsAPI.AppsDelete(context.Background(), appName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AppsAPI.AppsDelete``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.AppsAPI.AppsDelete(context.Background(), appName).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AppsAPI.AppsDelete``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -143,6 +147,8 @@ No authorization required
 
 > ListAppsResponse AppsList(ctx).OrgSlug(orgSlug).Execute()
 
+List Apps
+
 
 
 ### Example
@@ -151,24 +157,24 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
-    orgSlug := "orgSlug_example" // string | The org slug, or 'personal', to filter apps
+	orgSlug := "orgSlug_example" // string | The org slug, or 'personal', to filter apps
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AppsAPI.AppsList(context.Background()).OrgSlug(orgSlug).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AppsAPI.AppsList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `AppsList`: ListAppsResponse
-    fmt.Fprintf(os.Stdout, "Response from `AppsAPI.AppsList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AppsAPI.AppsList(context.Background()).OrgSlug(orgSlug).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AppsAPI.AppsList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AppsList`: ListAppsResponse
+	fmt.Fprintf(os.Stdout, "Response from `AppsAPI.AppsList`: %v\n", resp)
 }
 ```
 
@@ -207,6 +213,8 @@ No authorization required
 
 > App AppsShow(ctx, appName).Execute()
 
+Get App
+
 
 
 ### Example
@@ -215,24 +223,24 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
-    appName := "appName_example" // string | Fly App Name
+	appName := "appName_example" // string | Fly App Name
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AppsAPI.AppsShow(context.Background(), appName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AppsAPI.AppsShow``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `AppsShow`: App
-    fmt.Fprintf(os.Stdout, "Response from `AppsAPI.AppsShow`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AppsAPI.AppsShow(context.Background(), appName).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AppsAPI.AppsShow``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AppsShow`: App
+	fmt.Fprintf(os.Stdout, "Response from `AppsAPI.AppsShow`: %v\n", resp)
 }
 ```
 

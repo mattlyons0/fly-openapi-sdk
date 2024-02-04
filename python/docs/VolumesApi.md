@@ -4,26 +4,27 @@ All URIs are relative to *https://api.machines.dev/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_volume_snapshot**](VolumesApi.md#create_volume_snapshot) | **POST** /apps/{app_name}/volumes/{volume_id}/snapshots | 
-[**volume_delete**](VolumesApi.md#volume_delete) | **DELETE** /apps/{app_name}/volumes/{volume_id} | 
-[**volumes_create**](VolumesApi.md#volumes_create) | **POST** /apps/{app_name}/volumes | 
-[**volumes_extend**](VolumesApi.md#volumes_extend) | **PUT** /apps/{app_name}/volumes/{volume_id}/extend | 
-[**volumes_get_by_id**](VolumesApi.md#volumes_get_by_id) | **GET** /apps/{app_name}/volumes/{volume_id} | 
-[**volumes_list**](VolumesApi.md#volumes_list) | **GET** /apps/{app_name}/volumes | 
-[**volumes_list_snapshots**](VolumesApi.md#volumes_list_snapshots) | **GET** /apps/{app_name}/volumes/{volume_id}/snapshots | 
-[**volumes_update**](VolumesApi.md#volumes_update) | **POST** /apps/{app_name}/volumes/{volume_id} | 
+[**create_volume_snapshot**](VolumesApi.md#create_volume_snapshot) | **POST** /apps/{app_name}/volumes/{volume_id}/snapshots | Create Snapshot
+[**volume_delete**](VolumesApi.md#volume_delete) | **DELETE** /apps/{app_name}/volumes/{volume_id} | Destroy Volume
+[**volumes_create**](VolumesApi.md#volumes_create) | **POST** /apps/{app_name}/volumes | Create Volume
+[**volumes_extend**](VolumesApi.md#volumes_extend) | **PUT** /apps/{app_name}/volumes/{volume_id}/extend | Extend Volume
+[**volumes_get_by_id**](VolumesApi.md#volumes_get_by_id) | **GET** /apps/{app_name}/volumes/{volume_id} | Get Volume
+[**volumes_list**](VolumesApi.md#volumes_list) | **GET** /apps/{app_name}/volumes | List Volumes
+[**volumes_list_snapshots**](VolumesApi.md#volumes_list_snapshots) | **GET** /apps/{app_name}/volumes/{volume_id}/snapshots | List Snapshots
+[**volumes_update**](VolumesApi.md#volumes_update) | **POST** /apps/{app_name}/volumes/{volume_id} | Update Volume
 
 
 # **create_volume_snapshot**
 > create_volume_snapshot(app_name, volume_id)
 
+Create Snapshot
 
+Create a snapshot for a specific volume within an app. 
 
 ### Example
 
+
 ```python
-import time
-import os
 import fly_sdk
 from fly_sdk.rest import ApiException
 from pprint import pprint
@@ -43,6 +44,7 @@ with fly_sdk.ApiClient(configuration) as api_client:
     volume_id = 'volume_id_example' # str | Volume ID
 
     try:
+        # Create Snapshot
         api_instance.create_volume_snapshot(app_name, volume_id)
     except Exception as e:
         print("Exception when calling VolumesApi->create_volume_snapshot: %s\n" % e)
@@ -51,6 +53,7 @@ with fly_sdk.ApiClient(configuration) as api_client:
 
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -71,6 +74,7 @@ No authorization required
  - **Accept**: Not defined
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -80,13 +84,14 @@ No authorization required
 # **volume_delete**
 > Volume volume_delete(app_name, volume_id)
 
+Destroy Volume
 
+Delete a specific volume within an app by volume ID. 
 
 ### Example
 
+
 ```python
-import time
-import os
 import fly_sdk
 from fly_sdk.models.volume import Volume
 from fly_sdk.rest import ApiException
@@ -107,6 +112,7 @@ with fly_sdk.ApiClient(configuration) as api_client:
     volume_id = 'volume_id_example' # str | Volume ID
 
     try:
+        # Destroy Volume
         api_response = api_instance.volume_delete(app_name, volume_id)
         print("The response of VolumesApi->volume_delete:\n")
         pprint(api_response)
@@ -117,6 +123,7 @@ with fly_sdk.ApiClient(configuration) as api_client:
 
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -137,6 +144,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -146,13 +154,14 @@ No authorization required
 # **volumes_create**
 > Volume volumes_create(app_name, request)
 
+Create Volume
 
+Create a volume for a specific app using the details provided in the request body. 
 
 ### Example
 
+
 ```python
-import time
-import os
 import fly_sdk
 from fly_sdk.models.create_volume_request import CreateVolumeRequest
 from fly_sdk.models.volume import Volume
@@ -174,6 +183,7 @@ with fly_sdk.ApiClient(configuration) as api_client:
     request = fly_sdk.CreateVolumeRequest() # CreateVolumeRequest | Request body
 
     try:
+        # Create Volume
         api_response = api_instance.volumes_create(app_name, request)
         print("The response of VolumesApi->volumes_create:\n")
         pprint(api_response)
@@ -184,6 +194,7 @@ with fly_sdk.ApiClient(configuration) as api_client:
 
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -204,6 +215,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -213,13 +225,14 @@ No authorization required
 # **volumes_extend**
 > ExtendVolumeResponse volumes_extend(app_name, volume_id, request)
 
+Extend Volume
 
+Extend a volume's size within an app using the details provided in the request body. 
 
 ### Example
 
+
 ```python
-import time
-import os
 import fly_sdk
 from fly_sdk.models.extend_volume_request import ExtendVolumeRequest
 from fly_sdk.models.extend_volume_response import ExtendVolumeResponse
@@ -242,6 +255,7 @@ with fly_sdk.ApiClient(configuration) as api_client:
     request = fly_sdk.ExtendVolumeRequest() # ExtendVolumeRequest | Request body
 
     try:
+        # Extend Volume
         api_response = api_instance.volumes_extend(app_name, volume_id, request)
         print("The response of VolumesApi->volumes_extend:\n")
         pprint(api_response)
@@ -252,6 +266,7 @@ with fly_sdk.ApiClient(configuration) as api_client:
 
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -273,6 +288,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -282,13 +298,14 @@ No authorization required
 # **volumes_get_by_id**
 > Volume volumes_get_by_id(app_name, volume_id)
 
+Get Volume
 
+Retrieve details about a specific volume by its ID within an app. 
 
 ### Example
 
+
 ```python
-import time
-import os
 import fly_sdk
 from fly_sdk.models.volume import Volume
 from fly_sdk.rest import ApiException
@@ -309,6 +326,7 @@ with fly_sdk.ApiClient(configuration) as api_client:
     volume_id = 'volume_id_example' # str | Volume ID
 
     try:
+        # Get Volume
         api_response = api_instance.volumes_get_by_id(app_name, volume_id)
         print("The response of VolumesApi->volumes_get_by_id:\n")
         pprint(api_response)
@@ -319,6 +337,7 @@ with fly_sdk.ApiClient(configuration) as api_client:
 
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -339,6 +358,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -348,13 +368,14 @@ No authorization required
 # **volumes_list**
 > List[Volume] volumes_list(app_name)
 
+List Volumes
 
+List all volumes associated with a specific app. 
 
 ### Example
 
+
 ```python
-import time
-import os
 import fly_sdk
 from fly_sdk.models.volume import Volume
 from fly_sdk.rest import ApiException
@@ -374,6 +395,7 @@ with fly_sdk.ApiClient(configuration) as api_client:
     app_name = 'app_name_example' # str | Fly App Name
 
     try:
+        # List Volumes
         api_response = api_instance.volumes_list(app_name)
         print("The response of VolumesApi->volumes_list:\n")
         pprint(api_response)
@@ -384,6 +406,7 @@ with fly_sdk.ApiClient(configuration) as api_client:
 
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -403,6 +426,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -412,13 +436,14 @@ No authorization required
 # **volumes_list_snapshots**
 > List[VolumeSnapshot] volumes_list_snapshots(app_name, volume_id)
 
+List Snapshots
 
+List all snapshots for a specific volume within an app. 
 
 ### Example
 
+
 ```python
-import time
-import os
 import fly_sdk
 from fly_sdk.models.volume_snapshot import VolumeSnapshot
 from fly_sdk.rest import ApiException
@@ -439,6 +464,7 @@ with fly_sdk.ApiClient(configuration) as api_client:
     volume_id = 'volume_id_example' # str | Volume ID
 
     try:
+        # List Snapshots
         api_response = api_instance.volumes_list_snapshots(app_name, volume_id)
         print("The response of VolumesApi->volumes_list_snapshots:\n")
         pprint(api_response)
@@ -449,6 +475,7 @@ with fly_sdk.ApiClient(configuration) as api_client:
 
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -469,6 +496,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
@@ -478,13 +506,14 @@ No authorization required
 # **volumes_update**
 > Volume volumes_update(app_name, volume_id, request)
 
+Update Volume
 
+Update a volume's configuration using the details provided in the request body. 
 
 ### Example
 
+
 ```python
-import time
-import os
 import fly_sdk
 from fly_sdk.models.update_volume_request import UpdateVolumeRequest
 from fly_sdk.models.volume import Volume
@@ -507,6 +536,7 @@ with fly_sdk.ApiClient(configuration) as api_client:
     request = fly_sdk.UpdateVolumeRequest() # UpdateVolumeRequest | Request body
 
     try:
+        # Update Volume
         api_response = api_instance.volumes_update(app_name, volume_id, request)
         print("The response of VolumesApi->volumes_update:\n")
         pprint(api_response)
@@ -517,6 +547,7 @@ with fly_sdk.ApiClient(configuration) as api_client:
 
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -538,6 +569,7 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |

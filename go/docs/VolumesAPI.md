@@ -4,20 +4,22 @@ All URIs are relative to *https://api.machines.dev/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateVolumeSnapshot**](VolumesAPI.md#CreateVolumeSnapshot) | **Post** /apps/{app_name}/volumes/{volume_id}/snapshots | 
-[**VolumeDelete**](VolumesAPI.md#VolumeDelete) | **Delete** /apps/{app_name}/volumes/{volume_id} | 
-[**VolumesCreate**](VolumesAPI.md#VolumesCreate) | **Post** /apps/{app_name}/volumes | 
-[**VolumesExtend**](VolumesAPI.md#VolumesExtend) | **Put** /apps/{app_name}/volumes/{volume_id}/extend | 
-[**VolumesGetById**](VolumesAPI.md#VolumesGetById) | **Get** /apps/{app_name}/volumes/{volume_id} | 
-[**VolumesList**](VolumesAPI.md#VolumesList) | **Get** /apps/{app_name}/volumes | 
-[**VolumesListSnapshots**](VolumesAPI.md#VolumesListSnapshots) | **Get** /apps/{app_name}/volumes/{volume_id}/snapshots | 
-[**VolumesUpdate**](VolumesAPI.md#VolumesUpdate) | **Post** /apps/{app_name}/volumes/{volume_id} | 
+[**CreateVolumeSnapshot**](VolumesAPI.md#CreateVolumeSnapshot) | **Post** /apps/{app_name}/volumes/{volume_id}/snapshots | Create Snapshot
+[**VolumeDelete**](VolumesAPI.md#VolumeDelete) | **Delete** /apps/{app_name}/volumes/{volume_id} | Destroy Volume
+[**VolumesCreate**](VolumesAPI.md#VolumesCreate) | **Post** /apps/{app_name}/volumes | Create Volume
+[**VolumesExtend**](VolumesAPI.md#VolumesExtend) | **Put** /apps/{app_name}/volumes/{volume_id}/extend | Extend Volume
+[**VolumesGetById**](VolumesAPI.md#VolumesGetById) | **Get** /apps/{app_name}/volumes/{volume_id} | Get Volume
+[**VolumesList**](VolumesAPI.md#VolumesList) | **Get** /apps/{app_name}/volumes | List Volumes
+[**VolumesListSnapshots**](VolumesAPI.md#VolumesListSnapshots) | **Get** /apps/{app_name}/volumes/{volume_id}/snapshots | List Snapshots
+[**VolumesUpdate**](VolumesAPI.md#VolumesUpdate) | **Post** /apps/{app_name}/volumes/{volume_id} | Update Volume
 
 
 
 ## CreateVolumeSnapshot
 
 > CreateVolumeSnapshot(ctx, appName, volumeId).Execute()
+
+Create Snapshot
 
 
 
@@ -27,23 +29,23 @@ Method | HTTP request | Description
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
-    appName := "appName_example" // string | Fly App Name
-    volumeId := "volumeId_example" // string | Volume ID
+	appName := "appName_example" // string | Fly App Name
+	volumeId := "volumeId_example" // string | Volume ID
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.VolumesAPI.CreateVolumeSnapshot(context.Background(), appName, volumeId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VolumesAPI.CreateVolumeSnapshot``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.VolumesAPI.CreateVolumeSnapshot(context.Background(), appName, volumeId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VolumesAPI.CreateVolumeSnapshot``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -88,6 +90,8 @@ No authorization required
 
 > Volume VolumeDelete(ctx, appName, volumeId).Execute()
 
+Destroy Volume
+
 
 
 ### Example
@@ -96,25 +100,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
-    appName := "appName_example" // string | Fly App Name
-    volumeId := "volumeId_example" // string | Volume ID
+	appName := "appName_example" // string | Fly App Name
+	volumeId := "volumeId_example" // string | Volume ID
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VolumesAPI.VolumeDelete(context.Background(), appName, volumeId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VolumesAPI.VolumeDelete``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `VolumeDelete`: Volume
-    fmt.Fprintf(os.Stdout, "Response from `VolumesAPI.VolumeDelete`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VolumesAPI.VolumeDelete(context.Background(), appName, volumeId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VolumesAPI.VolumeDelete``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VolumeDelete`: Volume
+	fmt.Fprintf(os.Stdout, "Response from `VolumesAPI.VolumeDelete`: %v\n", resp)
 }
 ```
 
@@ -159,6 +163,8 @@ No authorization required
 
 > Volume VolumesCreate(ctx, appName).Request(request).Execute()
 
+Create Volume
+
 
 
 ### Example
@@ -167,25 +173,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
-    appName := "appName_example" // string | Fly App Name
-    request := *openapiclient.NewCreateVolumeRequest() // CreateVolumeRequest | Request body
+	appName := "appName_example" // string | Fly App Name
+	request := *openapiclient.NewCreateVolumeRequest() // CreateVolumeRequest | Request body
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VolumesAPI.VolumesCreate(context.Background(), appName).Request(request).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VolumesAPI.VolumesCreate``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `VolumesCreate`: Volume
-    fmt.Fprintf(os.Stdout, "Response from `VolumesAPI.VolumesCreate`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VolumesAPI.VolumesCreate(context.Background(), appName).Request(request).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VolumesAPI.VolumesCreate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VolumesCreate`: Volume
+	fmt.Fprintf(os.Stdout, "Response from `VolumesAPI.VolumesCreate`: %v\n", resp)
 }
 ```
 
@@ -229,6 +235,8 @@ No authorization required
 
 > ExtendVolumeResponse VolumesExtend(ctx, appName, volumeId).Request(request).Execute()
 
+Extend Volume
+
 
 
 ### Example
@@ -237,26 +245,26 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
-    appName := "appName_example" // string | Fly App Name
-    volumeId := "volumeId_example" // string | Volume ID
-    request := *openapiclient.NewExtendVolumeRequest() // ExtendVolumeRequest | Request body
+	appName := "appName_example" // string | Fly App Name
+	volumeId := "volumeId_example" // string | Volume ID
+	request := *openapiclient.NewExtendVolumeRequest() // ExtendVolumeRequest | Request body
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VolumesAPI.VolumesExtend(context.Background(), appName, volumeId).Request(request).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VolumesAPI.VolumesExtend``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `VolumesExtend`: ExtendVolumeResponse
-    fmt.Fprintf(os.Stdout, "Response from `VolumesAPI.VolumesExtend`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VolumesAPI.VolumesExtend(context.Background(), appName, volumeId).Request(request).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VolumesAPI.VolumesExtend``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VolumesExtend`: ExtendVolumeResponse
+	fmt.Fprintf(os.Stdout, "Response from `VolumesAPI.VolumesExtend`: %v\n", resp)
 }
 ```
 
@@ -302,6 +310,8 @@ No authorization required
 
 > Volume VolumesGetById(ctx, appName, volumeId).Execute()
 
+Get Volume
+
 
 
 ### Example
@@ -310,25 +320,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
-    appName := "appName_example" // string | Fly App Name
-    volumeId := "volumeId_example" // string | Volume ID
+	appName := "appName_example" // string | Fly App Name
+	volumeId := "volumeId_example" // string | Volume ID
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VolumesAPI.VolumesGetById(context.Background(), appName, volumeId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VolumesAPI.VolumesGetById``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `VolumesGetById`: Volume
-    fmt.Fprintf(os.Stdout, "Response from `VolumesAPI.VolumesGetById`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VolumesAPI.VolumesGetById(context.Background(), appName, volumeId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VolumesAPI.VolumesGetById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VolumesGetById`: Volume
+	fmt.Fprintf(os.Stdout, "Response from `VolumesAPI.VolumesGetById`: %v\n", resp)
 }
 ```
 
@@ -373,6 +383,8 @@ No authorization required
 
 > []Volume VolumesList(ctx, appName).Execute()
 
+List Volumes
+
 
 
 ### Example
@@ -381,24 +393,24 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
-    appName := "appName_example" // string | Fly App Name
+	appName := "appName_example" // string | Fly App Name
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VolumesAPI.VolumesList(context.Background(), appName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VolumesAPI.VolumesList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `VolumesList`: []Volume
-    fmt.Fprintf(os.Stdout, "Response from `VolumesAPI.VolumesList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VolumesAPI.VolumesList(context.Background(), appName).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VolumesAPI.VolumesList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VolumesList`: []Volume
+	fmt.Fprintf(os.Stdout, "Response from `VolumesAPI.VolumesList`: %v\n", resp)
 }
 ```
 
@@ -441,6 +453,8 @@ No authorization required
 
 > []VolumeSnapshot VolumesListSnapshots(ctx, appName, volumeId).Execute()
 
+List Snapshots
+
 
 
 ### Example
@@ -449,25 +463,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
-    appName := "appName_example" // string | Fly App Name
-    volumeId := "volumeId_example" // string | Volume ID
+	appName := "appName_example" // string | Fly App Name
+	volumeId := "volumeId_example" // string | Volume ID
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VolumesAPI.VolumesListSnapshots(context.Background(), appName, volumeId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VolumesAPI.VolumesListSnapshots``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `VolumesListSnapshots`: []VolumeSnapshot
-    fmt.Fprintf(os.Stdout, "Response from `VolumesAPI.VolumesListSnapshots`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VolumesAPI.VolumesListSnapshots(context.Background(), appName, volumeId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VolumesAPI.VolumesListSnapshots``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VolumesListSnapshots`: []VolumeSnapshot
+	fmt.Fprintf(os.Stdout, "Response from `VolumesAPI.VolumesListSnapshots`: %v\n", resp)
 }
 ```
 
@@ -512,6 +526,8 @@ No authorization required
 
 > Volume VolumesUpdate(ctx, appName, volumeId).Request(request).Execute()
 
+Update Volume
+
 
 
 ### Example
@@ -520,26 +536,26 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
-    appName := "appName_example" // string | Fly App Name
-    volumeId := "volumeId_example" // string | Volume ID
-    request := *openapiclient.NewUpdateVolumeRequest() // UpdateVolumeRequest | Request body
+	appName := "appName_example" // string | Fly App Name
+	volumeId := "volumeId_example" // string | Volume ID
+	request := *openapiclient.NewUpdateVolumeRequest() // UpdateVolumeRequest | Request body
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.VolumesAPI.VolumesUpdate(context.Background(), appName, volumeId).Request(request).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `VolumesAPI.VolumesUpdate``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `VolumesUpdate`: Volume
-    fmt.Fprintf(os.Stdout, "Response from `VolumesAPI.VolumesUpdate`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VolumesAPI.VolumesUpdate(context.Background(), appName, volumeId).Request(request).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VolumesAPI.VolumesUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VolumesUpdate`: Volume
+	fmt.Fprintf(os.Stdout, "Response from `VolumesAPI.VolumesUpdate`: %v\n", resp)
 }
 ```
 

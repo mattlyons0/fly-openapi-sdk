@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **config** | [**ApiMachineConfig**](ApiMachineConfig.md) |  | [optional] |
+| **config** | [**ApiMachineConfig**](ApiMachineConfig.md) | An object defining the Machine configuration | [optional] |
 | **current_version** | **String** |  | [optional] |
 | **lease_ttl** | **Integer** |  | [optional] |
 | **lsvd** | **Boolean** |  | [optional] |

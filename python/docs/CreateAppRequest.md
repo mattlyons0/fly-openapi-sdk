@@ -2,10 +2,10 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **app_name** | **str** |  | [optional] 
-**app_role_id** | **str** |  | [optional] 
 **network** | **str** |  | [optional] 
 **org_slug** | **str** |  | [optional] 
 

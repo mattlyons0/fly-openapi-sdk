@@ -4,17 +4,19 @@ All URIs are relative to *https://api.machines.dev/v1*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**apps_create**](AppsApi.md#apps_create) | **POST** /apps |  |
-| [**apps_delete**](AppsApi.md#apps_delete) | **DELETE** /apps/{app_name} |  |
-| [**apps_list**](AppsApi.md#apps_list) | **GET** /apps |  |
-| [**apps_show**](AppsApi.md#apps_show) | **GET** /apps/{app_name} |  |
+| [**apps_create**](AppsApi.md#apps_create) | **POST** /apps | Create App |
+| [**apps_delete**](AppsApi.md#apps_delete) | **DELETE** /apps/{app_name} | Destroy App |
+| [**apps_list**](AppsApi.md#apps_list) | **GET** /apps | List Apps |
+| [**apps_show**](AppsApi.md#apps_show) | **GET** /apps/{app_name} | Get App |
 
 
 ## apps_create
 
 > apps_create(request)
 
+Create App
 
+Create an app with the specified details in the request body. 
 
 ### Examples
 
@@ -26,7 +28,7 @@ api_instance = FlySDK::AppsApi.new
 request = FlySDK::CreateAppRequest.new # CreateAppRequest | App body
 
 begin
-  
+  # Create App
   api_instance.apps_create(request)
 rescue FlySDK::ApiError => e
   puts "Error when calling AppsApi->apps_create: #{e}"
@@ -41,7 +43,7 @@ This returns an Array which contains the response data (`nil` in this case), sta
 
 ```ruby
 begin
-  
+  # Create App
   data, status_code, headers = api_instance.apps_create_with_http_info(request)
   p status_code # => 2xx
   p headers # => { ... }
@@ -75,7 +77,9 @@ No authorization required
 
 > apps_delete(app_name)
 
+Destroy App
 
+Delete an app by its name. 
 
 ### Examples
 
@@ -87,7 +91,7 @@ api_instance = FlySDK::AppsApi.new
 app_name = 'app_name_example' # String | Fly App Name
 
 begin
-  
+  # Destroy App
   api_instance.apps_delete(app_name)
 rescue FlySDK::ApiError => e
   puts "Error when calling AppsApi->apps_delete: #{e}"
@@ -102,7 +106,7 @@ This returns an Array which contains the response data (`nil` in this case), sta
 
 ```ruby
 begin
-  
+  # Destroy App
   data, status_code, headers = api_instance.apps_delete_with_http_info(app_name)
   p status_code # => 2xx
   p headers # => { ... }
@@ -136,7 +140,9 @@ No authorization required
 
 > <ListAppsResponse> apps_list(org_slug)
 
+List Apps
 
+List all apps with the ability to filter by organization slug. 
 
 ### Examples
 
@@ -148,7 +154,7 @@ api_instance = FlySDK::AppsApi.new
 org_slug = 'org_slug_example' # String | The org slug, or 'personal', to filter apps
 
 begin
-  
+  # List Apps
   result = api_instance.apps_list(org_slug)
   p result
 rescue FlySDK::ApiError => e
@@ -164,7 +170,7 @@ This returns an Array which contains the response data, status code and headers.
 
 ```ruby
 begin
-  
+  # List Apps
   data, status_code, headers = api_instance.apps_list_with_http_info(org_slug)
   p status_code # => 2xx
   p headers # => { ... }
@@ -198,7 +204,9 @@ No authorization required
 
 > <App> apps_show(app_name)
 
+Get App
 
+Retrieve details about a specific app by its name. 
 
 ### Examples
 
@@ -210,7 +218,7 @@ api_instance = FlySDK::AppsApi.new
 app_name = 'app_name_example' # String | Fly App Name
 
 begin
-  
+  # Get App
   result = api_instance.apps_show(app_name)
   p result
 rescue FlySDK::ApiError => e
@@ -226,7 +234,7 @@ This returns an Array which contains the response data, status code and headers.
 
 ```ruby
 begin
-  
+  # Get App
   data, status_code, headers = api_instance.apps_show_with_http_info(app_name)
   p status_code # => 2xx
   p headers # => { ... }

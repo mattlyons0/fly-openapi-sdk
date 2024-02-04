@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **GuestPath** | **string** |  | 
+**TigrisBucket** | Pointer to **string** |  | [optional] 
 **UrlPrefix** | **string** |  | 
 
 ## Methods
@@ -45,6 +46,31 @@ and a boolean to check if the value has been set.
 
 SetGuestPath sets GuestPath field to given value.
 
+
+### GetTigrisBucket
+
+`func (o *ApiStatic) GetTigrisBucket() string`
+
+GetTigrisBucket returns the TigrisBucket field if non-nil, zero value otherwise.
+
+### GetTigrisBucketOk
+
+`func (o *ApiStatic) GetTigrisBucketOk() (*string, bool)`
+
+GetTigrisBucketOk returns a tuple with the TigrisBucket field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTigrisBucket
+
+`func (o *ApiStatic) SetTigrisBucket(v string)`
+
+SetTigrisBucket sets TigrisBucket field to given value.
+
+### HasTigrisBucket
+
+`func (o *ApiStatic) HasTigrisBucket() bool`
+
+HasTigrisBucket returns a boolean if a field has been set.
 
 ### GetUrlPrefix
 

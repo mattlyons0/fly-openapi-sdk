@@ -1,5 +1,5 @@
 /*
-Fly Machines API
+Machines API
 
 Testing AppsAPIService
 

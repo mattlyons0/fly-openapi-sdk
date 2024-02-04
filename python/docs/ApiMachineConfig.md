@@ -2,6 +2,7 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **auto_destroy** | **bool** | Optional boolean telling the Machine to destroy itself once it’s complete (default false) | [optional] 

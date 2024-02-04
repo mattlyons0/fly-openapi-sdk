@@ -2,8 +2,12 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**nameservers** | **List[str]** |  | [optional] 
+**options** | [**List[ApiDnsOption]**](ApiDnsOption.md) |  | [optional] 
+**searches** | **List[str]** |  | [optional] 
 **skip_registration** | **bool** |  | [optional] 
 
 ## Example

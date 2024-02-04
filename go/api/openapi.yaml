@@ -1,19 +1,75 @@
 openapi: 3.0.1
 info:
   contact: {}
-  description: ""
+  description: |
+    # Introduction
+
+    Fly Machines are the compute behind the Fly.io platform. They are fast-launching VMs that can be started and stopped at subsecond speeds. A Machine is the configuration and state for a single VM running on our platform. Every Machine will belong to a Fly App; Apps can have more than one Machine. Read more [here](https://fly.io/docs/machines/).
+
+    The Machines REST API allows you to provison and manage Apps, Machines and Volumes on the Fly.io platform. To manage other Fly.io resources like organizations, use the [GraphQL API](https://fly.io/docs/networking/custom-domains-with-fly/#graphql-api-notes).
+
+    ## Authentication
+
+    All requests must include the Fly API Token in the HTTP Headers as follows:
+
+    ```
+    Authorization: Bearer [TOKEN]
+    ```
+
+    You can get your API token using [flyctl](https://fly.io/docs/hands-on/install-flyctl/) by running `fly auth token`
+
+    ## Base URL
+
+    The easiest (and recommended) way to connect to the Machines API is to use the public `api.machines.dev` endpoint, a simpler and more performant alternative to connecting over WireGuard. You can still access your Machines directly over a WireGuard VPN, and use the private Machines API endpoint: `http://_api.internal:4280`. This method requires more setup.
+
+    Follow the [instructions](https://fly.io/docs/networking/private-networking/#private-network-vpn) to set up a permanent WireGuard connection to your Fly.io [IPv6 private network](https://fly.io/docs/networking/private-networking/). Once you’re connected, Fly internal DNS should expose the Machines API endpoint at: `http://_api.internal:4280`
+
+    ## Response Codes
+
+    The API uses conventional HTTP status codes to signal whether a request was successful or not.
+
+    Typically, 2xx HTTP status codes denote successful operations, 4xx codes imply failures related to the user, and 5xx codes suggest problems with the infrastructure.
+
+    | Status | Description                                 |
+    | :----: | ------------------------------------------- |
+    | `200`  | Successful request.                         |
+    | `201`  | Created successfully.                       |
+    | `202`  | Successful request. No content.             |
+    | `400`  | Check that the parameters were correct.     |
+    | `401`  | The API key used was missing or invalid.    |
+    | `404`  | The resource was not found.                 |
+    | `5xx`  | Indicates an error with Fly.io API servers. |
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
-  title: Fly Machines API
+  title: Machines API
   version: "1.0"
 externalDocs:
   url: https://fly.io/docs/machines/working-with-machines/
 servers:
 - url: https://api.machines.dev/v1
+tags:
+- description: "A Fly App is an abstraction for a group of Machines running your code\
+    \ on Fly.io, along with the configuration, provisioned resources, and data we\
+    \ need to keep track of to run and route to your Machines. Read more [here](https://fly.io/docs/reference/apps/)."
+  name: Apps
+- description: "Fly Machines are the compute behind the Fly.io platform. They are\
+    \ fast-launching VMs that can be started and stopped at subsecond speeds. A Machine\
+    \ is the configuration and state for a single VM running on our platform. Every\
+    \ Machine will belong to a Fly App; Apps can have more than one Machine. Read\
+    \ more [here](https://fly.io/docs/machines/)."
+  name: Machines
+- description: "Fly Volumes are local persistent storage for Fly Machines. You can\
+    \ access and write to a volume on a Machine just like a regular directory. Use\
+    \ volumes to store your database files, to save your app’s state, such as configuration\
+    \ and session or user data, or for any information that needs to persist after\
+    \ deploy or restart. Read more [here](https://fly.io/docs/reference/volumes/)."
+  name: Volumes
 paths:
   /apps:
     get:
+      description: |
+        List all apps with the ability to filter by organization slug.
       operationId: Apps_list
       parameters:
       - description: "The org slug, or 'personal', to filter apps"
@@ -29,9 +85,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/ListAppsResponse'
           description: OK
+      summary: List Apps
       tags:
       - Apps
     post:
+      description: |
+        Create an app with the specified details in the request body.
       operationId: Apps_create
       requestBody:
         content:
@@ -50,11 +109,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: Bad Request
+      summary: Create App
       tags:
       - Apps
       x-codegen-request-body-name: request
   /apps/{app_name}:
     delete:
+      description: |
+        Delete an app by its name.
       operationId: Apps_delete
       parameters:
       - description: Fly App Name
@@ -67,9 +129,12 @@ paths:
         "202":
           content: {}
           description: Accepted
+      summary: Destroy App
       tags:
       - Apps
     get:
+      description: |
+        Retrieve details about a specific app by its name.
       operationId: Apps_show
       parameters:
       - description: Fly App Name
@@ -85,10 +150,13 @@ paths:
               schema:
                 $ref: '#/components/schemas/App'
           description: OK
+      summary: Get App
       tags:
       - Apps
   /apps/{app_name}/machines:
     get:
+      description: |
+        List all Machines associated with a specific app, with optional filters for including deleted Machines and filtering by region.
       operationId: Machines_list
       parameters:
       - description: Fly App Name
@@ -116,9 +184,14 @@ paths:
                   $ref: '#/components/schemas/Machine'
                 type: array
           description: OK
+      summary: List Machines
       tags:
       - Machines
     post:
+      description: |
+        Create a Machine within a specific app using the details provided in the request body.
+
+        **Important**: This request can fail, and you’re responsible for handling that failure. If you ask for a large Machine, or a Machine in a region we happen to be at capacity for, you might need to retry the request, or to fall back to another region. If you’re working directly with the Machines API, you’re taking some responsibility for your own orchestration!
       operationId: Machines_create
       parameters:
       - description: Fly App Name
@@ -141,11 +214,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/Machine'
           description: OK
+      summary: Create Machine
       tags:
       - Machines
       x-codegen-request-body-name: request
   /apps/{app_name}/machines/{machine_id}:
     delete:
+      description: |
+        Delete a specific Machine within an app by Machine ID, with an optional force parameter to force kill the Machine if it's running.
       operationId: Machines_delete
       parameters:
       - description: Fly App Name
@@ -160,13 +236,21 @@ paths:
         required: true
         schema:
           type: string
+      - description: Force kill the machine if it's running
+        in: query
+        name: force
+        schema:
+          type: boolean
       responses:
         "200":
           content: {}
           description: OK
+      summary: Destroy Machine
       tags:
       - Machines
     get:
+      description: |
+        Get details of a specific Machine within an app by the Machine ID.
       operationId: Machines_show
       parameters:
       - description: Fly App Name
@@ -188,9 +272,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/Machine'
           description: OK
+      summary: Get Machine
       tags:
       - Machines
     post:
+      description: |
+        Update a Machine's configuration using the details provided in the request body.
       operationId: Machines_update
       parameters:
       - description: Fly App Name
@@ -225,16 +312,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: Bad Request
+      summary: Update Machine
       tags:
       - Machines
       x-codegen-request-body-name: request
   /apps/{app_name}/machines/{machine_id}/cordon:
     post:
-      description: "“Cordoning” a machine refers to disabling its services, so the\
-        \ proxy won’t route requests to it. In flyctl this is used by blue/green deployments;\
-        \ one set of machines is started up with services disabled, and when they\
-        \ are all healthy, the services are enabled on the new machines and disabled\
-        \ on the old ones."
+      description: |
+        “Cordoning” a Machine refers to disabling its services, so the Fly Proxy won’t route requests to it. In flyctl this is used by blue/green deployments; one set of Machines is started up with services disabled, and when they are all healthy, the services are enabled on the new Machines and disabled on the old ones.
       operationId: Machines_cordon
       parameters:
       - description: Fly App Name
@@ -253,10 +338,13 @@ paths:
         "200":
           content: {}
           description: OK
+      summary: Cordon Machine
       tags:
       - Machines
   /apps/{app_name}/machines/{machine_id}/events:
     get:
+      description: |
+        List all events associated with a specific Machine within an app.
       operationId: Machines_list_events
       parameters:
       - description: Fly App Name
@@ -280,10 +368,13 @@ paths:
                   $ref: '#/components/schemas/MachineEvent'
                 type: array
           description: OK
+      summary: List Events
       tags:
       - Machines
   /apps/{app_name}/machines/{machine_id}/exec:
     post:
+      description: |
+        Execute a command on a specific Machine and return the raw command output bytes.
       operationId: Machines_exec
       parameters:
       - description: Fly App Name
@@ -324,11 +415,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: Bad Request
+      summary: Execute Command
       tags:
       - Machines
       x-codegen-request-body-name: request
   /apps/{app_name}/machines/{machine_id}/lease:
     delete:
+      description: |
+        Release the lease of a specific Machine within an app. Machine leases can be used to obtain an exclusive lock on modifying a Machine.
       operationId: Machines_release_lease
       parameters:
       - description: Fly App Name
@@ -347,9 +441,12 @@ paths:
         "200":
           content: {}
           description: OK
+      summary: Release Lease
       tags:
       - Machines
     get:
+      description: |
+        Retrieve the current lease of a specific Machine within an app. Machine leases can be used to obtain an exclusive lock on modifying a Machine.
       operationId: Machines_show_lease
       parameters:
       - description: Fly App Name
@@ -371,9 +468,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/Lease'
           description: OK
+      summary: Get Lease
       tags:
       - Machines
     post:
+      description: |
+        Create a lease for a specific Machine within an app using the details provided in the request body. Machine leases can be used to obtain an exclusive lock on modifying a Machine.
       operationId: Machines_create_lease
       parameters:
       - description: Fly App Name
@@ -402,11 +502,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/Lease'
           description: OK
+      summary: Create Lease
       tags:
       - Machines
       x-codegen-request-body-name: request
   /apps/{app_name}/machines/{machine_id}/metadata:
     get:
+      description: |
+        Retrieve metadata for a specific Machine within an app.
       operationId: Machines_show_metadata
       parameters:
       - description: Fly App Name
@@ -430,10 +533,13 @@ paths:
                   type: string
                 type: object
           description: OK
+      summary: Get Metadata
       tags:
       - Machines
   /apps/{app_name}/machines/{machine_id}/metadata/{key}:
     delete:
+      description: |
+        Delete metadata for a specific Machine within an app by providing a metadata key.
       operationId: Machines_delete_metadata
       parameters:
       - description: Fly App Name
@@ -458,9 +564,12 @@ paths:
         "204":
           content: {}
           description: No Content
+      summary: Delete Metadata
       tags:
       - Machines
     post:
+      description: |
+        Update metadata for a specific machine within an app by providing a metadata key.
       operationId: Machines_update_metadata
       parameters:
       - description: Fly App Name
@@ -491,10 +600,13 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: Bad Request
+      summary: Update Metadata
       tags:
       - Machines
   /apps/{app_name}/machines/{machine_id}/ps:
     get:
+      description: |
+        List all processes running on a specific Machine within an app, with optional sorting parameters.
       operationId: Machines_list_processes
       parameters:
       - description: Fly App Name
@@ -534,10 +646,13 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: Bad Request
+      summary: List Processes
       tags:
       - Machines
   /apps/{app_name}/machines/{machine_id}/restart:
     post:
+      description: |
+        Restart a specific Machine within an app, with an optional timeout parameter.
       operationId: Machines_restart
       parameters:
       - description: Fly App Name
@@ -567,10 +682,13 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: Bad Request
+      summary: Restart Machine
       tags:
       - Machines
   /apps/{app_name}/machines/{machine_id}/signal:
     post:
+      description: |
+        Send a signal to a specific Machine within an app using the details provided in the request body.
       operationId: Machines_signal
       parameters:
       - description: Fly App Name
@@ -602,11 +720,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: Bad Request
+      summary: Signal Machine
       tags:
       - Machines
       x-codegen-request-body-name: request
   /apps/{app_name}/machines/{machine_id}/start:
     post:
+      description: |
+        Start a specific Machine within an app.
       operationId: Machines_start
       parameters:
       - description: Fly App Name
@@ -625,10 +746,13 @@ paths:
         "200":
           content: {}
           description: OK
+      summary: Start Machine
       tags:
       - Machines
   /apps/{app_name}/machines/{machine_id}/stop:
     post:
+      description: |
+        Stop a specific Machine within an app, with an optional request body to specify signal and timeout.
       operationId: Machines_stop
       parameters:
       - description: Fly App Name
@@ -660,16 +784,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: Bad Request
+      summary: Stop Machine
       tags:
       - Machines
       x-codegen-request-body-name: request
   /apps/{app_name}/machines/{machine_id}/uncordon:
     post:
-      description: "“Cordoning” a machine refers to disabling its services, so the\
-        \ proxy won’t route requests to it. In flyctl this is used by blue/green deployments;\
-        \ one set of machines is started up with services disabled, and when they\
-        \ are all healthy, the services are enabled on the new machines and disabled\
-        \ on the old ones."
+      description: |
+        “Cordoning” a Machine refers to disabling its services, so the Fly Proxy won’t route requests to it. In flyctl this is used by blue/green deployments; one set of Machines is started up with services disabled, and when they are all healthy, the services are enabled on the new Machines and disabled on the old ones.
       operationId: Machines_uncordon
       parameters:
       - description: Fly App Name
@@ -688,10 +810,13 @@ paths:
         "200":
           content: {}
           description: OK
+      summary: Uncordon Machine
       tags:
       - Machines
   /apps/{app_name}/machines/{machine_id}/versions:
     get:
+      description: |
+        List all versions of the configuration for a specific Machine within an app.
       operationId: Machines_list_versions
       parameters:
       - description: Fly App Name
@@ -715,10 +840,15 @@ paths:
                   $ref: '#/components/schemas/MachineVersion'
                 type: array
           description: OK
+      summary: List Versions
       tags:
       - Machines
   /apps/{app_name}/machines/{machine_id}/wait:
     get:
+      description: |
+        Wait for a Machine to reach a specific state. Specify the desired state with the state parameter. See the [Machine states table](https://fly.io/docs/machines/working-with-machines/#machine-states) for a list of possible states. The default for this parameter is `started`.
+
+        This request will block for up to 60 seconds. Set a shorter timeout with the timeout parameter.
       operationId: Machines_wait
       parameters:
       - description: Fly App Name
@@ -762,10 +892,13 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: Bad Request
+      summary: Wait for State
       tags:
       - Machines
   /apps/{app_name}/volumes:
     get:
+      description: |
+        List all volumes associated with a specific app.
       operationId: Volumes_list
       parameters:
       - description: Fly App Name
@@ -783,9 +916,12 @@ paths:
                   $ref: '#/components/schemas/Volume'
                 type: array
           description: OK
+      summary: List Volumes
       tags:
       - Volumes
     post:
+      description: |
+        Create a volume for a specific app using the details provided in the request body.
       operationId: Volumes_create
       parameters:
       - description: Fly App Name
@@ -808,11 +944,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/Volume'
           description: OK
+      summary: Create Volume
       tags:
       - Volumes
       x-codegen-request-body-name: request
   /apps/{app_name}/volumes/{volume_id}:
     delete:
+      description: |
+        Delete a specific volume within an app by volume ID.
       operationId: Volume_delete
       parameters:
       - description: Fly App Name
@@ -834,9 +973,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/Volume'
           description: OK
+      summary: Destroy Volume
       tags:
       - Volumes
     get:
+      description: |
+        Retrieve details about a specific volume by its ID within an app.
       operationId: Volumes_get_by_id
       parameters:
       - description: Fly App Name
@@ -858,9 +1000,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/Volume'
           description: OK
+      summary: Get Volume
       tags:
       - Volumes
     post:
+      description: |
+        Update a volume's configuration using the details provided in the request body.
       operationId: Volumes_update
       parameters:
       - description: Fly App Name
@@ -895,11 +1040,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
           description: Bad Request
+      summary: Update Volume
       tags:
       - Volumes
       x-codegen-request-body-name: request
   /apps/{app_name}/volumes/{volume_id}/extend:
     put:
+      description: |
+        Extend a volume's size within an app using the details provided in the request body.
       operationId: Volumes_extend
       parameters:
       - description: Fly App Name
@@ -928,11 +1076,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/ExtendVolumeResponse'
           description: OK
+      summary: Extend Volume
       tags:
       - Volumes
       x-codegen-request-body-name: request
   /apps/{app_name}/volumes/{volume_id}/snapshots:
     get:
+      description: |
+        List all snapshots for a specific volume within an app.
       operationId: Volumes_list_snapshots
       parameters:
       - description: Fly App Name
@@ -956,9 +1107,12 @@ paths:
                   $ref: '#/components/schemas/VolumeSnapshot'
                 type: array
           description: OK
+      summary: List Snapshots
       tags:
       - Volumes
     post:
+      description: |
+        Create a snapshot for a specific volume within an app.
       operationId: createVolumeSnapshot
       parameters:
       - description: Fly App Name
@@ -977,6 +1131,7 @@ paths:
         "200":
           content: {}
           description: OK
+      summary: Create Snapshot
       tags:
       - Volumes
 components:
@@ -1019,12 +1174,9 @@ components:
       example:
         app_name: app_name
         org_slug: org_slug
-        app_role_id: app_role_id
         network: network
       properties:
         app_name:
-          type: string
-        app_role_id:
           type: string
         network:
           type: string
@@ -1079,8 +1231,9 @@ components:
           gpu_kind: gpu_kind
           cpus: 6
           host_dedication_id: host_dedication_id
+          gpus: 1
           cpu_kind: cpu_kind
-          memory_mb: 1
+          memory_mb: 5
           kernel_args:
           - kernel_args
           - kernel_args
@@ -1121,6 +1274,10 @@ components:
           type: string
       type: object
     ErrorResponse:
+      example:
+        details: "{}"
+        error: error
+        status: null
       properties:
         details:
           description: Deprecated
@@ -1329,28 +1486,39 @@ components:
             - exec
             - exec
           restart:
-            max_retries: 2
+            max_retries: 4
             policy: "no"
           auto_destroy: true
           dns:
+            searches:
+            - searches
+            - searches
+            nameservers:
+            - nameservers
+            - nameservers
+            options:
+            - name: name
+              value: value
+            - name: name
+              value: value
             skip_registration: true
           mounts:
           - volume: volume
             path: path
             encrypted: true
-            size_gb_limit: 3
-            extend_threshold_percent: 7
+            size_gb_limit: 2
+            extend_threshold_percent: 9
             name: name
-            add_size_gb: 2
-            size_gb: 9
+            add_size_gb: 7
+            size_gb: 3
           - volume: volume
             path: path
             encrypted: true
-            size_gb_limit: 3
-            extend_threshold_percent: 7
+            size_gb_limit: 2
+            extend_threshold_percent: 9
             name: name
-            add_size_gb: 2
-            size_gb: 9
+            add_size_gb: 7
+            size_gb: 3
           services:
           - min_machines_running: 1
             protocol: protocol
@@ -1398,11 +1566,11 @@ components:
             internal_port: 1
             ports:
             - force_https: true
-              port: 6
+              port: 7
               handlers:
               - handlers
               - handlers
-              start_port: 7
+              start_port: 1
               tls_options:
                 alpn:
                 - alpn
@@ -1413,7 +1581,7 @@ components:
                 - versions
               proxy_proto_options:
                 version: version
-              end_port: 1
+              end_port: 6
               http_options:
                 compress: true
                 response:
@@ -1421,11 +1589,11 @@ components:
                     key: "{}"
                 h2_backend: true
             - force_https: true
-              port: 6
+              port: 7
               handlers:
               - handlers
               - handlers
-              start_port: 7
+              start_port: 1
               tls_options:
                 alpn:
                 - alpn
@@ -1436,7 +1604,7 @@ components:
                 - versions
               proxy_proto_options:
                 version: version
-              end_port: 1
+              end_port: 6
               http_options:
                 compress: true
                 response:
@@ -1446,9 +1614,9 @@ components:
             force_instance_description: force_instance_description
             autostop: true
             concurrency:
-              soft_limit: 7
+              soft_limit: 1
               type: type
-              hard_limit: 4
+              hard_limit: 7
           - min_machines_running: 1
             protocol: protocol
             checks:
@@ -1495,11 +1663,11 @@ components:
             internal_port: 1
             ports:
             - force_https: true
-              port: 6
+              port: 7
               handlers:
               - handlers
               - handlers
-              start_port: 7
+              start_port: 1
               tls_options:
                 alpn:
                 - alpn
@@ -1510,7 +1678,7 @@ components:
                 - versions
               proxy_proto_options:
                 version: version
-              end_port: 1
+              end_port: 6
               http_options:
                 compress: true
                 response:
@@ -1518,11 +1686,11 @@ components:
                     key: "{}"
                 h2_backend: true
             - force_https: true
-              port: 6
+              port: 7
               handlers:
               - handlers
               - handlers
-              start_port: 7
+              start_port: 1
               tls_options:
                 alpn:
                 - alpn
@@ -1533,7 +1701,7 @@ components:
                 - versions
               proxy_proto_options:
                 version: version
-              end_port: 1
+              end_port: 6
               http_options:
                 compress: true
                 response:
@@ -1543,15 +1711,17 @@ components:
             force_instance_description: force_instance_description
             autostop: true
             concurrency:
-              soft_limit: 7
+              soft_limit: 1
               type: type
-              hard_limit: 4
+              hard_limit: 7
           env:
             key: env
           statics:
-          - guest_path: guest_path
+          - tigris_bucket: tigris_bucket
+            guest_path: guest_path
             url_prefix: url_prefix
-          - guest_path: guest_path
+          - tigris_bucket: tigris_bucket
+            guest_path: guest_path
             url_prefix: url_prefix
           schedule: schedule
           checks:
@@ -1587,15 +1757,16 @@ components:
             gpu_kind: gpu_kind
             cpus: 6
             host_dedication_id: host_dedication_id
+            gpus: 1
             cpu_kind: cpu_kind
-            memory_mb: 1
+            memory_mb: 5
             kernel_args:
             - kernel_args
             - kernel_args
           disable_machine_autostart: true
           metrics:
             path: path
-            port: 5
+            port: 2
           standbys:
           - standbys
           - standbys
@@ -1608,13 +1779,13 @@ components:
           source: source
           type: type
           status: status
-          timestamp: 1
+          timestamp: 4
         - request: "{}"
           id: id
           source: source
           type: type
           status: status
-          timestamp: 1
+          timestamp: 4
       properties:
         checks:
           items:
@@ -1658,7 +1829,7 @@ components:
         source: source
         type: type
         status: status
-        timestamp: 1
+        timestamp: 4
       properties:
         id:
           type: string
@@ -1739,28 +1910,39 @@ components:
             - exec
             - exec
           restart:
-            max_retries: 2
+            max_retries: 4
             policy: "no"
           auto_destroy: true
           dns:
+            searches:
+            - searches
+            - searches
+            nameservers:
+            - nameservers
+            - nameservers
+            options:
+            - name: name
+              value: value
+            - name: name
+              value: value
             skip_registration: true
           mounts:
           - volume: volume
             path: path
             encrypted: true
-            size_gb_limit: 3
-            extend_threshold_percent: 7
+            size_gb_limit: 2
+            extend_threshold_percent: 9
             name: name
-            add_size_gb: 2
-            size_gb: 9
+            add_size_gb: 7
+            size_gb: 3
           - volume: volume
             path: path
             encrypted: true
-            size_gb_limit: 3
-            extend_threshold_percent: 7
+            size_gb_limit: 2
+            extend_threshold_percent: 9
             name: name
-            add_size_gb: 2
-            size_gb: 9
+            add_size_gb: 7
+            size_gb: 3
           services:
           - min_machines_running: 1
             protocol: protocol
@@ -1808,11 +1990,11 @@ components:
             internal_port: 1
             ports:
             - force_https: true
-              port: 6
+              port: 7
               handlers:
               - handlers
               - handlers
-              start_port: 7
+              start_port: 1
               tls_options:
                 alpn:
                 - alpn
@@ -1823,7 +2005,7 @@ components:
                 - versions
               proxy_proto_options:
                 version: version
-              end_port: 1
+              end_port: 6
               http_options:
                 compress: true
                 response:
@@ -1831,11 +2013,11 @@ components:
                     key: "{}"
                 h2_backend: true
             - force_https: true
-              port: 6
+              port: 7
               handlers:
               - handlers
               - handlers
-              start_port: 7
+              start_port: 1
               tls_options:
                 alpn:
                 - alpn
@@ -1846,7 +2028,7 @@ components:
                 - versions
               proxy_proto_options:
                 version: version
-              end_port: 1
+              end_port: 6
               http_options:
                 compress: true
                 response:
@@ -1856,9 +2038,9 @@ components:
             force_instance_description: force_instance_description
             autostop: true
             concurrency:
-              soft_limit: 7
+              soft_limit: 1
               type: type
-              hard_limit: 4
+              hard_limit: 7
           - min_machines_running: 1
             protocol: protocol
             checks:
@@ -1905,11 +2087,11 @@ components:
             internal_port: 1
             ports:
             - force_https: true
-              port: 6
+              port: 7
               handlers:
               - handlers
               - handlers
-              start_port: 7
+              start_port: 1
               tls_options:
                 alpn:
                 - alpn
@@ -1920,7 +2102,7 @@ components:
                 - versions
               proxy_proto_options:
                 version: version
-              end_port: 1
+              end_port: 6
               http_options:
                 compress: true
                 response:
@@ -1928,11 +2110,11 @@ components:
                     key: "{}"
                 h2_backend: true
             - force_https: true
-              port: 6
+              port: 7
               handlers:
               - handlers
               - handlers
-              start_port: 7
+              start_port: 1
               tls_options:
                 alpn:
                 - alpn
@@ -1943,7 +2125,7 @@ components:
                 - versions
               proxy_proto_options:
                 version: version
-              end_port: 1
+              end_port: 6
               http_options:
                 compress: true
                 response:
@@ -1953,15 +2135,17 @@ components:
             force_instance_description: force_instance_description
             autostop: true
             concurrency:
-              soft_limit: 7
+              soft_limit: 1
               type: type
-              hard_limit: 4
+              hard_limit: 7
           env:
             key: env
           statics:
-          - guest_path: guest_path
+          - tigris_bucket: tigris_bucket
+            guest_path: guest_path
             url_prefix: url_prefix
-          - guest_path: guest_path
+          - tigris_bucket: tigris_bucket
+            guest_path: guest_path
             url_prefix: url_prefix
           schedule: schedule
           checks:
@@ -1997,15 +2181,16 @@ components:
             gpu_kind: gpu_kind
             cpus: 6
             host_dedication_id: host_dedication_id
+            gpus: 1
             cpu_kind: cpu_kind
-            memory_mb: 1
+            memory_mb: 5
             kernel_args:
             - kernel_args
             - kernel_args
           disable_machine_autostart: true
           metrics:
             path: path
-            port: 5
+            port: 2
           standbys:
           - standbys
           - standbys
@@ -2208,8 +2393,31 @@ components:
       type: object
     api.DNSConfig:
       example:
+        searches:
+        - searches
+        - searches
+        nameservers:
+        - nameservers
+        - nameservers
+        options:
+        - name: name
+          value: value
+        - name: name
+          value: value
         skip_registration: true
       properties:
+        nameservers:
+          items:
+            type: string
+          type: array
+        options:
+          items:
+            $ref: '#/components/schemas/api.dnsOption'
+          type: array
+        searches:
+          items:
+            type: string
+          type: array
         skip_registration:
           type: boolean
       type: object
@@ -2368,28 +2576,39 @@ components:
           - exec
           - exec
         restart:
-          max_retries: 2
+          max_retries: 4
           policy: "no"
         auto_destroy: true
         dns:
+          searches:
+          - searches
+          - searches
+          nameservers:
+          - nameservers
+          - nameservers
+          options:
+          - name: name
+            value: value
+          - name: name
+            value: value
           skip_registration: true
         mounts:
         - volume: volume
           path: path
           encrypted: true
-          size_gb_limit: 3
-          extend_threshold_percent: 7
+          size_gb_limit: 2
+          extend_threshold_percent: 9
           name: name
-          add_size_gb: 2
-          size_gb: 9
+          add_size_gb: 7
+          size_gb: 3
         - volume: volume
           path: path
           encrypted: true
-          size_gb_limit: 3
-          extend_threshold_percent: 7
+          size_gb_limit: 2
+          extend_threshold_percent: 9
           name: name
-          add_size_gb: 2
-          size_gb: 9
+          add_size_gb: 7
+          size_gb: 3
         services:
         - min_machines_running: 1
           protocol: protocol
@@ -2437,11 +2656,11 @@ components:
           internal_port: 1
           ports:
           - force_https: true
-            port: 6
+            port: 7
             handlers:
             - handlers
             - handlers
-            start_port: 7
+            start_port: 1
             tls_options:
               alpn:
               - alpn
@@ -2452,7 +2671,7 @@ components:
               - versions
             proxy_proto_options:
               version: version
-            end_port: 1
+            end_port: 6
             http_options:
               compress: true
               response:
@@ -2460,11 +2679,11 @@ components:
                   key: "{}"
               h2_backend: true
           - force_https: true
-            port: 6
+            port: 7
             handlers:
             - handlers
             - handlers
-            start_port: 7
+            start_port: 1
             tls_options:
               alpn:
               - alpn
@@ -2475,7 +2694,7 @@ components:
               - versions
             proxy_proto_options:
               version: version
-            end_port: 1
+            end_port: 6
             http_options:
               compress: true
               response:
@@ -2485,9 +2704,9 @@ components:
           force_instance_description: force_instance_description
           autostop: true
           concurrency:
-            soft_limit: 7
+            soft_limit: 1
             type: type
-            hard_limit: 4
+            hard_limit: 7
         - min_machines_running: 1
           protocol: protocol
           checks:
@@ -2534,11 +2753,11 @@ components:
           internal_port: 1
           ports:
           - force_https: true
-            port: 6
+            port: 7
             handlers:
             - handlers
             - handlers
-            start_port: 7
+            start_port: 1
             tls_options:
               alpn:
               - alpn
@@ -2549,7 +2768,7 @@ components:
               - versions
             proxy_proto_options:
               version: version
-            end_port: 1
+            end_port: 6
             http_options:
               compress: true
               response:
@@ -2557,11 +2776,11 @@ components:
                   key: "{}"
               h2_backend: true
           - force_https: true
-            port: 6
+            port: 7
             handlers:
             - handlers
             - handlers
-            start_port: 7
+            start_port: 1
             tls_options:
               alpn:
               - alpn
@@ -2572,7 +2791,7 @@ components:
               - versions
             proxy_proto_options:
               version: version
-            end_port: 1
+            end_port: 6
             http_options:
               compress: true
               response:
@@ -2582,15 +2801,17 @@ components:
           force_instance_description: force_instance_description
           autostop: true
           concurrency:
-            soft_limit: 7
+            soft_limit: 1
             type: type
-            hard_limit: 4
+            hard_limit: 7
         env:
           key: env
         statics:
-        - guest_path: guest_path
+        - tigris_bucket: tigris_bucket
+          guest_path: guest_path
           url_prefix: url_prefix
-        - guest_path: guest_path
+        - tigris_bucket: tigris_bucket
+          guest_path: guest_path
           url_prefix: url_prefix
         schedule: schedule
         checks:
@@ -2626,15 +2847,16 @@ components:
           gpu_kind: gpu_kind
           cpus: 6
           host_dedication_id: host_dedication_id
+          gpus: 1
           cpu_kind: cpu_kind
-          memory_mb: 1
+          memory_mb: 5
           kernel_args:
           - kernel_args
           - kernel_args
         disable_machine_autostart: true
         metrics:
           path: path
-          port: 5
+          port: 2
         standbys:
         - standbys
         - standbys
@@ -2716,8 +2938,9 @@ components:
         gpu_kind: gpu_kind
         cpus: 6
         host_dedication_id: host_dedication_id
+        gpus: 1
         cpu_kind: cpu_kind
-        memory_mb: 1
+        memory_mb: 5
         kernel_args:
         - kernel_args
         - kernel_args
@@ -2728,6 +2951,8 @@ components:
           type: integer
         gpu_kind:
           type: string
+        gpus:
+          type: integer
         host_dedication_id:
           type: string
         kernel_args:
@@ -2797,7 +3022,7 @@ components:
     api.MachineMetrics:
       example:
         path: path
-        port: 5
+        port: 2
       properties:
         path:
           type: string
@@ -2809,11 +3034,11 @@ components:
         volume: volume
         path: path
         encrypted: true
-        size_gb_limit: 3
-        extend_threshold_percent: 7
+        size_gb_limit: 2
+        extend_threshold_percent: 9
         name: name
-        add_size_gb: 2
-        size_gb: 9
+        add_size_gb: 7
+        size_gb: 3
       properties:
         add_size_gb:
           type: integer
@@ -2835,11 +3060,11 @@ components:
     api.MachinePort:
       example:
         force_https: true
-        port: 6
+        port: 7
         handlers:
         - handlers
         - handlers
-        start_port: 7
+        start_port: 1
         tls_options:
           alpn:
           - alpn
@@ -2850,7 +3075,7 @@ components:
           - versions
         proxy_proto_options:
           version: version
-        end_port: 1
+        end_port: 6
         http_options:
           compress: true
           response:
@@ -2915,7 +3140,7 @@ components:
       description: The Machine restart policy defines whether and how flyd restarts
         a Machine after its main process exits. See https://fly.io/docs/machines/guides-examples/machine-restart-policy/.
       example:
-        max_retries: 2
+        max_retries: 4
         policy: "no"
       properties:
         max_retries:
@@ -2981,11 +3206,11 @@ components:
         internal_port: 1
         ports:
         - force_https: true
-          port: 6
+          port: 7
           handlers:
           - handlers
           - handlers
-          start_port: 7
+          start_port: 1
           tls_options:
             alpn:
             - alpn
@@ -2996,7 +3221,7 @@ components:
             - versions
           proxy_proto_options:
             version: version
-          end_port: 1
+          end_port: 6
           http_options:
             compress: true
             response:
@@ -3004,11 +3229,11 @@ components:
                 key: "{}"
             h2_backend: true
         - force_https: true
-          port: 6
+          port: 7
           handlers:
           - handlers
           - handlers
-          start_port: 7
+          start_port: 1
           tls_options:
             alpn:
             - alpn
@@ -3019,7 +3244,7 @@ components:
             - versions
           proxy_proto_options:
             version: version
-          end_port: 1
+          end_port: 6
           http_options:
             compress: true
             response:
@@ -3029,9 +3254,9 @@ components:
         force_instance_description: force_instance_description
         autostop: true
         concurrency:
-          soft_limit: 7
+          soft_limit: 1
           type: type
-          hard_limit: 4
+          hard_limit: 7
       properties:
         autostart:
           type: boolean
@@ -3060,9 +3285,9 @@ components:
       type: object
     api.MachineServiceConcurrency:
       example:
-        soft_limit: 7
+        soft_limit: 1
         type: type
-        hard_limit: 4
+        hard_limit: 7
       properties:
         hard_limit:
           type: integer
@@ -3080,10 +3305,13 @@ components:
       type: object
     api.Static:
       example:
+        tigris_bucket: tigris_bucket
         guest_path: guest_path
         url_prefix: url_prefix
       properties:
         guest_path:
+          type: string
+        tigris_bucket:
           type: string
         url_prefix:
           type: string
@@ -3121,6 +3349,16 @@ components:
           items:
             type: string
           type: array
+      type: object
+    api.dnsOption:
+      example:
+        name: name
+        value: value
+      properties:
+        name:
+          type: string
+        value:
+          type: string
       type: object
     main.statusCode:
       enum:

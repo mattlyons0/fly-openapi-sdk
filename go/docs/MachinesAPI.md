@@ -4,28 +4,28 @@ All URIs are relative to *https://api.machines.dev/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**MachinesCordon**](MachinesAPI.md#MachinesCordon) | **Post** /apps/{app_name}/machines/{machine_id}/cordon | 
-[**MachinesCreate**](MachinesAPI.md#MachinesCreate) | **Post** /apps/{app_name}/machines | 
-[**MachinesCreateLease**](MachinesAPI.md#MachinesCreateLease) | **Post** /apps/{app_name}/machines/{machine_id}/lease | 
-[**MachinesDelete**](MachinesAPI.md#MachinesDelete) | **Delete** /apps/{app_name}/machines/{machine_id} | 
-[**MachinesDeleteMetadata**](MachinesAPI.md#MachinesDeleteMetadata) | **Delete** /apps/{app_name}/machines/{machine_id}/metadata/{key} | 
-[**MachinesExec**](MachinesAPI.md#MachinesExec) | **Post** /apps/{app_name}/machines/{machine_id}/exec | 
-[**MachinesList**](MachinesAPI.md#MachinesList) | **Get** /apps/{app_name}/machines | 
-[**MachinesListEvents**](MachinesAPI.md#MachinesListEvents) | **Get** /apps/{app_name}/machines/{machine_id}/events | 
-[**MachinesListProcesses**](MachinesAPI.md#MachinesListProcesses) | **Get** /apps/{app_name}/machines/{machine_id}/ps | 
-[**MachinesListVersions**](MachinesAPI.md#MachinesListVersions) | **Get** /apps/{app_name}/machines/{machine_id}/versions | 
-[**MachinesReleaseLease**](MachinesAPI.md#MachinesReleaseLease) | **Delete** /apps/{app_name}/machines/{machine_id}/lease | 
-[**MachinesRestart**](MachinesAPI.md#MachinesRestart) | **Post** /apps/{app_name}/machines/{machine_id}/restart | 
-[**MachinesShow**](MachinesAPI.md#MachinesShow) | **Get** /apps/{app_name}/machines/{machine_id} | 
-[**MachinesShowLease**](MachinesAPI.md#MachinesShowLease) | **Get** /apps/{app_name}/machines/{machine_id}/lease | 
-[**MachinesShowMetadata**](MachinesAPI.md#MachinesShowMetadata) | **Get** /apps/{app_name}/machines/{machine_id}/metadata | 
-[**MachinesSignal**](MachinesAPI.md#MachinesSignal) | **Post** /apps/{app_name}/machines/{machine_id}/signal | 
-[**MachinesStart**](MachinesAPI.md#MachinesStart) | **Post** /apps/{app_name}/machines/{machine_id}/start | 
-[**MachinesStop**](MachinesAPI.md#MachinesStop) | **Post** /apps/{app_name}/machines/{machine_id}/stop | 
-[**MachinesUncordon**](MachinesAPI.md#MachinesUncordon) | **Post** /apps/{app_name}/machines/{machine_id}/uncordon | 
-[**MachinesUpdate**](MachinesAPI.md#MachinesUpdate) | **Post** /apps/{app_name}/machines/{machine_id} | 
-[**MachinesUpdateMetadata**](MachinesAPI.md#MachinesUpdateMetadata) | **Post** /apps/{app_name}/machines/{machine_id}/metadata/{key} | 
-[**MachinesWait**](MachinesAPI.md#MachinesWait) | **Get** /apps/{app_name}/machines/{machine_id}/wait | 
+[**MachinesCordon**](MachinesAPI.md#MachinesCordon) | **Post** /apps/{app_name}/machines/{machine_id}/cordon | Cordon Machine
+[**MachinesCreate**](MachinesAPI.md#MachinesCreate) | **Post** /apps/{app_name}/machines | Create Machine
+[**MachinesCreateLease**](MachinesAPI.md#MachinesCreateLease) | **Post** /apps/{app_name}/machines/{machine_id}/lease | Create Lease
+[**MachinesDelete**](MachinesAPI.md#MachinesDelete) | **Delete** /apps/{app_name}/machines/{machine_id} | Destroy Machine
+[**MachinesDeleteMetadata**](MachinesAPI.md#MachinesDeleteMetadata) | **Delete** /apps/{app_name}/machines/{machine_id}/metadata/{key} | Delete Metadata
+[**MachinesExec**](MachinesAPI.md#MachinesExec) | **Post** /apps/{app_name}/machines/{machine_id}/exec | Execute Command
+[**MachinesList**](MachinesAPI.md#MachinesList) | **Get** /apps/{app_name}/machines | List Machines
+[**MachinesListEvents**](MachinesAPI.md#MachinesListEvents) | **Get** /apps/{app_name}/machines/{machine_id}/events | List Events
+[**MachinesListProcesses**](MachinesAPI.md#MachinesListProcesses) | **Get** /apps/{app_name}/machines/{machine_id}/ps | List Processes
+[**MachinesListVersions**](MachinesAPI.md#MachinesListVersions) | **Get** /apps/{app_name}/machines/{machine_id}/versions | List Versions
+[**MachinesReleaseLease**](MachinesAPI.md#MachinesReleaseLease) | **Delete** /apps/{app_name}/machines/{machine_id}/lease | Release Lease
+[**MachinesRestart**](MachinesAPI.md#MachinesRestart) | **Post** /apps/{app_name}/machines/{machine_id}/restart | Restart Machine
+[**MachinesShow**](MachinesAPI.md#MachinesShow) | **Get** /apps/{app_name}/machines/{machine_id} | Get Machine
+[**MachinesShowLease**](MachinesAPI.md#MachinesShowLease) | **Get** /apps/{app_name}/machines/{machine_id}/lease | Get Lease
+[**MachinesShowMetadata**](MachinesAPI.md#MachinesShowMetadata) | **Get** /apps/{app_name}/machines/{machine_id}/metadata | Get Metadata
+[**MachinesSignal**](MachinesAPI.md#MachinesSignal) | **Post** /apps/{app_name}/machines/{machine_id}/signal | Signal Machine
+[**MachinesStart**](MachinesAPI.md#MachinesStart) | **Post** /apps/{app_name}/machines/{machine_id}/start | Start Machine
+[**MachinesStop**](MachinesAPI.md#MachinesStop) | **Post** /apps/{app_name}/machines/{machine_id}/stop | Stop Machine
+[**MachinesUncordon**](MachinesAPI.md#MachinesUncordon) | **Post** /apps/{app_name}/machines/{machine_id}/uncordon | Uncordon Machine
+[**MachinesUpdate**](MachinesAPI.md#MachinesUpdate) | **Post** /apps/{app_name}/machines/{machine_id} | Update Machine
+[**MachinesUpdateMetadata**](MachinesAPI.md#MachinesUpdateMetadata) | **Post** /apps/{app_name}/machines/{machine_id}/metadata/{key} | Update Metadata
+[**MachinesWait**](MachinesAPI.md#MachinesWait) | **Get** /apps/{app_name}/machines/{machine_id}/wait | Wait for State
 
 
 
@@ -33,7 +33,7 @@ Method | HTTP request | Description
 
 > MachinesCordon(ctx, appName, machineId).Execute()
 
-
+Cordon Machine
 
 
 
@@ -43,23 +43,23 @@ Method | HTTP request | Description
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
-    appName := "appName_example" // string | Fly App Name
-    machineId := "machineId_example" // string | Machine ID
+	appName := "appName_example" // string | Fly App Name
+	machineId := "machineId_example" // string | Machine ID
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.MachinesAPI.MachinesCordon(context.Background(), appName, machineId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesCordon``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.MachinesAPI.MachinesCordon(context.Background(), appName, machineId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesCordon``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -104,6 +104,8 @@ No authorization required
 
 > Machine MachinesCreate(ctx, appName).Request(request).Execute()
 
+Create Machine
+
 
 
 ### Example
@@ -112,25 +114,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
-    appName := "appName_example" // string | Fly App Name
-    request := *openapiclient.NewCreateMachineRequest() // CreateMachineRequest | Create machine request
+	appName := "appName_example" // string | Fly App Name
+	request := *openapiclient.NewCreateMachineRequest() // CreateMachineRequest | Create machine request
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MachinesAPI.MachinesCreate(context.Background(), appName).Request(request).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesCreate``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `MachinesCreate`: Machine
-    fmt.Fprintf(os.Stdout, "Response from `MachinesAPI.MachinesCreate`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MachinesAPI.MachinesCreate(context.Background(), appName).Request(request).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesCreate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `MachinesCreate`: Machine
+	fmt.Fprintf(os.Stdout, "Response from `MachinesAPI.MachinesCreate`: %v\n", resp)
 }
 ```
 
@@ -174,6 +176,8 @@ No authorization required
 
 > Lease MachinesCreateLease(ctx, appName, machineId).Request(request).Execute()
 
+Create Lease
+
 
 
 ### Example
@@ -182,26 +186,26 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
-    appName := "appName_example" // string | Fly App Name
-    machineId := "machineId_example" // string | Machine ID
-    request := *openapiclient.NewCreateLeaseRequest() // CreateLeaseRequest | Request body
+	appName := "appName_example" // string | Fly App Name
+	machineId := "machineId_example" // string | Machine ID
+	request := *openapiclient.NewCreateLeaseRequest() // CreateLeaseRequest | Request body
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MachinesAPI.MachinesCreateLease(context.Background(), appName, machineId).Request(request).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesCreateLease``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `MachinesCreateLease`: Lease
-    fmt.Fprintf(os.Stdout, "Response from `MachinesAPI.MachinesCreateLease`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MachinesAPI.MachinesCreateLease(context.Background(), appName, machineId).Request(request).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesCreateLease``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `MachinesCreateLease`: Lease
+	fmt.Fprintf(os.Stdout, "Response from `MachinesAPI.MachinesCreateLease`: %v\n", resp)
 }
 ```
 
@@ -245,7 +249,9 @@ No authorization required
 
 ## MachinesDelete
 
-> MachinesDelete(ctx, appName, machineId).Execute()
+> MachinesDelete(ctx, appName, machineId).Force(force).Execute()
+
+Destroy Machine
 
 
 
@@ -255,23 +261,24 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
-    appName := "appName_example" // string | Fly App Name
-    machineId := "machineId_example" // string | Machine ID
+	appName := "appName_example" // string | Fly App Name
+	machineId := "machineId_example" // string | Machine ID
+	force := true // bool | Force kill the machine if it's running (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.MachinesAPI.MachinesDelete(context.Background(), appName, machineId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesDelete``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.MachinesAPI.MachinesDelete(context.Background(), appName, machineId).Force(force).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesDelete``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -293,6 +300,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
+ **force** | **bool** | Force kill the machine if it&#39;s running | 
 
 ### Return type
 
@@ -316,6 +324,8 @@ No authorization required
 
 > MachinesDeleteMetadata(ctx, appName, machineId, key).Execute()
 
+Delete Metadata
+
 
 
 ### Example
@@ -324,24 +334,24 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
-    appName := "appName_example" // string | Fly App Name
-    machineId := "machineId_example" // string | Machine ID
-    key := "key_example" // string | Metadata Key
+	appName := "appName_example" // string | Fly App Name
+	machineId := "machineId_example" // string | Machine ID
+	key := "key_example" // string | Metadata Key
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.MachinesAPI.MachinesDeleteMetadata(context.Background(), appName, machineId, key).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesDeleteMetadata``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.MachinesAPI.MachinesDeleteMetadata(context.Background(), appName, machineId, key).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesDeleteMetadata``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -388,6 +398,8 @@ No authorization required
 
 > string MachinesExec(ctx, appName, machineId).Request(request).Execute()
 
+Execute Command
+
 
 
 ### Example
@@ -396,26 +408,26 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
-    appName := "appName_example" // string | Fly App Name
-    machineId := "machineId_example" // string | Machine ID
-    request := *openapiclient.NewMachineExecRequest() // MachineExecRequest | Request body
+	appName := "appName_example" // string | Fly App Name
+	machineId := "machineId_example" // string | Machine ID
+	request := *openapiclient.NewMachineExecRequest() // MachineExecRequest | Request body
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MachinesAPI.MachinesExec(context.Background(), appName, machineId).Request(request).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesExec``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `MachinesExec`: string
-    fmt.Fprintf(os.Stdout, "Response from `MachinesAPI.MachinesExec`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MachinesAPI.MachinesExec(context.Background(), appName, machineId).Request(request).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesExec``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `MachinesExec`: string
+	fmt.Fprintf(os.Stdout, "Response from `MachinesAPI.MachinesExec`: %v\n", resp)
 }
 ```
 
@@ -461,6 +473,8 @@ No authorization required
 
 > []Machine MachinesList(ctx, appName).IncludeDeleted(includeDeleted).Region(region).Execute()
 
+List Machines
+
 
 
 ### Example
@@ -469,26 +483,26 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
-    appName := "appName_example" // string | Fly App Name
-    includeDeleted := true // bool | Include deleted machines (optional)
-    region := "region_example" // string | Region filter (optional)
+	appName := "appName_example" // string | Fly App Name
+	includeDeleted := true // bool | Include deleted machines (optional)
+	region := "region_example" // string | Region filter (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MachinesAPI.MachinesList(context.Background(), appName).IncludeDeleted(includeDeleted).Region(region).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `MachinesList`: []Machine
-    fmt.Fprintf(os.Stdout, "Response from `MachinesAPI.MachinesList`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MachinesAPI.MachinesList(context.Background(), appName).IncludeDeleted(includeDeleted).Region(region).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesList``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `MachinesList`: []Machine
+	fmt.Fprintf(os.Stdout, "Response from `MachinesAPI.MachinesList`: %v\n", resp)
 }
 ```
 
@@ -533,6 +547,8 @@ No authorization required
 
 > []MachineEvent MachinesListEvents(ctx, appName, machineId).Execute()
 
+List Events
+
 
 
 ### Example
@@ -541,25 +557,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
-    appName := "appName_example" // string | Fly App Name
-    machineId := "machineId_example" // string | Machine ID
+	appName := "appName_example" // string | Fly App Name
+	machineId := "machineId_example" // string | Machine ID
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MachinesAPI.MachinesListEvents(context.Background(), appName, machineId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesListEvents``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `MachinesListEvents`: []MachineEvent
-    fmt.Fprintf(os.Stdout, "Response from `MachinesAPI.MachinesListEvents`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MachinesAPI.MachinesListEvents(context.Background(), appName, machineId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesListEvents``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `MachinesListEvents`: []MachineEvent
+	fmt.Fprintf(os.Stdout, "Response from `MachinesAPI.MachinesListEvents`: %v\n", resp)
 }
 ```
 
@@ -604,6 +620,8 @@ No authorization required
 
 > []ProcessStat MachinesListProcesses(ctx, appName, machineId).SortBy(sortBy).Order(order).Execute()
 
+List Processes
+
 
 
 ### Example
@@ -612,27 +630,27 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
-    appName := "appName_example" // string | Fly App Name
-    machineId := "machineId_example" // string | Machine ID
-    sortBy := "sortBy_example" // string | Sort by (optional)
-    order := "order_example" // string | Order (optional)
+	appName := "appName_example" // string | Fly App Name
+	machineId := "machineId_example" // string | Machine ID
+	sortBy := "sortBy_example" // string | Sort by (optional)
+	order := "order_example" // string | Order (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MachinesAPI.MachinesListProcesses(context.Background(), appName, machineId).SortBy(sortBy).Order(order).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesListProcesses``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `MachinesListProcesses`: []ProcessStat
-    fmt.Fprintf(os.Stdout, "Response from `MachinesAPI.MachinesListProcesses`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MachinesAPI.MachinesListProcesses(context.Background(), appName, machineId).SortBy(sortBy).Order(order).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesListProcesses``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `MachinesListProcesses`: []ProcessStat
+	fmt.Fprintf(os.Stdout, "Response from `MachinesAPI.MachinesListProcesses`: %v\n", resp)
 }
 ```
 
@@ -679,6 +697,8 @@ No authorization required
 
 > []MachineVersion MachinesListVersions(ctx, appName, machineId).Execute()
 
+List Versions
+
 
 
 ### Example
@@ -687,25 +707,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
-    appName := "appName_example" // string | Fly App Name
-    machineId := "machineId_example" // string | Machine ID
+	appName := "appName_example" // string | Fly App Name
+	machineId := "machineId_example" // string | Machine ID
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MachinesAPI.MachinesListVersions(context.Background(), appName, machineId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesListVersions``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `MachinesListVersions`: []MachineVersion
-    fmt.Fprintf(os.Stdout, "Response from `MachinesAPI.MachinesListVersions`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MachinesAPI.MachinesListVersions(context.Background(), appName, machineId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesListVersions``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `MachinesListVersions`: []MachineVersion
+	fmt.Fprintf(os.Stdout, "Response from `MachinesAPI.MachinesListVersions`: %v\n", resp)
 }
 ```
 
@@ -750,6 +770,8 @@ No authorization required
 
 > MachinesReleaseLease(ctx, appName, machineId).Execute()
 
+Release Lease
+
 
 
 ### Example
@@ -758,23 +780,23 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
-    appName := "appName_example" // string | Fly App Name
-    machineId := "machineId_example" // string | Machine ID
+	appName := "appName_example" // string | Fly App Name
+	machineId := "machineId_example" // string | Machine ID
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.MachinesAPI.MachinesReleaseLease(context.Background(), appName, machineId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesReleaseLease``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.MachinesAPI.MachinesReleaseLease(context.Background(), appName, machineId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesReleaseLease``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -819,6 +841,8 @@ No authorization required
 
 > MachinesRestart(ctx, appName, machineId).Timeout(timeout).Execute()
 
+Restart Machine
+
 
 
 ### Example
@@ -827,24 +851,24 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
-    appName := "appName_example" // string | Fly App Name
-    machineId := "machineId_example" // string | Machine ID
-    timeout := "timeout_example" // string | Restart timeout as a Go duration string or number of seconds (optional)
+	appName := "appName_example" // string | Fly App Name
+	machineId := "machineId_example" // string | Machine ID
+	timeout := "timeout_example" // string | Restart timeout as a Go duration string or number of seconds (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.MachinesAPI.MachinesRestart(context.Background(), appName, machineId).Timeout(timeout).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesRestart``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.MachinesAPI.MachinesRestart(context.Background(), appName, machineId).Timeout(timeout).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesRestart``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -890,6 +914,8 @@ No authorization required
 
 > Machine MachinesShow(ctx, appName, machineId).Execute()
 
+Get Machine
+
 
 
 ### Example
@@ -898,25 +924,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
-    appName := "appName_example" // string | Fly App Name
-    machineId := "machineId_example" // string | Machine ID
+	appName := "appName_example" // string | Fly App Name
+	machineId := "machineId_example" // string | Machine ID
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MachinesAPI.MachinesShow(context.Background(), appName, machineId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesShow``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `MachinesShow`: Machine
-    fmt.Fprintf(os.Stdout, "Response from `MachinesAPI.MachinesShow`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MachinesAPI.MachinesShow(context.Background(), appName, machineId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesShow``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `MachinesShow`: Machine
+	fmt.Fprintf(os.Stdout, "Response from `MachinesAPI.MachinesShow`: %v\n", resp)
 }
 ```
 
@@ -961,6 +987,8 @@ No authorization required
 
 > Lease MachinesShowLease(ctx, appName, machineId).Execute()
 
+Get Lease
+
 
 
 ### Example
@@ -969,25 +997,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
-    appName := "appName_example" // string | Fly App Name
-    machineId := "machineId_example" // string | Machine ID
+	appName := "appName_example" // string | Fly App Name
+	machineId := "machineId_example" // string | Machine ID
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MachinesAPI.MachinesShowLease(context.Background(), appName, machineId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesShowLease``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `MachinesShowLease`: Lease
-    fmt.Fprintf(os.Stdout, "Response from `MachinesAPI.MachinesShowLease`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MachinesAPI.MachinesShowLease(context.Background(), appName, machineId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesShowLease``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `MachinesShowLease`: Lease
+	fmt.Fprintf(os.Stdout, "Response from `MachinesAPI.MachinesShowLease`: %v\n", resp)
 }
 ```
 
@@ -1032,6 +1060,8 @@ No authorization required
 
 > map[string]string MachinesShowMetadata(ctx, appName, machineId).Execute()
 
+Get Metadata
+
 
 
 ### Example
@@ -1040,25 +1070,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
-    appName := "appName_example" // string | Fly App Name
-    machineId := "machineId_example" // string | Machine ID
+	appName := "appName_example" // string | Fly App Name
+	machineId := "machineId_example" // string | Machine ID
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MachinesAPI.MachinesShowMetadata(context.Background(), appName, machineId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesShowMetadata``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `MachinesShowMetadata`: map[string]string
-    fmt.Fprintf(os.Stdout, "Response from `MachinesAPI.MachinesShowMetadata`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MachinesAPI.MachinesShowMetadata(context.Background(), appName, machineId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesShowMetadata``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `MachinesShowMetadata`: map[string]string
+	fmt.Fprintf(os.Stdout, "Response from `MachinesAPI.MachinesShowMetadata`: %v\n", resp)
 }
 ```
 
@@ -1103,6 +1133,8 @@ No authorization required
 
 > MachinesSignal(ctx, appName, machineId).Request(request).Execute()
 
+Signal Machine
+
 
 
 ### Example
@@ -1111,24 +1143,24 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
-    appName := "appName_example" // string | Fly App Name
-    machineId := "machineId_example" // string | Machine ID
-    request := *openapiclient.NewSignalRequest() // SignalRequest | Request body
+	appName := "appName_example" // string | Fly App Name
+	machineId := "machineId_example" // string | Machine ID
+	request := *openapiclient.NewSignalRequest() // SignalRequest | Request body
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.MachinesAPI.MachinesSignal(context.Background(), appName, machineId).Request(request).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesSignal``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.MachinesAPI.MachinesSignal(context.Background(), appName, machineId).Request(request).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesSignal``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -1174,6 +1206,8 @@ No authorization required
 
 > MachinesStart(ctx, appName, machineId).Execute()
 
+Start Machine
+
 
 
 ### Example
@@ -1182,23 +1216,23 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
-    appName := "appName_example" // string | Fly App Name
-    machineId := "machineId_example" // string | Machine ID
+	appName := "appName_example" // string | Fly App Name
+	machineId := "machineId_example" // string | Machine ID
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.MachinesAPI.MachinesStart(context.Background(), appName, machineId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesStart``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.MachinesAPI.MachinesStart(context.Background(), appName, machineId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesStart``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -1243,6 +1277,8 @@ No authorization required
 
 > MachinesStop(ctx, appName, machineId).Request(request).Execute()
 
+Stop Machine
+
 
 
 ### Example
@@ -1251,24 +1287,24 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
-    appName := "appName_example" // string | Fly App Name
-    machineId := "machineId_example" // string | Machine ID
-    request := *openapiclient.NewStopRequest() // StopRequest | Optional request body (optional)
+	appName := "appName_example" // string | Fly App Name
+	machineId := "machineId_example" // string | Machine ID
+	request := *openapiclient.NewStopRequest() // StopRequest | Optional request body (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.MachinesAPI.MachinesStop(context.Background(), appName, machineId).Request(request).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesStop``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.MachinesAPI.MachinesStop(context.Background(), appName, machineId).Request(request).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesStop``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -1314,7 +1350,7 @@ No authorization required
 
 > MachinesUncordon(ctx, appName, machineId).Execute()
 
-
+Uncordon Machine
 
 
 
@@ -1324,23 +1360,23 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
-    appName := "appName_example" // string | Fly App Name
-    machineId := "machineId_example" // string | Machine ID
+	appName := "appName_example" // string | Fly App Name
+	machineId := "machineId_example" // string | Machine ID
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.MachinesAPI.MachinesUncordon(context.Background(), appName, machineId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesUncordon``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.MachinesAPI.MachinesUncordon(context.Background(), appName, machineId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesUncordon``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -1385,6 +1421,8 @@ No authorization required
 
 > Machine MachinesUpdate(ctx, appName, machineId).Request(request).Execute()
 
+Update Machine
+
 
 
 ### Example
@@ -1393,26 +1431,26 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
-    appName := "appName_example" // string | Fly App Name
-    machineId := "machineId_example" // string | Machine ID
-    request := *openapiclient.NewUpdateMachineRequest() // UpdateMachineRequest | Request body
+	appName := "appName_example" // string | Fly App Name
+	machineId := "machineId_example" // string | Machine ID
+	request := *openapiclient.NewUpdateMachineRequest() // UpdateMachineRequest | Request body
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MachinesAPI.MachinesUpdate(context.Background(), appName, machineId).Request(request).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesUpdate``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `MachinesUpdate`: Machine
-    fmt.Fprintf(os.Stdout, "Response from `MachinesAPI.MachinesUpdate`: %v\n", resp)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MachinesAPI.MachinesUpdate(context.Background(), appName, machineId).Request(request).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesUpdate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `MachinesUpdate`: Machine
+	fmt.Fprintf(os.Stdout, "Response from `MachinesAPI.MachinesUpdate`: %v\n", resp)
 }
 ```
 
@@ -1458,6 +1496,8 @@ No authorization required
 
 > MachinesUpdateMetadata(ctx, appName, machineId, key).Execute()
 
+Update Metadata
+
 
 
 ### Example
@@ -1466,24 +1506,24 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
-    appName := "appName_example" // string | Fly App Name
-    machineId := "machineId_example" // string | Machine ID
-    key := "key_example" // string | Metadata Key
+	appName := "appName_example" // string | Fly App Name
+	machineId := "machineId_example" // string | Machine ID
+	key := "key_example" // string | Metadata Key
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.MachinesAPI.MachinesUpdateMetadata(context.Background(), appName, machineId, key).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesUpdateMetadata``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.MachinesAPI.MachinesUpdateMetadata(context.Background(), appName, machineId, key).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesUpdateMetadata``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 
@@ -1530,6 +1570,8 @@ No authorization required
 
 > MachinesWait(ctx, appName, machineId).InstanceId(instanceId).Timeout(timeout).State(state).Execute()
 
+Wait for State
+
 
 
 ### Example
@@ -1538,26 +1580,26 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
-    appName := "appName_example" // string | Fly App Name
-    machineId := "machineId_example" // string | Machine ID
-    instanceId := "instanceId_example" // string | instance? version? TODO (optional)
-    timeout := int32(56) // int32 | wait timeout. default 60s (optional)
-    state := "state_example" // string | desired state (optional)
+	appName := "appName_example" // string | Fly App Name
+	machineId := "machineId_example" // string | Machine ID
+	instanceId := "instanceId_example" // string | instance? version? TODO (optional)
+	timeout := int32(56) // int32 | wait timeout. default 60s (optional)
+	state := "state_example" // string | desired state (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.MachinesAPI.MachinesWait(context.Background(), appName, machineId).InstanceId(instanceId).Timeout(timeout).State(state).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesWait``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.MachinesAPI.MachinesWait(context.Background(), appName, machineId).InstanceId(instanceId).Timeout(timeout).State(state).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MachinesAPI.MachinesWait``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
 }
 ```
 

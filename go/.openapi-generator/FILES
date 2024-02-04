@@ -9,6 +9,7 @@ api_volumes.go
 client.go
 configuration.go
 docs/ApiDNSConfig.md
+docs/ApiDnsOption.md
 docs/ApiFile.md
 docs/ApiHTTPOptions.md
 docs/ApiHTTPResponseOptions.md
@@ -62,6 +63,7 @@ git_push.sh
 go.mod
 go.sum
 model_api_dns_config.go
+model_api_dns_option.go
 model_api_file.go
 model_api_http_options.go
 model_api_http_response_options.go

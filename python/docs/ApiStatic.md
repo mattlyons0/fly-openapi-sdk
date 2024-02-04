@@ -2,9 +2,11 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **guest_path** | **str** |  | 
+**tigris_bucket** | **str** |  | [optional] 
 **url_prefix** | **str** |  | 
 
 ## Example

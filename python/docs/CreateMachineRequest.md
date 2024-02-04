@@ -2,9 +2,10 @@
 
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**config** | [**ApiMachineConfig**](ApiMachineConfig.md) |  | [optional] 
+**config** | [**ApiMachineConfig**](ApiMachineConfig.md) | An object defining the Machine configuration | [optional] 
 **lease_ttl** | **int** |  | [optional] 
 **lsvd** | **bool** |  | [optional] 
 **name** | **str** | Unique name for this Machine. If omitted, one is generated for you | [optional] 

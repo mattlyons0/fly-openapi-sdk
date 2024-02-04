@@ -3,6 +3,7 @@
 The Machine restart policy defines whether and how flyd restarts a Machine after its main process exits. See https://fly.io/docs/machines/guides-examples/machine-restart-policy/.
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **max_retries** | **int** | When policy is on-failure, the maximum number of times to attempt to restart the Machine before letting it stop. | [optional] 

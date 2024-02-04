@@ -3,6 +3,7 @@
 An optional object that defines one or more named checks. The key for each check is the check name.
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **grace_period** | **str** | The time to wait after a VM starts before checking its health | [optional] 
