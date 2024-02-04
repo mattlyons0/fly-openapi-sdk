@@ -30,7 +30,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonPropertyOrder({
   ExtendVolumeRequest.JSON_PROPERTY_SIZE_GB
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-04T04:08:18.495225938Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ExtendVolumeRequest {
   public static final String JSON_PROPERTY_SIZE_GB = "size_gb";
   private Integer sizeGb;

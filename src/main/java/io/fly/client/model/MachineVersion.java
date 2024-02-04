@@ -32,7 +32,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   MachineVersion.JSON_PROPERTY_USER_CONFIG,
   MachineVersion.JSON_PROPERTY_VERSION
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-04T04:08:18.495225938Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class MachineVersion {
   public static final String JSON_PROPERTY_USER_CONFIG = "user_config";
   private ApiMachineConfig userConfig;

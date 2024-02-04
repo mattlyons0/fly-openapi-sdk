@@ -32,7 +32,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   CreateAppRequest.JSON_PROPERTY_NETWORK,
   CreateAppRequest.JSON_PROPERTY_ORG_SLUG
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-04T04:08:18.495225938Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CreateAppRequest {
   public static final String JSON_PROPERTY_APP_NAME = "app_name";
   private String appName;

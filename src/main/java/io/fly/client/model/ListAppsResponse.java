@@ -35,7 +35,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ListAppsResponse.JSON_PROPERTY_APPS,
   ListAppsResponse.JSON_PROPERTY_TOTAL_APPS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-04T04:08:18.495225938Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ListAppsResponse {
   public static final String JSON_PROPERTY_APPS = "apps";
   private List<ListApp> apps;

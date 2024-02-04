@@ -36,7 +36,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ApiTLSOptions.JSON_PROPERTY_VERSIONS
 })
 @JsonTypeName("api.TLSOptions")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-04T04:08:18.495225938Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ApiTLSOptions {
   public static final String JSON_PROPERTY_ALPN = "alpn";
   private List<String> alpn;

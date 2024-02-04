@@ -33,7 +33,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ApiHTTPResponseOptions.JSON_PROPERTY_HEADERS
 })
 @JsonTypeName("api.HTTPResponseOptions")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-04T04:08:18.495225938Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ApiHTTPResponseOptions {
   public static final String JSON_PROPERTY_HEADERS = "headers";
   private Map<String, Object> headers = new HashMap<>();

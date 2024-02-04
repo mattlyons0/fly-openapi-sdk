@@ -30,7 +30,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonPropertyOrder({
   UpdateVolumeRequest.JSON_PROPERTY_SNAPSHOT_RETENTION
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-04T04:08:18.495225938Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class UpdateVolumeRequest {
   public static final String JSON_PROPERTY_SNAPSHOT_RETENTION = "snapshot_retention";
   private Integer snapshotRetention;

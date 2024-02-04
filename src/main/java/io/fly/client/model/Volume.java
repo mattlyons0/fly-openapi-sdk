@@ -45,7 +45,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   Volume.JSON_PROPERTY_STATE,
   Volume.JSON_PROPERTY_ZONE
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-04T04:08:18.495225938Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Volume {
   public static final String JSON_PROPERTY_ATTACHED_ALLOC_ID = "attached_alloc_id";
   private String attachedAllocId;

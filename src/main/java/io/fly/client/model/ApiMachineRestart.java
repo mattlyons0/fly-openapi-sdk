@@ -33,7 +33,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ApiMachineRestart.JSON_PROPERTY_POLICY
 })
 @JsonTypeName("api.MachineRestart")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-04T04:08:18.495225938Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ApiMachineRestart {
   public static final String JSON_PROPERTY_MAX_RETRIES = "max_retries";
   private Integer maxRetries;

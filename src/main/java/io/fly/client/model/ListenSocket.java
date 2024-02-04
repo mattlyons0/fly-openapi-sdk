@@ -31,7 +31,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ListenSocket.JSON_PROPERTY_ADDRESS,
   ListenSocket.JSON_PROPERTY_PROTO
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-04T04:08:18.495225938Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ListenSocket {
   public static final String JSON_PROPERTY_ADDRESS = "address";
   private String address;

@@ -32,7 +32,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ApiMachineMetrics.JSON_PROPERTY_PORT
 })
 @JsonTypeName("api.MachineMetrics")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-04T04:08:18.495225938Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ApiMachineMetrics {
   public static final String JSON_PROPERTY_PATH = "path";
   private String path;

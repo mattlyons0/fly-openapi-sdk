@@ -38,7 +38,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ApiMachineMount.JSON_PROPERTY_VOLUME
 })
 @JsonTypeName("api.MachineMount")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-04T04:08:18.495225938Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ApiMachineMount {
   public static final String JSON_PROPERTY_ADD_SIZE_GB = "add_size_gb";
   private Integer addSizeGb;

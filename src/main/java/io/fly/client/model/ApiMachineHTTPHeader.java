@@ -36,7 +36,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ApiMachineHTTPHeader.JSON_PROPERTY_VALUES
 })
 @JsonTypeName("api.MachineHTTPHeader")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-04T04:08:18.495225938Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ApiMachineHTTPHeader {
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;

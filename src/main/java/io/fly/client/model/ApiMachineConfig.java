@@ -67,7 +67,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ApiMachineConfig.JSON_PROPERTY_STOP_CONFIG
 })
 @JsonTypeName("api.MachineConfig")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-04T04:08:18.495225938Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ApiMachineConfig {
   public static final String JSON_PROPERTY_AUTO_DESTROY = "auto_destroy";
   private Boolean autoDestroy;

@@ -49,7 +49,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   Machine.JSON_PROPERTY_STATE,
   Machine.JSON_PROPERTY_UPDATED_AT
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-04T04:08:18.495225938Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Machine {
   public static final String JSON_PROPERTY_CHECKS = "checks";
   private List<CheckStatus> checks;

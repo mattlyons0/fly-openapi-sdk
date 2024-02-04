@@ -37,7 +37,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   CreateMachineRequest.JSON_PROPERTY_SKIP_LAUNCH,
   CreateMachineRequest.JSON_PROPERTY_SKIP_SERVICE_REGISTRATION
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-04T04:08:18.495225938Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CreateMachineRequest {
   public static final String JSON_PROPERTY_CONFIG = "config";
   private ApiMachineConfig config;

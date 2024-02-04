@@ -4,8 +4,6 @@ Machines API
 
 - API version: 1.0
 
-- Build date: 2024-02-04T04:08:18.495225938Z[Etc/UTC]
-
 # Introduction
 
 Fly Machines are the compute behind the Fly.io platform. They are fast-launching VMs that can be started and stopped at subsecond speeds. A Machine is the configuration and state for a single VM running on our platform. Every Machine will belong to a Fly App; Apps can have more than one Machine. Read more [here](https://fly.io/docs/machines/).

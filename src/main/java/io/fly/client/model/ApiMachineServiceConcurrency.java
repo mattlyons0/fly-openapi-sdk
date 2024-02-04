@@ -33,7 +33,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ApiMachineServiceConcurrency.JSON_PROPERTY_TYPE
 })
 @JsonTypeName("api.MachineServiceConcurrency")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-04T04:08:18.495225938Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ApiMachineServiceConcurrency {
   public static final String JSON_PROPERTY_HARD_LIMIT = "hard_limit";
   private Integer hardLimit;

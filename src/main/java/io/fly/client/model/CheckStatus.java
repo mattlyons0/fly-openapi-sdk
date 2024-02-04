@@ -33,7 +33,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   CheckStatus.JSON_PROPERTY_STATUS,
   CheckStatus.JSON_PROPERTY_UPDATED_AT
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-04T04:08:18.495225938Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CheckStatus {
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;

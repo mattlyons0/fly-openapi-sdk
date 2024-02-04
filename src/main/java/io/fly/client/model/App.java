@@ -34,7 +34,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   App.JSON_PROPERTY_ORGANIZATION,
   App.JSON_PROPERTY_STATUS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-04T04:08:18.495225938Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class App {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;

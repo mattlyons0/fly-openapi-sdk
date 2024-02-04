@@ -41,7 +41,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ProcessStat.JSON_PROPERTY_RTIME,
   ProcessStat.JSON_PROPERTY_STIME
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-04T04:08:18.495225938Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ProcessStat {
   public static final String JSON_PROPERTY_COMMAND = "command";
   private String command;

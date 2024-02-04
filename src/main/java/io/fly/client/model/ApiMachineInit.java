@@ -39,7 +39,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ApiMachineInit.JSON_PROPERTY_TTY
 })
 @JsonTypeName("api.MachineInit")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-04T04:08:18.495225938Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ApiMachineInit {
   public static final String JSON_PROPERTY_CMD = "cmd";
   private List<String> cmd;

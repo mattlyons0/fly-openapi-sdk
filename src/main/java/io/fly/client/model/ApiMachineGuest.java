@@ -40,7 +40,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ApiMachineGuest.JSON_PROPERTY_MEMORY_MB
 })
 @JsonTypeName("api.MachineGuest")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-04T04:08:18.495225938Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ApiMachineGuest {
   public static final String JSON_PROPERTY_CPU_KIND = "cpu_kind";
   private String cpuKind;

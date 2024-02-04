@@ -46,7 +46,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ApiMachineCheck.JSON_PROPERTY_TYPE
 })
 @JsonTypeName("api.MachineCheck")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-04T04:08:18.495225938Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ApiMachineCheck {
   public static final String JSON_PROPERTY_GRACE_PERIOD = "grace_period";
   private String gracePeriod;

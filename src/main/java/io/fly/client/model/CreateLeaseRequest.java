@@ -31,7 +31,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   CreateLeaseRequest.JSON_PROPERTY_DESCRIPTION,
   CreateLeaseRequest.JSON_PROPERTY_TTL
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-04T04:08:18.495225938Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CreateLeaseRequest {
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   private String description;
