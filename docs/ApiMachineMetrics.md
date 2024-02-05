@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**path** | **String** |  |  [optional] |
-|**port** | **Integer** |  |  [optional] |
+|**port** | **Long** |  |  [optional] |
 
 
 

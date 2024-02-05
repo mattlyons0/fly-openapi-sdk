@@ -8,12 +8,12 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**cpuKind** | **String** |  |  [optional] |
-|**cpus** | **Integer** |  |  [optional] |
+|**cpus** | **Long** |  |  [optional] |
 |**gpuKind** | **String** |  |  [optional] |
-|**gpus** | **Integer** |  |  [optional] |
+|**gpus** | **Long** |  |  [optional] |
 |**hostDedicationId** | **String** |  |  [optional] |
 |**kernelArgs** | **List&lt;String&gt;** |  |  [optional] |
-|**memoryMb** | **Integer** |  |  [optional] |
+|**memoryMb** | **Long** |  |  [optional] |
 
 
 

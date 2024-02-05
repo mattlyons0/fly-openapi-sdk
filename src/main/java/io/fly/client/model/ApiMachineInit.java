@@ -54,7 +54,7 @@ public class ApiMachineInit {
   private List<String> kernelArgs;
 
   public static final String JSON_PROPERTY_SWAP_SIZE_MB = "swap_size_mb";
-  private Integer swapSizeMb;
+  private Long swapSizeMb;
 
   public static final String JSON_PROPERTY_TTY = "tty";
   private Boolean tty;
@@ -202,7 +202,7 @@ public class ApiMachineInit {
   }
 
 
-  public ApiMachineInit swapSizeMb(Integer swapSizeMb) {
+  public ApiMachineInit swapSizeMb(Long swapSizeMb) {
     
     this.swapSizeMb = swapSizeMb;
     return this;
@@ -217,14 +217,14 @@ public class ApiMachineInit {
   @JsonProperty(JSON_PROPERTY_SWAP_SIZE_MB)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getSwapSizeMb() {
+  public Long getSwapSizeMb() {
     return swapSizeMb;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SWAP_SIZE_MB)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSwapSizeMb(Integer swapSizeMb) {
+  public void setSwapSizeMb(Long swapSizeMb) {
     this.swapSizeMb = swapSizeMb;
   }
 

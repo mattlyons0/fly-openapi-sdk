@@ -41,7 +41,7 @@ public class ListAppsResponse {
   private List<ListApp> apps;
 
   public static final String JSON_PROPERTY_TOTAL_APPS = "total_apps";
-  private Integer totalApps;
+  private Long totalApps;
 
   public ListAppsResponse() {
   }
@@ -81,7 +81,7 @@ public class ListAppsResponse {
   }
 
 
-  public ListAppsResponse totalApps(Integer totalApps) {
+  public ListAppsResponse totalApps(Long totalApps) {
     
     this.totalApps = totalApps;
     return this;
@@ -96,14 +96,14 @@ public class ListAppsResponse {
   @JsonProperty(JSON_PROPERTY_TOTAL_APPS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getTotalApps() {
+  public Long getTotalApps() {
     return totalApps;
   }
 
 
   @JsonProperty(JSON_PROPERTY_TOTAL_APPS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTotalApps(Integer totalApps) {
+  public void setTotalApps(Long totalApps) {
     this.totalApps = totalApps;
   }
 

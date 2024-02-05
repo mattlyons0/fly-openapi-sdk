@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**snapshotRetention** | **Integer** |  |  [optional] |
+|**snapshotRetention** | **Long** |  |  [optional] |
 
 
 

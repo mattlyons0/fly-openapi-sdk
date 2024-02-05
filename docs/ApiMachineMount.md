@@ -7,13 +7,13 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**addSizeGb** | **Integer** |  |  [optional] |
+|**addSizeGb** | **Long** |  |  [optional] |
 |**encrypted** | **Boolean** |  |  [optional] |
-|**extendThresholdPercent** | **Integer** |  |  [optional] |
+|**extendThresholdPercent** | **Long** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**path** | **String** |  |  [optional] |
-|**sizeGb** | **Integer** |  |  [optional] |
-|**sizeGbLimit** | **Integer** |  |  [optional] |
+|**sizeGb** | **Long** |  |  [optional] |
+|**sizeGbLimit** | **Long** |  |  [optional] |
 |**volume** | **String** |  |  [optional] |
 
 

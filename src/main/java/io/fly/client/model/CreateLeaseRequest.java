@@ -37,7 +37,7 @@ public class CreateLeaseRequest {
   private String description;
 
   public static final String JSON_PROPERTY_TTL = "ttl";
-  private Integer ttl;
+  private Long ttl;
 
   public CreateLeaseRequest() {
   }
@@ -69,7 +69,7 @@ public class CreateLeaseRequest {
   }
 
 
-  public CreateLeaseRequest ttl(Integer ttl) {
+  public CreateLeaseRequest ttl(Long ttl) {
     
     this.ttl = ttl;
     return this;
@@ -84,14 +84,14 @@ public class CreateLeaseRequest {
   @JsonProperty(JSON_PROPERTY_TTL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getTtl() {
+  public Long getTtl() {
     return ttl;
   }
 
 
   @JsonProperty(JSON_PROPERTY_TTL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTtl(Integer ttl) {
+  public void setTtl(Long ttl) {
     this.ttl = ttl;
   }
 

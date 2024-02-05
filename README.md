@@ -77,7 +77,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>io.fly</groupId>
   <artifactId>fly-sdk</artifactId>
-  <version>1.0.1</version>
+  <version>1.1.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -93,7 +93,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "io.fly:fly-sdk:1.0.1"
+     implementation "io.fly:fly-sdk:1.1.0"
   }
 ```
 
@@ -107,7 +107,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/fly-sdk-1.0.1.jar`
+- `target/fly-sdk-1.1.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started

@@ -47,7 +47,7 @@ public class ProcessStat {
   private String command;
 
   public static final String JSON_PROPERTY_CPU = "cpu";
-  private Integer cpu;
+  private Long cpu;
 
   public static final String JSON_PROPERTY_DIRECTORY = "directory";
   private String directory;
@@ -56,16 +56,16 @@ public class ProcessStat {
   private List<ListenSocket> listenSockets;
 
   public static final String JSON_PROPERTY_PID = "pid";
-  private Integer pid;
+  private Long pid;
 
   public static final String JSON_PROPERTY_RSS = "rss";
-  private Integer rss;
+  private Long rss;
 
   public static final String JSON_PROPERTY_RTIME = "rtime";
-  private Integer rtime;
+  private Long rtime;
 
   public static final String JSON_PROPERTY_STIME = "stime";
-  private Integer stime;
+  private Long stime;
 
   public ProcessStat() {
   }
@@ -97,7 +97,7 @@ public class ProcessStat {
   }
 
 
-  public ProcessStat cpu(Integer cpu) {
+  public ProcessStat cpu(Long cpu) {
     
     this.cpu = cpu;
     return this;
@@ -112,14 +112,14 @@ public class ProcessStat {
   @JsonProperty(JSON_PROPERTY_CPU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getCpu() {
+  public Long getCpu() {
     return cpu;
   }
 
 
   @JsonProperty(JSON_PROPERTY_CPU)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCpu(Integer cpu) {
+  public void setCpu(Long cpu) {
     this.cpu = cpu;
   }
 
@@ -186,7 +186,7 @@ public class ProcessStat {
   }
 
 
-  public ProcessStat pid(Integer pid) {
+  public ProcessStat pid(Long pid) {
     
     this.pid = pid;
     return this;
@@ -201,19 +201,19 @@ public class ProcessStat {
   @JsonProperty(JSON_PROPERTY_PID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getPid() {
+  public Long getPid() {
     return pid;
   }
 
 
   @JsonProperty(JSON_PROPERTY_PID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPid(Integer pid) {
+  public void setPid(Long pid) {
     this.pid = pid;
   }
 
 
-  public ProcessStat rss(Integer rss) {
+  public ProcessStat rss(Long rss) {
     
     this.rss = rss;
     return this;
@@ -228,19 +228,19 @@ public class ProcessStat {
   @JsonProperty(JSON_PROPERTY_RSS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getRss() {
+  public Long getRss() {
     return rss;
   }
 
 
   @JsonProperty(JSON_PROPERTY_RSS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRss(Integer rss) {
+  public void setRss(Long rss) {
     this.rss = rss;
   }
 
 
-  public ProcessStat rtime(Integer rtime) {
+  public ProcessStat rtime(Long rtime) {
     
     this.rtime = rtime;
     return this;
@@ -255,19 +255,19 @@ public class ProcessStat {
   @JsonProperty(JSON_PROPERTY_RTIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getRtime() {
+  public Long getRtime() {
     return rtime;
   }
 
 
   @JsonProperty(JSON_PROPERTY_RTIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRtime(Integer rtime) {
+  public void setRtime(Long rtime) {
     this.rtime = rtime;
   }
 
 
-  public ProcessStat stime(Integer stime) {
+  public ProcessStat stime(Long stime) {
     
     this.stime = stime;
     return this;
@@ -282,14 +282,14 @@ public class ProcessStat {
   @JsonProperty(JSON_PROPERTY_STIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getStime() {
+  public Long getStime() {
     return stime;
   }
 
 
   @JsonProperty(JSON_PROPERTY_STIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStime(Integer stime) {
+  public void setStime(Long stime) {
     this.stime = stime;
   }
 

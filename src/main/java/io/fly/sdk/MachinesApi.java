@@ -1334,7 +1334,7 @@ public class MachinesApi {
      * @param state desired state (optional)
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public void machinesWait(String appName, String machineId, String instanceId, Integer timeout, String state) throws RestClientException {
+    public void machinesWait(String appName, String machineId, String instanceId, Long timeout, String state) throws RestClientException {
         machinesWaitWithHttpInfo(appName, machineId, instanceId, timeout, state);
     }
 
@@ -1351,7 +1351,7 @@ public class MachinesApi {
      * @return ResponseEntity&lt;Void&gt;
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public ResponseEntity<Void> machinesWaitWithHttpInfo(String appName, String machineId, String instanceId, Integer timeout, String state) throws RestClientException {
+    public ResponseEntity<Void> machinesWaitWithHttpInfo(String appName, String machineId, String instanceId, Long timeout, String state) throws RestClientException {
         Object localVarPostBody = null;
         
         // verify the required parameter 'appName' is set

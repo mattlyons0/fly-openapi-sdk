@@ -44,7 +44,7 @@ public class MachineExecRequest {
   private List<String> command;
 
   public static final String JSON_PROPERTY_TIMEOUT = "timeout";
-  private Integer timeout;
+  private Long timeout;
 
   public MachineExecRequest() {
   }
@@ -111,7 +111,7 @@ public class MachineExecRequest {
   }
 
 
-  public MachineExecRequest timeout(Integer timeout) {
+  public MachineExecRequest timeout(Long timeout) {
     
     this.timeout = timeout;
     return this;
@@ -126,14 +126,14 @@ public class MachineExecRequest {
   @JsonProperty(JSON_PROPERTY_TIMEOUT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getTimeout() {
+  public Long getTimeout() {
     return timeout;
   }
 
 
   @JsonProperty(JSON_PROPERTY_TIMEOUT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTimeout(Integer timeout) {
+  public void setTimeout(Long timeout) {
     this.timeout = timeout;
   }
 

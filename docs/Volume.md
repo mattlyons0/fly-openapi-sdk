@@ -9,18 +9,18 @@
 |------------ | ------------- | ------------- | -------------|
 |**attachedAllocId** | **String** |  |  [optional] |
 |**attachedMachineId** | **String** |  |  [optional] |
-|**blockSize** | **Integer** |  |  [optional] |
-|**blocks** | **Integer** |  |  [optional] |
-|**blocksAvail** | **Integer** |  |  [optional] |
-|**blocksFree** | **Integer** |  |  [optional] |
+|**blockSize** | **Long** |  |  [optional] |
+|**blocks** | **Long** |  |  [optional] |
+|**blocksAvail** | **Long** |  |  [optional] |
+|**blocksFree** | **Long** |  |  [optional] |
 |**createdAt** | **String** |  |  [optional] |
 |**encrypted** | **Boolean** |  |  [optional] |
 |**fstype** | **String** |  |  [optional] |
 |**id** | **String** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**region** | **String** |  |  [optional] |
-|**sizeGb** | **Integer** |  |  [optional] |
-|**snapshotRetention** | **Integer** |  |  [optional] |
+|**sizeGb** | **Long** |  |  [optional] |
+|**snapshotRetention** | **Long** |  |  [optional] |
 |**state** | **String** |  |  [optional] |
 |**zone** | **String** |  |  [optional] |
 

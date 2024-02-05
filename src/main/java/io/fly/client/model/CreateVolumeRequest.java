@@ -65,13 +65,13 @@ public class CreateVolumeRequest {
   private Boolean requireUniqueZone;
 
   public static final String JSON_PROPERTY_SIZE_GB = "size_gb";
-  private Integer sizeGb;
+  private Long sizeGb;
 
   public static final String JSON_PROPERTY_SNAPSHOT_ID = "snapshot_id";
   private String snapshotId;
 
   public static final String JSON_PROPERTY_SNAPSHOT_RETENTION = "snapshot_retention";
-  private Integer snapshotRetention;
+  private Long snapshotRetention;
 
   public static final String JSON_PROPERTY_SOURCE_VOLUME_ID = "source_volume_id";
   private String sourceVolumeId;
@@ -268,7 +268,7 @@ public class CreateVolumeRequest {
   }
 
 
-  public CreateVolumeRequest sizeGb(Integer sizeGb) {
+  public CreateVolumeRequest sizeGb(Long sizeGb) {
     
     this.sizeGb = sizeGb;
     return this;
@@ -283,14 +283,14 @@ public class CreateVolumeRequest {
   @JsonProperty(JSON_PROPERTY_SIZE_GB)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getSizeGb() {
+  public Long getSizeGb() {
     return sizeGb;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SIZE_GB)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSizeGb(Integer sizeGb) {
+  public void setSizeGb(Long sizeGb) {
     this.sizeGb = sizeGb;
   }
 
@@ -322,7 +322,7 @@ public class CreateVolumeRequest {
   }
 
 
-  public CreateVolumeRequest snapshotRetention(Integer snapshotRetention) {
+  public CreateVolumeRequest snapshotRetention(Long snapshotRetention) {
     
     this.snapshotRetention = snapshotRetention;
     return this;
@@ -337,14 +337,14 @@ public class CreateVolumeRequest {
   @JsonProperty(JSON_PROPERTY_SNAPSHOT_RETENTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getSnapshotRetention() {
+  public Long getSnapshotRetention() {
     return snapshotRetention;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SNAPSHOT_RETENTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSnapshotRetention(Integer snapshotRetention) {
+  public void setSnapshotRetention(Long snapshotRetention) {
     this.snapshotRetention = snapshotRetention;
   }
 

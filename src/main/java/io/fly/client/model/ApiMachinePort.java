@@ -47,7 +47,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ApiMachinePort {
   public static final String JSON_PROPERTY_END_PORT = "end_port";
-  private Integer endPort;
+  private Long endPort;
 
   public static final String JSON_PROPERTY_FORCE_HTTPS = "force_https";
   private Boolean forceHttps;
@@ -59,13 +59,13 @@ public class ApiMachinePort {
   private ApiHTTPOptions httpOptions;
 
   public static final String JSON_PROPERTY_PORT = "port";
-  private Integer port;
+  private Long port;
 
   public static final String JSON_PROPERTY_PROXY_PROTO_OPTIONS = "proxy_proto_options";
   private ApiProxyProtoOptions proxyProtoOptions;
 
   public static final String JSON_PROPERTY_START_PORT = "start_port";
-  private Integer startPort;
+  private Long startPort;
 
   public static final String JSON_PROPERTY_TLS_OPTIONS = "tls_options";
   private ApiTLSOptions tlsOptions;
@@ -73,7 +73,7 @@ public class ApiMachinePort {
   public ApiMachinePort() {
   }
 
-  public ApiMachinePort endPort(Integer endPort) {
+  public ApiMachinePort endPort(Long endPort) {
     
     this.endPort = endPort;
     return this;
@@ -88,14 +88,14 @@ public class ApiMachinePort {
   @JsonProperty(JSON_PROPERTY_END_PORT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getEndPort() {
+  public Long getEndPort() {
     return endPort;
   }
 
 
   @JsonProperty(JSON_PROPERTY_END_PORT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEndPort(Integer endPort) {
+  public void setEndPort(Long endPort) {
     this.endPort = endPort;
   }
 
@@ -189,7 +189,7 @@ public class ApiMachinePort {
   }
 
 
-  public ApiMachinePort port(Integer port) {
+  public ApiMachinePort port(Long port) {
     
     this.port = port;
     return this;
@@ -204,14 +204,14 @@ public class ApiMachinePort {
   @JsonProperty(JSON_PROPERTY_PORT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getPort() {
+  public Long getPort() {
     return port;
   }
 
 
   @JsonProperty(JSON_PROPERTY_PORT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPort(Integer port) {
+  public void setPort(Long port) {
     this.port = port;
   }
 
@@ -243,7 +243,7 @@ public class ApiMachinePort {
   }
 
 
-  public ApiMachinePort startPort(Integer startPort) {
+  public ApiMachinePort startPort(Long startPort) {
     
     this.startPort = startPort;
     return this;
@@ -258,14 +258,14 @@ public class ApiMachinePort {
   @JsonProperty(JSON_PROPERTY_START_PORT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getStartPort() {
+  public Long getStartPort() {
     return startPort;
   }
 
 
   @JsonProperty(JSON_PROPERTY_START_PORT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStartPort(Integer startPort) {
+  public void setStartPort(Long startPort) {
     this.startPort = startPort;
   }
 

@@ -36,7 +36,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ApiMachineRestart {
   public static final String JSON_PROPERTY_MAX_RETRIES = "max_retries";
-  private Integer maxRetries;
+  private Long maxRetries;
 
   /**
    * * no - Never try to restart a Machine automatically when its main process exits, whether that’s on purpose or on a crash. * always - Always restart a Machine automatically and never let it enter a stopped state, even when the main process exits cleanly. * on-failure - Try up to MaxRetries times to automatically restart the Machine if it exits with a non-zero exit code. Default when no explicit policy is set, and for Machines with schedules.
@@ -81,7 +81,7 @@ public class ApiMachineRestart {
   public ApiMachineRestart() {
   }
 
-  public ApiMachineRestart maxRetries(Integer maxRetries) {
+  public ApiMachineRestart maxRetries(Long maxRetries) {
     
     this.maxRetries = maxRetries;
     return this;
@@ -96,14 +96,14 @@ public class ApiMachineRestart {
   @JsonProperty(JSON_PROPERTY_MAX_RETRIES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getMaxRetries() {
+  public Long getMaxRetries() {
     return maxRetries;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MAX_RETRIES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMaxRetries(Integer maxRetries) {
+  public void setMaxRetries(Long maxRetries) {
     this.maxRetries = maxRetries;
   }
 

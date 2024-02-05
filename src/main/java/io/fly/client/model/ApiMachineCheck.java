@@ -64,7 +64,7 @@ public class ApiMachineCheck {
   private String path;
 
   public static final String JSON_PROPERTY_PORT = "port";
-  private Integer port;
+  private Long port;
 
   public static final String JSON_PROPERTY_PROTOCOL = "protocol";
   private String protocol;
@@ -227,7 +227,7 @@ public class ApiMachineCheck {
   }
 
 
-  public ApiMachineCheck port(Integer port) {
+  public ApiMachineCheck port(Long port) {
     
     this.port = port;
     return this;
@@ -242,14 +242,14 @@ public class ApiMachineCheck {
   @JsonProperty(JSON_PROPERTY_PORT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getPort() {
+  public Long getPort() {
     return port;
   }
 
 
   @JsonProperty(JSON_PROPERTY_PORT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPort(Integer port) {
+  public void setPort(Long port) {
     this.port = port;
   }
 

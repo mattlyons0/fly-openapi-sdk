@@ -36,10 +36,10 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ApiMachineServiceConcurrency {
   public static final String JSON_PROPERTY_HARD_LIMIT = "hard_limit";
-  private Integer hardLimit;
+  private Long hardLimit;
 
   public static final String JSON_PROPERTY_SOFT_LIMIT = "soft_limit";
-  private Integer softLimit;
+  private Long softLimit;
 
   public static final String JSON_PROPERTY_TYPE = "type";
   private String type;
@@ -47,7 +47,7 @@ public class ApiMachineServiceConcurrency {
   public ApiMachineServiceConcurrency() {
   }
 
-  public ApiMachineServiceConcurrency hardLimit(Integer hardLimit) {
+  public ApiMachineServiceConcurrency hardLimit(Long hardLimit) {
     
     this.hardLimit = hardLimit;
     return this;
@@ -62,19 +62,19 @@ public class ApiMachineServiceConcurrency {
   @JsonProperty(JSON_PROPERTY_HARD_LIMIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getHardLimit() {
+  public Long getHardLimit() {
     return hardLimit;
   }
 
 
   @JsonProperty(JSON_PROPERTY_HARD_LIMIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setHardLimit(Integer hardLimit) {
+  public void setHardLimit(Long hardLimit) {
     this.hardLimit = hardLimit;
   }
 
 
-  public ApiMachineServiceConcurrency softLimit(Integer softLimit) {
+  public ApiMachineServiceConcurrency softLimit(Long softLimit) {
     
     this.softLimit = softLimit;
     return this;
@@ -89,14 +89,14 @@ public class ApiMachineServiceConcurrency {
   @JsonProperty(JSON_PROPERTY_SOFT_LIMIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getSoftLimit() {
+  public Long getSoftLimit() {
     return softLimit;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SOFT_LIMIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSoftLimit(Integer softLimit) {
+  public void setSoftLimit(Long softLimit) {
     this.softLimit = softLimit;
   }
 

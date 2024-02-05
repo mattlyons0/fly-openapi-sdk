@@ -13,7 +13,7 @@ An optional object that defines one or more named checks. The key for each check
 |**interval** | **String** | The time between connectivity checks |  [optional] |
 |**method** | **String** | For http checks, the HTTP method to use to when making the request |  [optional] |
 |**path** | **String** | For http checks, the path to send the request to |  [optional] |
-|**port** | **Integer** | The port to connect to, often the same as internal_port |  [optional] |
+|**port** | **Long** | The port to connect to, often the same as internal_port |  [optional] |
 |**protocol** | **String** | For http checks, whether to use http or https |  [optional] |
 |**timeout** | **String** | The maximum time a connection can take before being reported as failing its health check |  [optional] |
 |**tlsServerName** | **String** | If the protocol is https, the hostname to use for TLS certificate validation |  [optional] |

@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**sizeGb** | **Integer** |  |  [optional] |
+|**sizeGb** | **Long** |  |  [optional] |
 
 
 

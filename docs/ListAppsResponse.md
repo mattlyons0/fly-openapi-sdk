@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**apps** | [**List&lt;ListApp&gt;**](ListApp.md) |  |  [optional] |
-|**totalApps** | **Integer** |  |  [optional] |
+|**totalApps** | **Long** |  |  [optional] |
 
 
 

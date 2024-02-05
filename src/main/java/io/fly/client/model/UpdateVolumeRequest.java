@@ -33,12 +33,12 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class UpdateVolumeRequest {
   public static final String JSON_PROPERTY_SNAPSHOT_RETENTION = "snapshot_retention";
-  private Integer snapshotRetention;
+  private Long snapshotRetention;
 
   public UpdateVolumeRequest() {
   }
 
-  public UpdateVolumeRequest snapshotRetention(Integer snapshotRetention) {
+  public UpdateVolumeRequest snapshotRetention(Long snapshotRetention) {
     
     this.snapshotRetention = snapshotRetention;
     return this;
@@ -53,14 +53,14 @@ public class UpdateVolumeRequest {
   @JsonProperty(JSON_PROPERTY_SNAPSHOT_RETENTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getSnapshotRetention() {
+  public Long getSnapshotRetention() {
     return snapshotRetention;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SNAPSHOT_RETENTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSnapshotRetention(Integer snapshotRetention) {
+  public void setSnapshotRetention(Long snapshotRetention) {
     this.snapshotRetention = snapshotRetention;
   }
 

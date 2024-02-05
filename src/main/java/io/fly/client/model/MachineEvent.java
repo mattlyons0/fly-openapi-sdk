@@ -50,7 +50,7 @@ public class MachineEvent {
   private String status;
 
   public static final String JSON_PROPERTY_TIMESTAMP = "timestamp";
-  private Integer timestamp;
+  private Long timestamp;
 
   public static final String JSON_PROPERTY_TYPE = "type";
   private String type;
@@ -166,7 +166,7 @@ public class MachineEvent {
   }
 
 
-  public MachineEvent timestamp(Integer timestamp) {
+  public MachineEvent timestamp(Long timestamp) {
     
     this.timestamp = timestamp;
     return this;
@@ -181,14 +181,14 @@ public class MachineEvent {
   @JsonProperty(JSON_PROPERTY_TIMESTAMP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getTimestamp() {
+  public Long getTimestamp() {
     return timestamp;
   }
 
 
   @JsonProperty(JSON_PROPERTY_TIMESTAMP)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTimestamp(Integer timestamp) {
+  public void setTimestamp(Long timestamp) {
     this.timestamp = timestamp;
   }
 

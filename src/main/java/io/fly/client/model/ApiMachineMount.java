@@ -41,13 +41,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ApiMachineMount {
   public static final String JSON_PROPERTY_ADD_SIZE_GB = "add_size_gb";
-  private Integer addSizeGb;
+  private Long addSizeGb;
 
   public static final String JSON_PROPERTY_ENCRYPTED = "encrypted";
   private Boolean encrypted;
 
   public static final String JSON_PROPERTY_EXTEND_THRESHOLD_PERCENT = "extend_threshold_percent";
-  private Integer extendThresholdPercent;
+  private Long extendThresholdPercent;
 
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
@@ -56,10 +56,10 @@ public class ApiMachineMount {
   private String path;
 
   public static final String JSON_PROPERTY_SIZE_GB = "size_gb";
-  private Integer sizeGb;
+  private Long sizeGb;
 
   public static final String JSON_PROPERTY_SIZE_GB_LIMIT = "size_gb_limit";
-  private Integer sizeGbLimit;
+  private Long sizeGbLimit;
 
   public static final String JSON_PROPERTY_VOLUME = "volume";
   private String volume;
@@ -67,7 +67,7 @@ public class ApiMachineMount {
   public ApiMachineMount() {
   }
 
-  public ApiMachineMount addSizeGb(Integer addSizeGb) {
+  public ApiMachineMount addSizeGb(Long addSizeGb) {
     
     this.addSizeGb = addSizeGb;
     return this;
@@ -82,14 +82,14 @@ public class ApiMachineMount {
   @JsonProperty(JSON_PROPERTY_ADD_SIZE_GB)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getAddSizeGb() {
+  public Long getAddSizeGb() {
     return addSizeGb;
   }
 
 
   @JsonProperty(JSON_PROPERTY_ADD_SIZE_GB)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAddSizeGb(Integer addSizeGb) {
+  public void setAddSizeGb(Long addSizeGb) {
     this.addSizeGb = addSizeGb;
   }
 
@@ -121,7 +121,7 @@ public class ApiMachineMount {
   }
 
 
-  public ApiMachineMount extendThresholdPercent(Integer extendThresholdPercent) {
+  public ApiMachineMount extendThresholdPercent(Long extendThresholdPercent) {
     
     this.extendThresholdPercent = extendThresholdPercent;
     return this;
@@ -136,14 +136,14 @@ public class ApiMachineMount {
   @JsonProperty(JSON_PROPERTY_EXTEND_THRESHOLD_PERCENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getExtendThresholdPercent() {
+  public Long getExtendThresholdPercent() {
     return extendThresholdPercent;
   }
 
 
   @JsonProperty(JSON_PROPERTY_EXTEND_THRESHOLD_PERCENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExtendThresholdPercent(Integer extendThresholdPercent) {
+  public void setExtendThresholdPercent(Long extendThresholdPercent) {
     this.extendThresholdPercent = extendThresholdPercent;
   }
 
@@ -202,7 +202,7 @@ public class ApiMachineMount {
   }
 
 
-  public ApiMachineMount sizeGb(Integer sizeGb) {
+  public ApiMachineMount sizeGb(Long sizeGb) {
     
     this.sizeGb = sizeGb;
     return this;
@@ -217,19 +217,19 @@ public class ApiMachineMount {
   @JsonProperty(JSON_PROPERTY_SIZE_GB)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getSizeGb() {
+  public Long getSizeGb() {
     return sizeGb;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SIZE_GB)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSizeGb(Integer sizeGb) {
+  public void setSizeGb(Long sizeGb) {
     this.sizeGb = sizeGb;
   }
 
 
-  public ApiMachineMount sizeGbLimit(Integer sizeGbLimit) {
+  public ApiMachineMount sizeGbLimit(Long sizeGbLimit) {
     
     this.sizeGbLimit = sizeGbLimit;
     return this;
@@ -244,14 +244,14 @@ public class ApiMachineMount {
   @JsonProperty(JSON_PROPERTY_SIZE_GB_LIMIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getSizeGbLimit() {
+  public Long getSizeGbLimit() {
     return sizeGbLimit;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SIZE_GB_LIMIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSizeGbLimit(Integer sizeGbLimit) {
+  public void setSizeGbLimit(Long sizeGbLimit) {
     this.sizeGbLimit = sizeGbLimit;
   }
 

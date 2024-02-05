@@ -1505,7 +1505,7 @@ public class Example {
         String appName = "appName_example"; // String | Fly App Name
         String machineId = "machineId_example"; // String | Machine ID
         String instanceId = "instanceId_example"; // String | instance? version? TODO
-        Integer timeout = 56; // Integer | wait timeout. default 60s
+        Long timeout = 56L; // Long | wait timeout. default 60s
         String state = "started"; // String | desired state
         try {
             apiInstance.machinesWait(appName, machineId, instanceId, timeout, state);
@@ -1528,7 +1528,7 @@ public class Example {
 | **appName** | **String**| Fly App Name | |
 | **machineId** | **String**| Machine ID | |
 | **instanceId** | **String**| instance? version? TODO | [optional] |
-| **timeout** | **Integer**| wait timeout. default 60s | [optional] |
+| **timeout** | **Long**| wait timeout. default 60s | [optional] |
 | **state** | **String**| desired state | [optional] [enum: started, stopped, destroyed] |
 
 ### Return type

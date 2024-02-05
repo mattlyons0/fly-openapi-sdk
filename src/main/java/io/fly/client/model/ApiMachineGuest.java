@@ -46,13 +46,13 @@ public class ApiMachineGuest {
   private String cpuKind;
 
   public static final String JSON_PROPERTY_CPUS = "cpus";
-  private Integer cpus;
+  private Long cpus;
 
   public static final String JSON_PROPERTY_GPU_KIND = "gpu_kind";
   private String gpuKind;
 
   public static final String JSON_PROPERTY_GPUS = "gpus";
-  private Integer gpus;
+  private Long gpus;
 
   public static final String JSON_PROPERTY_HOST_DEDICATION_ID = "host_dedication_id";
   private String hostDedicationId;
@@ -61,7 +61,7 @@ public class ApiMachineGuest {
   private List<String> kernelArgs;
 
   public static final String JSON_PROPERTY_MEMORY_MB = "memory_mb";
-  private Integer memoryMb;
+  private Long memoryMb;
 
   public ApiMachineGuest() {
   }
@@ -93,7 +93,7 @@ public class ApiMachineGuest {
   }
 
 
-  public ApiMachineGuest cpus(Integer cpus) {
+  public ApiMachineGuest cpus(Long cpus) {
     
     this.cpus = cpus;
     return this;
@@ -108,14 +108,14 @@ public class ApiMachineGuest {
   @JsonProperty(JSON_PROPERTY_CPUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getCpus() {
+  public Long getCpus() {
     return cpus;
   }
 
 
   @JsonProperty(JSON_PROPERTY_CPUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCpus(Integer cpus) {
+  public void setCpus(Long cpus) {
     this.cpus = cpus;
   }
 
@@ -147,7 +147,7 @@ public class ApiMachineGuest {
   }
 
 
-  public ApiMachineGuest gpus(Integer gpus) {
+  public ApiMachineGuest gpus(Long gpus) {
     
     this.gpus = gpus;
     return this;
@@ -162,14 +162,14 @@ public class ApiMachineGuest {
   @JsonProperty(JSON_PROPERTY_GPUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getGpus() {
+  public Long getGpus() {
     return gpus;
   }
 
 
   @JsonProperty(JSON_PROPERTY_GPUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setGpus(Integer gpus) {
+  public void setGpus(Long gpus) {
     this.gpus = gpus;
   }
 
@@ -236,7 +236,7 @@ public class ApiMachineGuest {
   }
 
 
-  public ApiMachineGuest memoryMb(Integer memoryMb) {
+  public ApiMachineGuest memoryMb(Long memoryMb) {
     
     this.memoryMb = memoryMb;
     return this;
@@ -251,14 +251,14 @@ public class ApiMachineGuest {
   @JsonProperty(JSON_PROPERTY_MEMORY_MB)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getMemoryMb() {
+  public Long getMemoryMb() {
     return memoryMb;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MEMORY_MB)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMemoryMb(Integer memoryMb) {
+  public void setMemoryMb(Long memoryMb) {
     this.memoryMb = memoryMb;
   }
 

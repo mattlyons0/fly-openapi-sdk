@@ -13,8 +13,8 @@
 |**concurrency** | [**ApiMachineServiceConcurrency**](ApiMachineServiceConcurrency.md) |  |  [optional] |
 |**forceInstanceDescription** | **String** |  |  [optional] |
 |**forceInstanceKey** | **String** |  |  [optional] |
-|**internalPort** | **Integer** |  |  [optional] |
-|**minMachinesRunning** | **Integer** |  |  [optional] |
+|**internalPort** | **Long** |  |  [optional] |
+|**minMachinesRunning** | **Long** |  |  [optional] |
 |**ports** | [**List&lt;ApiMachinePort&gt;**](ApiMachinePort.md) |  |  [optional] |
 |**protocol** | **String** |  |  [optional] |
 

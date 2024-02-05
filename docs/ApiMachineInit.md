@@ -11,7 +11,7 @@
 |**entrypoint** | **List&lt;String&gt;** |  |  [optional] |
 |**exec** | **List&lt;String&gt;** |  |  [optional] |
 |**kernelArgs** | **List&lt;String&gt;** |  |  [optional] |
-|**swapSizeMb** | **Integer** |  |  [optional] |
+|**swapSizeMb** | **Long** |  |  [optional] |
 |**tty** | **Boolean** |  |  [optional] |
 
 

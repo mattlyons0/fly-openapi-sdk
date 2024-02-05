@@ -39,7 +39,7 @@ public class ListApp {
   private String id;
 
   public static final String JSON_PROPERTY_MACHINE_COUNT = "machine_count";
-  private Integer machineCount;
+  private Long machineCount;
 
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
@@ -77,7 +77,7 @@ public class ListApp {
   }
 
 
-  public ListApp machineCount(Integer machineCount) {
+  public ListApp machineCount(Long machineCount) {
     
     this.machineCount = machineCount;
     return this;
@@ -92,14 +92,14 @@ public class ListApp {
   @JsonProperty(JSON_PROPERTY_MACHINE_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getMachineCount() {
+  public Long getMachineCount() {
     return machineCount;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MACHINE_COUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMachineCount(Integer machineCount) {
+  public void setMachineCount(Long machineCount) {
     this.machineCount = machineCount;
   }
 

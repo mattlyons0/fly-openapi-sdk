@@ -7,8 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**hardLimit** | **Integer** |  |  [optional] |
-|**softLimit** | **Integer** |  |  [optional] |
+|**hardLimit** | **Long** |  |  [optional] |
+|**softLimit** | **Long** |  |  [optional] |
 |**type** | **String** |  |  [optional] |
 
 

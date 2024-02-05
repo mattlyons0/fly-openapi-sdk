@@ -54,16 +54,16 @@ public class Volume {
   private String attachedMachineId;
 
   public static final String JSON_PROPERTY_BLOCK_SIZE = "block_size";
-  private Integer blockSize;
+  private Long blockSize;
 
   public static final String JSON_PROPERTY_BLOCKS = "blocks";
-  private Integer blocks;
+  private Long blocks;
 
   public static final String JSON_PROPERTY_BLOCKS_AVAIL = "blocks_avail";
-  private Integer blocksAvail;
+  private Long blocksAvail;
 
   public static final String JSON_PROPERTY_BLOCKS_FREE = "blocks_free";
-  private Integer blocksFree;
+  private Long blocksFree;
 
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
   private String createdAt;
@@ -84,10 +84,10 @@ public class Volume {
   private String region;
 
   public static final String JSON_PROPERTY_SIZE_GB = "size_gb";
-  private Integer sizeGb;
+  private Long sizeGb;
 
   public static final String JSON_PROPERTY_SNAPSHOT_RETENTION = "snapshot_retention";
-  private Integer snapshotRetention;
+  private Long snapshotRetention;
 
   public static final String JSON_PROPERTY_STATE = "state";
   private String state;
@@ -152,7 +152,7 @@ public class Volume {
   }
 
 
-  public Volume blockSize(Integer blockSize) {
+  public Volume blockSize(Long blockSize) {
     
     this.blockSize = blockSize;
     return this;
@@ -167,19 +167,19 @@ public class Volume {
   @JsonProperty(JSON_PROPERTY_BLOCK_SIZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getBlockSize() {
+  public Long getBlockSize() {
     return blockSize;
   }
 
 
   @JsonProperty(JSON_PROPERTY_BLOCK_SIZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setBlockSize(Integer blockSize) {
+  public void setBlockSize(Long blockSize) {
     this.blockSize = blockSize;
   }
 
 
-  public Volume blocks(Integer blocks) {
+  public Volume blocks(Long blocks) {
     
     this.blocks = blocks;
     return this;
@@ -194,19 +194,19 @@ public class Volume {
   @JsonProperty(JSON_PROPERTY_BLOCKS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getBlocks() {
+  public Long getBlocks() {
     return blocks;
   }
 
 
   @JsonProperty(JSON_PROPERTY_BLOCKS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setBlocks(Integer blocks) {
+  public void setBlocks(Long blocks) {
     this.blocks = blocks;
   }
 
 
-  public Volume blocksAvail(Integer blocksAvail) {
+  public Volume blocksAvail(Long blocksAvail) {
     
     this.blocksAvail = blocksAvail;
     return this;
@@ -221,19 +221,19 @@ public class Volume {
   @JsonProperty(JSON_PROPERTY_BLOCKS_AVAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getBlocksAvail() {
+  public Long getBlocksAvail() {
     return blocksAvail;
   }
 
 
   @JsonProperty(JSON_PROPERTY_BLOCKS_AVAIL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setBlocksAvail(Integer blocksAvail) {
+  public void setBlocksAvail(Long blocksAvail) {
     this.blocksAvail = blocksAvail;
   }
 
 
-  public Volume blocksFree(Integer blocksFree) {
+  public Volume blocksFree(Long blocksFree) {
     
     this.blocksFree = blocksFree;
     return this;
@@ -248,14 +248,14 @@ public class Volume {
   @JsonProperty(JSON_PROPERTY_BLOCKS_FREE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getBlocksFree() {
+  public Long getBlocksFree() {
     return blocksFree;
   }
 
 
   @JsonProperty(JSON_PROPERTY_BLOCKS_FREE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setBlocksFree(Integer blocksFree) {
+  public void setBlocksFree(Long blocksFree) {
     this.blocksFree = blocksFree;
   }
 
@@ -422,7 +422,7 @@ public class Volume {
   }
 
 
-  public Volume sizeGb(Integer sizeGb) {
+  public Volume sizeGb(Long sizeGb) {
     
     this.sizeGb = sizeGb;
     return this;
@@ -437,19 +437,19 @@ public class Volume {
   @JsonProperty(JSON_PROPERTY_SIZE_GB)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getSizeGb() {
+  public Long getSizeGb() {
     return sizeGb;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SIZE_GB)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSizeGb(Integer sizeGb) {
+  public void setSizeGb(Long sizeGb) {
     this.sizeGb = sizeGb;
   }
 
 
-  public Volume snapshotRetention(Integer snapshotRetention) {
+  public Volume snapshotRetention(Long snapshotRetention) {
     
     this.snapshotRetention = snapshotRetention;
     return this;
@@ -464,14 +464,14 @@ public class Volume {
   @JsonProperty(JSON_PROPERTY_SNAPSHOT_RETENTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getSnapshotRetention() {
+  public Long getSnapshotRetention() {
     return snapshotRetention;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SNAPSHOT_RETENTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSnapshotRetention(Integer snapshotRetention) {
+  public void setSnapshotRetention(Long snapshotRetention) {
     this.snapshotRetention = snapshotRetention;
   }
 

@@ -43,7 +43,7 @@ public class CreateMachineRequest {
   private ApiMachineConfig config;
 
   public static final String JSON_PROPERTY_LEASE_TTL = "lease_ttl";
-  private Integer leaseTtl;
+  private Long leaseTtl;
 
   public static final String JSON_PROPERTY_LSVD = "lsvd";
   private Boolean lsvd;
@@ -90,7 +90,7 @@ public class CreateMachineRequest {
   }
 
 
-  public CreateMachineRequest leaseTtl(Integer leaseTtl) {
+  public CreateMachineRequest leaseTtl(Long leaseTtl) {
     
     this.leaseTtl = leaseTtl;
     return this;
@@ -105,14 +105,14 @@ public class CreateMachineRequest {
   @JsonProperty(JSON_PROPERTY_LEASE_TTL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getLeaseTtl() {
+  public Long getLeaseTtl() {
     return leaseTtl;
   }
 
 
   @JsonProperty(JSON_PROPERTY_LEASE_TTL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLeaseTtl(Integer leaseTtl) {
+  public void setLeaseTtl(Long leaseTtl) {
     this.leaseTtl = leaseTtl;
   }
 

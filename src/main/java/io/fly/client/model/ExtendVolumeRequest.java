@@ -33,12 +33,12 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ExtendVolumeRequest {
   public static final String JSON_PROPERTY_SIZE_GB = "size_gb";
-  private Integer sizeGb;
+  private Long sizeGb;
 
   public ExtendVolumeRequest() {
   }
 
-  public ExtendVolumeRequest sizeGb(Integer sizeGb) {
+  public ExtendVolumeRequest sizeGb(Long sizeGb) {
     
     this.sizeGb = sizeGb;
     return this;
@@ -53,14 +53,14 @@ public class ExtendVolumeRequest {
   @JsonProperty(JSON_PROPERTY_SIZE_GB)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getSizeGb() {
+  public Long getSizeGb() {
     return sizeGb;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SIZE_GB)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSizeGb(Integer sizeGb) {
+  public void setSizeGb(Long sizeGb) {
     this.sizeGb = sizeGb;
   }
 

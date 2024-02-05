@@ -14,9 +14,9 @@
 |**name** | **String** |  |  [optional] |
 |**region** | **String** |  |  [optional] |
 |**requireUniqueZone** | **Boolean** |  |  [optional] |
-|**sizeGb** | **Integer** |  |  [optional] |
+|**sizeGb** | **Long** |  |  [optional] |
 |**snapshotId** | **String** | restore from snapshot |  [optional] |
-|**snapshotRetention** | **Integer** |  |  [optional] |
+|**snapshotRetention** | **Long** |  |  [optional] |
 |**sourceVolumeId** | **String** | fork from remote volume |  [optional] |
 
 

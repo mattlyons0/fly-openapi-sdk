@@ -67,10 +67,10 @@ public class ApiMachineService {
   private String forceInstanceKey;
 
   public static final String JSON_PROPERTY_INTERNAL_PORT = "internal_port";
-  private Integer internalPort;
+  private Long internalPort;
 
   public static final String JSON_PROPERTY_MIN_MACHINES_RUNNING = "min_machines_running";
-  private Integer minMachinesRunning;
+  private Long minMachinesRunning;
 
   public static final String JSON_PROPERTY_PORTS = "ports";
   private List<ApiMachinePort> ports;
@@ -251,7 +251,7 @@ public class ApiMachineService {
   }
 
 
-  public ApiMachineService internalPort(Integer internalPort) {
+  public ApiMachineService internalPort(Long internalPort) {
     
     this.internalPort = internalPort;
     return this;
@@ -266,19 +266,19 @@ public class ApiMachineService {
   @JsonProperty(JSON_PROPERTY_INTERNAL_PORT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getInternalPort() {
+  public Long getInternalPort() {
     return internalPort;
   }
 
 
   @JsonProperty(JSON_PROPERTY_INTERNAL_PORT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setInternalPort(Integer internalPort) {
+  public void setInternalPort(Long internalPort) {
     this.internalPort = internalPort;
   }
 
 
-  public ApiMachineService minMachinesRunning(Integer minMachinesRunning) {
+  public ApiMachineService minMachinesRunning(Long minMachinesRunning) {
     
     this.minMachinesRunning = minMachinesRunning;
     return this;
@@ -293,14 +293,14 @@ public class ApiMachineService {
   @JsonProperty(JSON_PROPERTY_MIN_MACHINES_RUNNING)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getMinMachinesRunning() {
+  public Long getMinMachinesRunning() {
     return minMachinesRunning;
   }
 
 
   @JsonProperty(JSON_PROPERTY_MIN_MACHINES_RUNNING)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMinMachinesRunning(Integer minMachinesRunning) {
+  public void setMinMachinesRunning(Long minMachinesRunning) {
     this.minMachinesRunning = minMachinesRunning;
   }
 

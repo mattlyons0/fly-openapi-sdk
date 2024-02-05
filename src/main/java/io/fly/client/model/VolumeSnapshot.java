@@ -46,7 +46,7 @@ public class VolumeSnapshot {
   private String id;
 
   public static final String JSON_PROPERTY_SIZE = "size";
-  private Integer size;
+  private Long size;
 
   public static final String JSON_PROPERTY_STATUS = "status";
   private String status;
@@ -135,7 +135,7 @@ public class VolumeSnapshot {
   }
 
 
-  public VolumeSnapshot size(Integer size) {
+  public VolumeSnapshot size(Long size) {
     
     this.size = size;
     return this;
@@ -150,14 +150,14 @@ public class VolumeSnapshot {
   @JsonProperty(JSON_PROPERTY_SIZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getSize() {
+  public Long getSize() {
     return size;
   }
 
 
   @JsonProperty(JSON_PROPERTY_SIZE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSize(Integer size) {
+  public void setSize(Long size) {
     this.size = size;
   }
 

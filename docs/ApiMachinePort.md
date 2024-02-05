@@ -7,13 +7,13 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**endPort** | **Integer** |  |  [optional] |
+|**endPort** | **Long** |  |  [optional] |
 |**forceHttps** | **Boolean** |  |  [optional] |
 |**handlers** | **List&lt;String&gt;** |  |  [optional] |
 |**httpOptions** | [**ApiHTTPOptions**](ApiHTTPOptions.md) |  |  [optional] |
-|**port** | **Integer** |  |  [optional] |
+|**port** | **Long** |  |  [optional] |
 |**proxyProtoOptions** | [**ApiProxyProtoOptions**](ApiProxyProtoOptions.md) |  |  [optional] |
-|**startPort** | **Integer** |  |  [optional] |
+|**startPort** | **Long** |  |  [optional] |
 |**tlsOptions** | [**ApiTLSOptions**](ApiTLSOptions.md) |  |  [optional] |
 
 

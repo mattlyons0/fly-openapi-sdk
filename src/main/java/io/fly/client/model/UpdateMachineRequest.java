@@ -47,7 +47,7 @@ public class UpdateMachineRequest {
   private String currentVersion;
 
   public static final String JSON_PROPERTY_LEASE_TTL = "lease_ttl";
-  private Integer leaseTtl;
+  private Long leaseTtl;
 
   public static final String JSON_PROPERTY_LSVD = "lsvd";
   private Boolean lsvd;
@@ -121,7 +121,7 @@ public class UpdateMachineRequest {
   }
 
 
-  public UpdateMachineRequest leaseTtl(Integer leaseTtl) {
+  public UpdateMachineRequest leaseTtl(Long leaseTtl) {
     
     this.leaseTtl = leaseTtl;
     return this;
@@ -136,14 +136,14 @@ public class UpdateMachineRequest {
   @JsonProperty(JSON_PROPERTY_LEASE_TTL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getLeaseTtl() {
+  public Long getLeaseTtl() {
     return leaseTtl;
   }
 
 
   @JsonProperty(JSON_PROPERTY_LEASE_TTL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLeaseTtl(Integer leaseTtl) {
+  public void setLeaseTtl(Long leaseTtl) {
     this.leaseTtl = leaseTtl;
   }
 

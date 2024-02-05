@@ -40,7 +40,7 @@ public class Lease {
   private String description;
 
   public static final String JSON_PROPERTY_EXPIRES_AT = "expires_at";
-  private Integer expiresAt;
+  private Long expiresAt;
 
   public static final String JSON_PROPERTY_NONCE = "nonce";
   private String nonce;
@@ -81,7 +81,7 @@ public class Lease {
   }
 
 
-  public Lease expiresAt(Integer expiresAt) {
+  public Lease expiresAt(Long expiresAt) {
     
     this.expiresAt = expiresAt;
     return this;
@@ -96,14 +96,14 @@ public class Lease {
   @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getExpiresAt() {
+  public Long getExpiresAt() {
     return expiresAt;
   }
 
 
   @JsonProperty(JSON_PROPERTY_EXPIRES_AT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setExpiresAt(Integer expiresAt) {
+  public void setExpiresAt(Long expiresAt) {
     this.expiresAt = expiresAt;
   }
 

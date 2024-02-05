@@ -11,7 +11,7 @@
 |**request** | **Object** |  |  [optional] |
 |**source** | **String** |  |  [optional] |
 |**status** | **String** |  |  [optional] |
-|**timestamp** | **Integer** |  |  [optional] |
+|**timestamp** | **Long** |  |  [optional] |
 |**type** | **String** |  |  [optional] |
 
 

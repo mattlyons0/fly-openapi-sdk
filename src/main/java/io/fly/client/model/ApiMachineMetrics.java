@@ -38,7 +38,7 @@ public class ApiMachineMetrics {
   private String path;
 
   public static final String JSON_PROPERTY_PORT = "port";
-  private Integer port;
+  private Long port;
 
   public ApiMachineMetrics() {
   }
@@ -70,7 +70,7 @@ public class ApiMachineMetrics {
   }
 
 
-  public ApiMachineMetrics port(Integer port) {
+  public ApiMachineMetrics port(Long port) {
     
     this.port = port;
     return this;
@@ -85,14 +85,14 @@ public class ApiMachineMetrics {
   @JsonProperty(JSON_PROPERTY_PORT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getPort() {
+  public Long getPort() {
     return port;
   }
 
 
   @JsonProperty(JSON_PROPERTY_PORT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPort(Integer port) {
+  public void setPort(Long port) {
     this.port = port;
   }
 

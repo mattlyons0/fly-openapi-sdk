@@ -10,7 +10,7 @@
 |**createdAt** | **String** |  |  [optional] |
 |**digest** | **String** |  |  [optional] |
 |**id** | **String** |  |  [optional] |
-|**size** | **Integer** |  |  [optional] |
+|**size** | **Long** |  |  [optional] |
 |**status** | **String** |  |  [optional] |
 
 
