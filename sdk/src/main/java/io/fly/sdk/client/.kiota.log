@@ -1,0 +1,11 @@
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/fly.Duration/properties/time.Duration/enum/0 - Data and type mismatch found.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/fly.Duration/properties/time.Duration/enum/1 - Data and type mismatch found.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/fly.Duration/properties/time.Duration/enum/6 - Data and type mismatch found.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/fly.Duration/properties/time.Duration/enum/7 - Data and type mismatch found.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/fly.Duration/properties/time.Duration/enum/12 - Data and type mismatch found.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/fly.Duration/properties/time.Duration/enum/13 - Data and type mismatch found.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/fly.Duration/properties/time.Duration/enum/18 - Data and type mismatch found.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/fly.Duration/properties/time.Duration/enum/19 - Data and type mismatch found.
+Warning: KiotaBuilder Omitted property network for model ListApp in API path \apps, the schema is invalid.
+Warning: KiotaBuilder Omitted property details for model ErrorResponse in API path \apps, the schema is invalid.
+Warning: KiotaBuilder Omitted property request for model MachineEvent in API path \apps\{app_name}\machines, the schema is invalid.
