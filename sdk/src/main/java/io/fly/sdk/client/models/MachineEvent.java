@@ -4,6 +4,7 @@ import com.microsoft.kiota.serialization.AdditionalDataHolder;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
+import com.microsoft.kiota.serialization.UntypedNode;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -17,6 +18,10 @@ public class MachineEvent implements AdditionalDataHolder, Parsable {
      * The id property
      */
     private String id;
+    /**
+     * The request property
+     */
+    private UntypedNode request;
     /**
      * The source property
      */
@@ -63,8 +68,9 @@ public class MachineEvent implements AdditionalDataHolder, Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(6);
         deserializerMap.put("id", (n) -> { this.setId(n.getStringValue()); });
+        deserializerMap.put("request", (n) -> { this.setRequest(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
         deserializerMap.put("source", (n) -> { this.setSource(n.getStringValue()); });
         deserializerMap.put("status", (n) -> { this.setStatus(n.getStringValue()); });
         deserializerMap.put("timestamp", (n) -> { this.setTimestamp(n.getIntegerValue()); });
@@ -78,6 +84,14 @@ public class MachineEvent implements AdditionalDataHolder, Parsable {
     @jakarta.annotation.Nullable
     public String getId() {
         return this.id;
+    }
+    /**
+     * Gets the request property value. The request property
+     * @return a {@link UntypedNode}
+     */
+    @jakarta.annotation.Nullable
+    public UntypedNode getRequest() {
+        return this.request;
     }
     /**
      * Gets the source property value. The source property
@@ -118,6 +132,7 @@ public class MachineEvent implements AdditionalDataHolder, Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("id", this.getId());
+        writer.writeObjectValue("request", this.getRequest());
         writer.writeStringValue("source", this.getSource());
         writer.writeStringValue("status", this.getStatus());
         writer.writeIntegerValue("timestamp", this.getTimestamp());
@@ -137,6 +152,13 @@ public class MachineEvent implements AdditionalDataHolder, Parsable {
      */
     public void setId(@jakarta.annotation.Nullable final String value) {
         this.id = value;
+    }
+    /**
+     * Sets the request property value. The request property
+     * @param value Value to set for the request property.
+     */
+    public void setRequest(@jakarta.annotation.Nullable final UntypedNode value) {
+        this.request = value;
     }
     /**
      * Sets the source property value. The source property

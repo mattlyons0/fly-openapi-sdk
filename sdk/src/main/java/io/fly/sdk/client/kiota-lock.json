@@ -1,14 +1,15 @@
 {
-  "descriptionHash": "4877E66102F85AEB418C803E1E3D29698B00CE85615DF68EDD05405D6CC62C05408B4F2043149668E1659037C5ECF200E770090C16718405E6CB108600D9E6B9",
+  "descriptionHash": "625207A4FA3B4FB468D3CE81A0259939FCBA865F1D55FA9B388D89164C47ED1DC8BF6B4831F763531C54F8275754CA72AC7798032D8B5FB87CC57C936B496C38",
   "descriptionLocation": "https://docs.machines.dev/swagger/doc.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.12.0",
+  "kiotaVersion": "1.17.0",
   "clientClassName": "FlySdkClient",
   "clientNamespaceName": "io.fly.sdk.client",
   "language": "Java",
   "usesBackingStore": false,
   "excludeBackwardCompatible": false,
   "includeAdditionalData": true,
+  "disableSSLValidation": false,
   "serializers": [
     "Microsoft.Kiota.Serialization.Json.JsonSerializationWriterFactory",
     "Microsoft.Kiota.Serialization.Text.TextSerializationWriterFactory",

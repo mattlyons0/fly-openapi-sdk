@@ -19,6 +19,7 @@ import io.fly.sdk.client.apps.item.machines.item.restart.RestartRequestBuilder;
 import io.fly.sdk.client.apps.item.machines.item.signal.SignalRequestBuilder;
 import io.fly.sdk.client.apps.item.machines.item.start.StartRequestBuilder;
 import io.fly.sdk.client.apps.item.machines.item.stop.StopRequestBuilder;
+import io.fly.sdk.client.apps.item.machines.item.suspend.SuspendRequestBuilder;
 import io.fly.sdk.client.apps.item.machines.item.uncordon.UncordonRequestBuilder;
 import io.fly.sdk.client.apps.item.machines.item.versions.VersionsRequestBuilder;
 import io.fly.sdk.client.apps.item.machines.item.waitescaped.WaitRequestBuilder;
@@ -116,6 +117,14 @@ public class WithMachineItemRequestBuilder extends BaseRequestBuilder {
         return new StopRequestBuilder(pathParameters, requestAdapter);
     }
     /**
+     * The suspend property
+     * @return a {@link SuspendRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public SuspendRequestBuilder suspend() {
+        return new SuspendRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
      * The uncordon property
      * @return a {@link UncordonRequestBuilder}
      */
@@ -145,7 +154,7 @@ public class WithMachineItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithMachineItemRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/apps/{app_name}/machines/{machine_id}", pathParameters);
+        super(requestAdapter, "{+baseurl}/apps/{app_name}/machines/{machine_id}{?force*}", pathParameters);
     }
     /**
      * Instantiates a new {@link WithMachineItemRequestBuilder} and sets the default values.
@@ -153,7 +162,7 @@ public class WithMachineItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithMachineItemRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/apps/{app_name}/machines/{machine_id}", rawUrl);
+        super(requestAdapter, "{+baseurl}/apps/{app_name}/machines/{machine_id}{?force*}", rawUrl);
     }
     /**
      * Delete a specific Machine within an app by Machine ID, with an optional force parameter to force kill the Machine if it's running.
@@ -231,7 +240,7 @@ public class WithMachineItemRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toDeleteRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation(HttpMethod.DELETE, "{+baseurl}/apps/{app_name}/machines/{machine_id}{?force*}", pathParameters);
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.DELETE, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, DeleteRequestConfiguration::new, x -> x.queryParameters);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;

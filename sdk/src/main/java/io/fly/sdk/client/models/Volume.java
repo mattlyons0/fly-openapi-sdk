@@ -54,6 +54,10 @@ public class Volume implements AdditionalDataHolder, Parsable {
      */
     private String fstype;
     /**
+     * The host_status property
+     */
+    private VolumeHostStatus hostStatus;
+    /**
      * The id property
      */
     private String id;
@@ -183,7 +187,7 @@ public class Volume implements AdditionalDataHolder, Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(17);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(18);
         deserializerMap.put("attached_alloc_id", (n) -> { this.setAttachedAllocId(n.getStringValue()); });
         deserializerMap.put("attached_machine_id", (n) -> { this.setAttachedMachineId(n.getStringValue()); });
         deserializerMap.put("auto_backup_enabled", (n) -> { this.setAutoBackupEnabled(n.getBooleanValue()); });
@@ -194,6 +198,7 @@ public class Volume implements AdditionalDataHolder, Parsable {
         deserializerMap.put("created_at", (n) -> { this.setCreatedAt(n.getStringValue()); });
         deserializerMap.put("encrypted", (n) -> { this.setEncrypted(n.getBooleanValue()); });
         deserializerMap.put("fstype", (n) -> { this.setFstype(n.getStringValue()); });
+        deserializerMap.put("host_status", (n) -> { this.setHostStatus(n.getEnumValue(VolumeHostStatus::forValue)); });
         deserializerMap.put("id", (n) -> { this.setId(n.getStringValue()); });
         deserializerMap.put("name", (n) -> { this.setName(n.getStringValue()); });
         deserializerMap.put("region", (n) -> { this.setRegion(n.getStringValue()); });
@@ -210,6 +215,14 @@ public class Volume implements AdditionalDataHolder, Parsable {
     @jakarta.annotation.Nullable
     public String getFstype() {
         return this.fstype;
+    }
+    /**
+     * Gets the host_status property value. The host_status property
+     * @return a {@link VolumeHostStatus}
+     */
+    @jakarta.annotation.Nullable
+    public VolumeHostStatus getHostStatus() {
+        return this.hostStatus;
     }
     /**
      * Gets the id property value. The id property
@@ -283,6 +296,7 @@ public class Volume implements AdditionalDataHolder, Parsable {
         writer.writeStringValue("created_at", this.getCreatedAt());
         writer.writeBooleanValue("encrypted", this.getEncrypted());
         writer.writeStringValue("fstype", this.getFstype());
+        writer.writeEnumValue("host_status", this.getHostStatus());
         writer.writeStringValue("id", this.getId());
         writer.writeStringValue("name", this.getName());
         writer.writeStringValue("region", this.getRegion());
@@ -368,6 +382,13 @@ public class Volume implements AdditionalDataHolder, Parsable {
      */
     public void setFstype(@jakarta.annotation.Nullable final String value) {
         this.fstype = value;
+    }
+    /**
+     * Sets the host_status property value. The host_status property
+     * @param value Value to set for the host_status property.
+     */
+    public void setHostStatus(@jakarta.annotation.Nullable final VolumeHostStatus value) {
+        this.hostStatus = value;
     }
     /**
      * Sets the id property value. The id property

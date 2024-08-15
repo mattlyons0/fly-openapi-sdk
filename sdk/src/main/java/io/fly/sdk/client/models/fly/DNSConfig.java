@@ -18,6 +18,14 @@ public class DNSConfig implements AdditionalDataHolder, Parsable {
      */
     private java.util.List<DnsForwardRule> dnsForwardRules;
     /**
+     * The hostname property
+     */
+    private String hostname;
+    /**
+     * The hostname_fqdn property
+     */
+    private String hostnameFqdn;
+    /**
      * The nameservers property
      */
     private java.util.List<String> nameservers;
@@ -71,13 +79,31 @@ public class DNSConfig implements AdditionalDataHolder, Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(7);
         deserializerMap.put("dns_forward_rules", (n) -> { this.setDnsForwardRules(n.getCollectionOfObjectValues(DnsForwardRule::createFromDiscriminatorValue)); });
+        deserializerMap.put("hostname", (n) -> { this.setHostname(n.getStringValue()); });
+        deserializerMap.put("hostname_fqdn", (n) -> { this.setHostnameFqdn(n.getStringValue()); });
         deserializerMap.put("nameservers", (n) -> { this.setNameservers(n.getCollectionOfPrimitiveValues(String.class)); });
         deserializerMap.put("options", (n) -> { this.setOptions(n.getCollectionOfObjectValues(DnsOption::createFromDiscriminatorValue)); });
         deserializerMap.put("searches", (n) -> { this.setSearches(n.getCollectionOfPrimitiveValues(String.class)); });
         deserializerMap.put("skip_registration", (n) -> { this.setSkipRegistration(n.getBooleanValue()); });
         return deserializerMap;
+    }
+    /**
+     * Gets the hostname property value. The hostname property
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getHostname() {
+        return this.hostname;
+    }
+    /**
+     * Gets the hostname_fqdn property value. The hostname_fqdn property
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getHostnameFqdn() {
+        return this.hostnameFqdn;
     }
     /**
      * Gets the nameservers property value. The nameservers property
@@ -118,6 +144,8 @@ public class DNSConfig implements AdditionalDataHolder, Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeCollectionOfObjectValues("dns_forward_rules", this.getDnsForwardRules());
+        writer.writeStringValue("hostname", this.getHostname());
+        writer.writeStringValue("hostname_fqdn", this.getHostnameFqdn());
         writer.writeCollectionOfPrimitiveValues("nameservers", this.getNameservers());
         writer.writeCollectionOfObjectValues("options", this.getOptions());
         writer.writeCollectionOfPrimitiveValues("searches", this.getSearches());
@@ -137,6 +165,20 @@ public class DNSConfig implements AdditionalDataHolder, Parsable {
      */
     public void setDnsForwardRules(@jakarta.annotation.Nullable final java.util.List<DnsForwardRule> value) {
         this.dnsForwardRules = value;
+    }
+    /**
+     * Sets the hostname property value. The hostname property
+     * @param value Value to set for the hostname property.
+     */
+    public void setHostname(@jakarta.annotation.Nullable final String value) {
+        this.hostname = value;
+    }
+    /**
+     * Sets the hostname_fqdn property value. The hostname_fqdn property
+     * @param value Value to set for the hostname_fqdn property.
+     */
+    public void setHostnameFqdn(@jakarta.annotation.Nullable final String value) {
+        this.hostnameFqdn = value;
     }
     /**
      * Sets the nameservers property value. The nameservers property

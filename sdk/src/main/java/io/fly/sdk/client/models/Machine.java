@@ -31,6 +31,10 @@ public class Machine implements AdditionalDataHolder, Parsable {
      */
     private java.util.List<MachineEvent> events;
     /**
+     * The host_status property
+     */
+    private MachineHostStatus hostStatus;
+    /**
      * The id property
      */
     private String id;
@@ -38,6 +42,10 @@ public class Machine implements AdditionalDataHolder, Parsable {
      * The image_ref property
      */
     private ImageRef imageRef;
+    /**
+     * The incomplete_config property
+     */
+    private MachineConfig incompleteConfig;
     /**
      * InstanceID is unique for each version of the machine
      */
@@ -128,13 +136,15 @@ public class Machine implements AdditionalDataHolder, Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(13);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(15);
         deserializerMap.put("checks", (n) -> { this.setChecks(n.getCollectionOfObjectValues(CheckStatus::createFromDiscriminatorValue)); });
         deserializerMap.put("config", (n) -> { this.setConfig(n.getObjectValue(MachineConfig::createFromDiscriminatorValue)); });
         deserializerMap.put("created_at", (n) -> { this.setCreatedAt(n.getStringValue()); });
         deserializerMap.put("events", (n) -> { this.setEvents(n.getCollectionOfObjectValues(MachineEvent::createFromDiscriminatorValue)); });
+        deserializerMap.put("host_status", (n) -> { this.setHostStatus(n.getEnumValue(MachineHostStatus::forValue)); });
         deserializerMap.put("id", (n) -> { this.setId(n.getStringValue()); });
         deserializerMap.put("image_ref", (n) -> { this.setImageRef(n.getObjectValue(ImageRef::createFromDiscriminatorValue)); });
+        deserializerMap.put("incomplete_config", (n) -> { this.setIncompleteConfig(n.getObjectValue(MachineConfig::createFromDiscriminatorValue)); });
         deserializerMap.put("instance_id", (n) -> { this.setInstanceId(n.getStringValue()); });
         deserializerMap.put("name", (n) -> { this.setName(n.getStringValue()); });
         deserializerMap.put("nonce", (n) -> { this.setNonce(n.getStringValue()); });
@@ -143,6 +153,14 @@ public class Machine implements AdditionalDataHolder, Parsable {
         deserializerMap.put("state", (n) -> { this.setState(n.getStringValue()); });
         deserializerMap.put("updated_at", (n) -> { this.setUpdatedAt(n.getStringValue()); });
         return deserializerMap;
+    }
+    /**
+     * Gets the host_status property value. The host_status property
+     * @return a {@link MachineHostStatus}
+     */
+    @jakarta.annotation.Nullable
+    public MachineHostStatus getHostStatus() {
+        return this.hostStatus;
     }
     /**
      * Gets the id property value. The id property
@@ -159,6 +177,14 @@ public class Machine implements AdditionalDataHolder, Parsable {
     @jakarta.annotation.Nullable
     public ImageRef getImageRef() {
         return this.imageRef;
+    }
+    /**
+     * Gets the incomplete_config property value. The incomplete_config property
+     * @return a {@link MachineConfig}
+     */
+    @jakarta.annotation.Nullable
+    public MachineConfig getIncompleteConfig() {
+        return this.incompleteConfig;
     }
     /**
      * Gets the instance_id property value. InstanceID is unique for each version of the machine
@@ -226,8 +252,10 @@ public class Machine implements AdditionalDataHolder, Parsable {
         writer.writeObjectValue("config", this.getConfig());
         writer.writeStringValue("created_at", this.getCreatedAt());
         writer.writeCollectionOfObjectValues("events", this.getEvents());
+        writer.writeEnumValue("host_status", this.getHostStatus());
         writer.writeStringValue("id", this.getId());
         writer.writeObjectValue("image_ref", this.getImageRef());
+        writer.writeObjectValue("incomplete_config", this.getIncompleteConfig());
         writer.writeStringValue("instance_id", this.getInstanceId());
         writer.writeStringValue("name", this.getName());
         writer.writeStringValue("nonce", this.getNonce());
@@ -273,6 +301,13 @@ public class Machine implements AdditionalDataHolder, Parsable {
         this.events = value;
     }
     /**
+     * Sets the host_status property value. The host_status property
+     * @param value Value to set for the host_status property.
+     */
+    public void setHostStatus(@jakarta.annotation.Nullable final MachineHostStatus value) {
+        this.hostStatus = value;
+    }
+    /**
      * Sets the id property value. The id property
      * @param value Value to set for the id property.
      */
@@ -285,6 +320,13 @@ public class Machine implements AdditionalDataHolder, Parsable {
      */
     public void setImageRef(@jakarta.annotation.Nullable final ImageRef value) {
         this.imageRef = value;
+    }
+    /**
+     * Sets the incomplete_config property value. The incomplete_config property
+     * @param value Value to set for the incomplete_config property.
+     */
+    public void setIncompleteConfig(@jakarta.annotation.Nullable final MachineConfig value) {
+        this.incompleteConfig = value;
     }
     /**
      * Sets the instance_id property value. InstanceID is unique for each version of the machine

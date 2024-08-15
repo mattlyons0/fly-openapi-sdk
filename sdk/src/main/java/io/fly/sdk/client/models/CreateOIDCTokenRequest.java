@@ -7,6 +7,9 @@ import com.microsoft.kiota.serialization.SerializationWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+/**
+ * Optional parameters
+ */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class CreateOIDCTokenRequest implements AdditionalDataHolder, Parsable {
     /**

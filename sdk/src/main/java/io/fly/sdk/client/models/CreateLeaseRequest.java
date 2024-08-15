@@ -18,7 +18,7 @@ public class CreateLeaseRequest implements AdditionalDataHolder, Parsable {
      */
     private String description;
     /**
-     * The ttl property
+     * seconds lease will be valid
      */
     private Integer ttl;
     /**
@@ -65,7 +65,7 @@ public class CreateLeaseRequest implements AdditionalDataHolder, Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the ttl property value. The ttl property
+     * Gets the ttl property value. seconds lease will be valid
      * @return a {@link Integer}
      */
     @jakarta.annotation.Nullable
@@ -97,7 +97,7 @@ public class CreateLeaseRequest implements AdditionalDataHolder, Parsable {
         this.description = value;
     }
     /**
-     * Sets the ttl property value. The ttl property
+     * Sets the ttl property value. seconds lease will be valid
      * @param value Value to set for the ttl property.
      */
     public void setTtl(@jakarta.annotation.Nullable final Integer value) {

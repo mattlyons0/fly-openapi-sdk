@@ -5,6 +5,7 @@ import com.microsoft.kiota.serialization.AdditionalDataHolder;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
+import com.microsoft.kiota.serialization.UntypedNode;
 import io.fly.sdk.client.models.main.StatusCode;
 import java.util.HashMap;
 import java.util.Map;
@@ -15,6 +16,10 @@ public class ErrorResponse extends ApiException implements AdditionalDataHolder,
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      */
     private Map<String, Object> additionalData;
+    /**
+     * Deprecated
+     */
+    private UntypedNode details;
     /**
      * The error property
      */
@@ -48,6 +53,14 @@ public class ErrorResponse extends ApiException implements AdditionalDataHolder,
         return this.additionalData;
     }
     /**
+     * Gets the details property value. Deprecated
+     * @return a {@link UntypedNode}
+     */
+    @jakarta.annotation.Nullable
+    public UntypedNode getDetails() {
+        return this.details;
+    }
+    /**
      * Gets the error property value. The error property
      * @return a {@link String}
      */
@@ -61,7 +74,8 @@ public class ErrorResponse extends ApiException implements AdditionalDataHolder,
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
+        deserializerMap.put("details", (n) -> { this.setDetails(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
         deserializerMap.put("error", (n) -> { this.setError(n.getStringValue()); });
         deserializerMap.put("status", (n) -> { this.setStatus(n.getEnumValue(StatusCode::forValue)); });
         return deserializerMap;
@@ -89,6 +103,7 @@ public class ErrorResponse extends ApiException implements AdditionalDataHolder,
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
+        writer.writeObjectValue("details", this.getDetails());
         writer.writeStringValue("error", this.getError());
         writer.writeEnumValue("status", this.getStatus());
         writer.writeAdditionalData(this.getAdditionalData());
@@ -99,6 +114,13 @@ public class ErrorResponse extends ApiException implements AdditionalDataHolder,
      */
     public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
+    }
+    /**
+     * Sets the details property value. Deprecated
+     * @param value Value to set for the details property.
+     */
+    public void setDetails(@jakarta.annotation.Nullable final UntypedNode value) {
+        this.details = value;
     }
     /**
      * Sets the error property value. The error property

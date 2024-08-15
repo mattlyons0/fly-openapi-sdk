@@ -22,6 +22,14 @@ public class HTTPOptions implements AdditionalDataHolder, Parsable {
      */
     private Boolean h2Backend;
     /**
+     * The headers_read_timeout property
+     */
+    private Integer headersReadTimeout;
+    /**
+     * The idle_timeout property
+     */
+    private Integer idleTimeout;
+    /**
      * The response property
      */
     private HTTPResponseOptions response;
@@ -63,9 +71,11 @@ public class HTTPOptions implements AdditionalDataHolder, Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
         deserializerMap.put("compress", (n) -> { this.setCompress(n.getBooleanValue()); });
         deserializerMap.put("h2_backend", (n) -> { this.setH2Backend(n.getBooleanValue()); });
+        deserializerMap.put("headers_read_timeout", (n) -> { this.setHeadersReadTimeout(n.getIntegerValue()); });
+        deserializerMap.put("idle_timeout", (n) -> { this.setIdleTimeout(n.getIntegerValue()); });
         deserializerMap.put("response", (n) -> { this.setResponse(n.getObjectValue(HTTPResponseOptions::createFromDiscriminatorValue)); });
         return deserializerMap;
     }
@@ -76,6 +86,22 @@ public class HTTPOptions implements AdditionalDataHolder, Parsable {
     @jakarta.annotation.Nullable
     public Boolean getH2Backend() {
         return this.h2Backend;
+    }
+    /**
+     * Gets the headers_read_timeout property value. The headers_read_timeout property
+     * @return a {@link Integer}
+     */
+    @jakarta.annotation.Nullable
+    public Integer getHeadersReadTimeout() {
+        return this.headersReadTimeout;
+    }
+    /**
+     * Gets the idle_timeout property value. The idle_timeout property
+     * @return a {@link Integer}
+     */
+    @jakarta.annotation.Nullable
+    public Integer getIdleTimeout() {
+        return this.idleTimeout;
     }
     /**
      * Gets the response property value. The response property
@@ -93,6 +119,8 @@ public class HTTPOptions implements AdditionalDataHolder, Parsable {
         Objects.requireNonNull(writer);
         writer.writeBooleanValue("compress", this.getCompress());
         writer.writeBooleanValue("h2_backend", this.getH2Backend());
+        writer.writeIntegerValue("headers_read_timeout", this.getHeadersReadTimeout());
+        writer.writeIntegerValue("idle_timeout", this.getIdleTimeout());
         writer.writeObjectValue("response", this.getResponse());
         writer.writeAdditionalData(this.getAdditionalData());
     }
@@ -116,6 +144,20 @@ public class HTTPOptions implements AdditionalDataHolder, Parsable {
      */
     public void setH2Backend(@jakarta.annotation.Nullable final Boolean value) {
         this.h2Backend = value;
+    }
+    /**
+     * Sets the headers_read_timeout property value. The headers_read_timeout property
+     * @param value Value to set for the headers_read_timeout property.
+     */
+    public void setHeadersReadTimeout(@jakarta.annotation.Nullable final Integer value) {
+        this.headersReadTimeout = value;
+    }
+    /**
+     * Sets the idle_timeout property value. The idle_timeout property
+     * @param value Value to set for the idle_timeout property.
+     */
+    public void setIdleTimeout(@jakarta.annotation.Nullable final Integer value) {
+        this.idleTimeout = value;
     }
     /**
      * Sets the response property value. The response property

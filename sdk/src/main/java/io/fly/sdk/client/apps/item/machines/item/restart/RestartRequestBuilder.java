@@ -26,7 +26,7 @@ public class RestartRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public RestartRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/apps/{app_name}/machines/{machine_id}/restart{?timeout*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/apps/{app_name}/machines/{machine_id}/restart{?signal*,timeout*}", pathParameters);
     }
     /**
      * Instantiates a new {@link RestartRequestBuilder} and sets the default values.
@@ -34,7 +34,7 @@ public class RestartRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public RestartRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/apps/{app_name}/machines/{machine_id}/restart{?timeout*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/apps/{app_name}/machines/{machine_id}/restart{?signal*,timeout*}", rawUrl);
     }
     /**
      * Restart a specific Machine within an app, with an optional timeout parameter.
@@ -94,6 +94,11 @@ public class RestartRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class PostQueryParameters implements QueryParameters {
         /**
+         * Unix signal name
+         */
+        @jakarta.annotation.Nullable
+        public String signal;
+        /**
          * Restart timeout as a Go duration string or number of seconds
          */
         @jakarta.annotation.Nullable
@@ -105,6 +110,7 @@ public class RestartRequestBuilder extends BaseRequestBuilder {
         @jakarta.annotation.Nonnull
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
+            allQueryParams.put("signal", signal);
             allQueryParams.put("timeout", timeout);
             return allQueryParams;
         }

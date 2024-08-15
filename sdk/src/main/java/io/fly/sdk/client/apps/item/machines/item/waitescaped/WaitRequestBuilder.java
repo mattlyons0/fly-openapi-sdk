@@ -94,7 +94,7 @@ public class WaitRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
         /**
-         * instance? version? TODO
+         * 26-character Machine version ID
          */
         @jakarta.annotation.Nullable
         public String instanceId;

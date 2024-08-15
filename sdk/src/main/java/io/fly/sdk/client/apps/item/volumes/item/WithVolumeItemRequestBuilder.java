@@ -97,8 +97,8 @@ public class WithVolumeItemRequestBuilder extends BaseRequestBuilder {
      * @throws ErrorResponse When receiving a 400 status code
      */
     @jakarta.annotation.Nullable
-    public Volume post(@jakarta.annotation.Nonnull final UpdateVolumeRequest body) {
-        return post(body, null);
+    public Volume put(@jakarta.annotation.Nonnull final UpdateVolumeRequest body) {
+        return put(body, null);
     }
     /**
      * Update a volume's configuration using the details provided in the request body.
@@ -108,9 +108,9 @@ public class WithVolumeItemRequestBuilder extends BaseRequestBuilder {
      * @throws ErrorResponse When receiving a 400 status code
      */
     @jakarta.annotation.Nullable
-    public Volume post(@jakarta.annotation.Nonnull final UpdateVolumeRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public Volume put(@jakarta.annotation.Nonnull final UpdateVolumeRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
+        final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
         final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
         errorMapping.put("400", ErrorResponse::createFromDiscriminatorValue);
         return this.requestAdapter.send(requestInfo, errorMapping, Volume::createFromDiscriminatorValue);
@@ -161,8 +161,8 @@ public class WithVolumeItemRequestBuilder extends BaseRequestBuilder {
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final UpdateVolumeRequest body) {
-        return toPostRequestInformation(body, null);
+    public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final UpdateVolumeRequest body) {
+        return toPutRequestInformation(body, null);
     }
     /**
      * Update a volume's configuration using the details provided in the request body.
@@ -171,10 +171,10 @@ public class WithVolumeItemRequestBuilder extends BaseRequestBuilder {
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final UpdateVolumeRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final UpdateVolumeRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
-        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.PUT, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PutRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;
@@ -205,6 +205,6 @@ public class WithVolumeItemRequestBuilder extends BaseRequestBuilder {
      * Configuration for the request such as headers, query parameters, and middleware options.
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
-    public class PostRequestConfiguration extends BaseRequestConfiguration {
+    public class PutRequestConfiguration extends BaseRequestConfiguration {
     }
 }

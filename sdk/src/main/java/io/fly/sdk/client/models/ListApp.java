@@ -4,6 +4,7 @@ import com.microsoft.kiota.serialization.AdditionalDataHolder;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
+import com.microsoft.kiota.serialization.UntypedNode;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -25,6 +26,10 @@ public class ListApp implements AdditionalDataHolder, Parsable {
      * The name property
      */
     private String name;
+    /**
+     * The network property
+     */
+    private UntypedNode network;
     /**
      * Instantiates a new {@link ListApp} and sets the default values.
      */
@@ -55,10 +60,11 @@ public class ListApp implements AdditionalDataHolder, Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
         deserializerMap.put("id", (n) -> { this.setId(n.getStringValue()); });
         deserializerMap.put("machine_count", (n) -> { this.setMachineCount(n.getIntegerValue()); });
         deserializerMap.put("name", (n) -> { this.setName(n.getStringValue()); });
+        deserializerMap.put("network", (n) -> { this.setNetwork(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
         return deserializerMap;
     }
     /**
@@ -86,6 +92,14 @@ public class ListApp implements AdditionalDataHolder, Parsable {
         return this.name;
     }
     /**
+     * Gets the network property value. The network property
+     * @return a {@link UntypedNode}
+     */
+    @jakarta.annotation.Nullable
+    public UntypedNode getNetwork() {
+        return this.network;
+    }
+    /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
      */
@@ -94,6 +108,7 @@ public class ListApp implements AdditionalDataHolder, Parsable {
         writer.writeStringValue("id", this.getId());
         writer.writeIntegerValue("machine_count", this.getMachineCount());
         writer.writeStringValue("name", this.getName());
+        writer.writeObjectValue("network", this.getNetwork());
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
@@ -123,5 +138,12 @@ public class ListApp implements AdditionalDataHolder, Parsable {
      */
     public void setName(@jakarta.annotation.Nullable final String value) {
         this.name = value;
+    }
+    /**
+     * Sets the network property value. The network property
+     * @param value Value to set for the network property.
+     */
+    public void setNetwork(@jakarta.annotation.Nullable final UntypedNode value) {
+        this.network = value;
     }
 }

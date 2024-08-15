@@ -6,17 +6,15 @@ import com.microsoft.kiota.RequestAdapter;
 import com.microsoft.kiota.serialization.FormParseNodeFactory;
 import com.microsoft.kiota.serialization.FormSerializationWriterFactory;
 import com.microsoft.kiota.serialization.MultipartSerializationWriterFactory;
-import com.microsoft.kiota.serialization.ParseNodeFactoryRegistry;
-import com.microsoft.kiota.serialization.SerializationWriterFactoryRegistry;
 import com.microsoft.kiota.serialization.TextParseNodeFactory;
 import com.microsoft.kiota.serialization.TextSerializationWriterFactory;
 import io.fly.sdk.client.apps.AppsRequestBuilder;
-import io.fly.sdk.client.v1.V1RequestBuilder;
+import io.fly.sdk.client.tokens.TokensRequestBuilder;
 import io.kiota.serialization.json.JsonParseNodeFactory;
 import io.kiota.serialization.json.JsonSerializationWriterFactory;
 
 import java.util.HashMap;
-import java.util.Objects;
+
 /**
  * The main entry point of the SDK, exposes the configuration and the fluent API.
  */
@@ -31,12 +29,12 @@ public class FlySdkClient extends BaseRequestBuilder {
         return new AppsRequestBuilder(pathParameters, requestAdapter);
     }
     /**
-     * The v1 property
-     * @return a {@link V1RequestBuilder}
+     * The tokens property
+     * @return a {@link TokensRequestBuilder}
      */
     @jakarta.annotation.Nonnull
-    public V1RequestBuilder v1() {
-        return new V1RequestBuilder(pathParameters, requestAdapter);
+    public TokensRequestBuilder tokens() {
+        return new TokensRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * Instantiates a new {@link FlySdkClient} and sets the default values.

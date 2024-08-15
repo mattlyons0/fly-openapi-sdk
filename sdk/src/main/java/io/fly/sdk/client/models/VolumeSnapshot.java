@@ -26,6 +26,10 @@ public class VolumeSnapshot implements AdditionalDataHolder, Parsable {
      */
     private String id;
     /**
+     * The retention_days property
+     */
+    private Integer retentionDays;
+    /**
      * The size property
      */
     private Integer size;
@@ -79,10 +83,11 @@ public class VolumeSnapshot implements AdditionalDataHolder, Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(6);
         deserializerMap.put("created_at", (n) -> { this.setCreatedAt(n.getStringValue()); });
         deserializerMap.put("digest", (n) -> { this.setDigest(n.getStringValue()); });
         deserializerMap.put("id", (n) -> { this.setId(n.getStringValue()); });
+        deserializerMap.put("retention_days", (n) -> { this.setRetentionDays(n.getIntegerValue()); });
         deserializerMap.put("size", (n) -> { this.setSize(n.getIntegerValue()); });
         deserializerMap.put("status", (n) -> { this.setStatus(n.getStringValue()); });
         return deserializerMap;
@@ -94,6 +99,14 @@ public class VolumeSnapshot implements AdditionalDataHolder, Parsable {
     @jakarta.annotation.Nullable
     public String getId() {
         return this.id;
+    }
+    /**
+     * Gets the retention_days property value. The retention_days property
+     * @return a {@link Integer}
+     */
+    @jakarta.annotation.Nullable
+    public Integer getRetentionDays() {
+        return this.retentionDays;
     }
     /**
      * Gets the size property value. The size property
@@ -120,6 +133,7 @@ public class VolumeSnapshot implements AdditionalDataHolder, Parsable {
         writer.writeStringValue("created_at", this.getCreatedAt());
         writer.writeStringValue("digest", this.getDigest());
         writer.writeStringValue("id", this.getId());
+        writer.writeIntegerValue("retention_days", this.getRetentionDays());
         writer.writeIntegerValue("size", this.getSize());
         writer.writeStringValue("status", this.getStatus());
         writer.writeAdditionalData(this.getAdditionalData());
@@ -151,6 +165,13 @@ public class VolumeSnapshot implements AdditionalDataHolder, Parsable {
      */
     public void setId(@jakarta.annotation.Nullable final String value) {
         this.id = value;
+    }
+    /**
+     * Sets the retention_days property value. The retention_days property
+     * @param value Value to set for the retention_days property.
+     */
+    public void setRetentionDays(@jakarta.annotation.Nullable final Integer value) {
+        this.retentionDays = value;
     }
     /**
      * Sets the size property value. The size property

@@ -18,6 +18,10 @@ public class HTTPResponseOptions implements AdditionalDataHolder, Parsable {
      */
     private HTTPResponseOptionsHeaders headers;
     /**
+     * The pristine property
+     */
+    private Boolean pristine;
+    /**
      * Instantiates a new {@link HTTPResponseOptions} and sets the default values.
      */
     public HTTPResponseOptions() {
@@ -47,8 +51,9 @@ public class HTTPResponseOptions implements AdditionalDataHolder, Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(1);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
         deserializerMap.put("headers", (n) -> { this.setHeaders(n.getObjectValue(HTTPResponseOptionsHeaders::createFromDiscriminatorValue)); });
+        deserializerMap.put("pristine", (n) -> { this.setPristine(n.getBooleanValue()); });
         return deserializerMap;
     }
     /**
@@ -60,12 +65,21 @@ public class HTTPResponseOptions implements AdditionalDataHolder, Parsable {
         return this.headers;
     }
     /**
+     * Gets the pristine property value. The pristine property
+     * @return a {@link Boolean}
+     */
+    @jakarta.annotation.Nullable
+    public Boolean getPristine() {
+        return this.pristine;
+    }
+    /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeObjectValue("headers", this.getHeaders());
+        writer.writeBooleanValue("pristine", this.getPristine());
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
@@ -81,5 +95,12 @@ public class HTTPResponseOptions implements AdditionalDataHolder, Parsable {
      */
     public void setHeaders(@jakarta.annotation.Nullable final HTTPResponseOptionsHeaders value) {
         this.headers = value;
+    }
+    /**
+     * Sets the pristine property value. The pristine property
+     * @param value Value to set for the pristine property.
+     */
+    public void setPristine(@jakarta.annotation.Nullable final Boolean value) {
+        this.pristine = value;
     }
 }

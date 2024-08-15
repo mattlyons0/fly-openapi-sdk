@@ -10,7 +10,7 @@ plugins {
     id 'maven-publish'
 }
 
-version = '0.2.0'
+version = '0.3.0'
 
 repositories {
     mavenLocal()
@@ -24,12 +24,13 @@ dependencies {
 
     // This dependency is used by the application.
     implementation libs.guava
-    api 'com.microsoft.kiota:microsoft-kiota-abstractions:1.1.2'
-    api 'com.microsoft.kiota:microsoft-kiota-http-okHttp:1.1.2'
-    implementation 'com.microsoft.kiota:microsoft-kiota-serialization-text:1.1.2'
-    implementation 'com.microsoft.kiota:microsoft-kiota-serialization-form:1.1.2'
-    implementation 'com.microsoft.kiota:microsoft-kiota-serialization-multipart:1.1.2'
-    implementation 'io.kiota:kiota-serialization-jackson:0.0.15' // Replaces com.microsoft.kiota:microsoft-kiota-serialization-json
+    api 'com.microsoft.kiota:microsoft-kiota-abstractions:1.2.0'
+    api 'com.microsoft.kiota:microsoft-kiota-http-okHttp:1.2.0'
+    implementation 'com.microsoft.kiota:microsoft-kiota-serialization-text:1.2.0'
+    implementation 'com.microsoft.kiota:microsoft-kiota-serialization-form:1.2.0'
+    implementation 'com.microsoft.kiota:microsoft-kiota-serialization-multipart:1.2.0'
+    implementation 'io.kiota:kiota-serialization-jackson:0.0.18' // Replaces com.microsoft.kiota:microsoft-kiota-serialization-json
+    implementation 'jakarta.annotation:jakarta.annotation-api:3.0.0'
 }
 
 // Apply a specific Java toolchain to ease working on different environments.

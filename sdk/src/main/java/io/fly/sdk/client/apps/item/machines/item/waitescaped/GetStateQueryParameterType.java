@@ -7,6 +7,7 @@ import java.util.Objects;
 public enum GetStateQueryParameterType implements ValuedEnum {
     Started("started"),
     Stopped("stopped"),
+    Suspended("suspended"),
     Destroyed("destroyed");
     public final String value;
     GetStateQueryParameterType(final String value) {
@@ -20,6 +21,7 @@ public enum GetStateQueryParameterType implements ValuedEnum {
         switch(searchValue) {
             case "started": return Started;
             case "stopped": return Stopped;
+            case "suspended": return Suspended;
             case "destroyed": return Destroyed;
             default: return null;
         }

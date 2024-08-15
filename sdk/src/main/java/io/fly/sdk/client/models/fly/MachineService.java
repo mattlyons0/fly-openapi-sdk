@@ -18,9 +18,9 @@ public class MachineService implements AdditionalDataHolder, Parsable {
      */
     private Boolean autostart;
     /**
-     * The autostop property
+     * Accepts a string (new format) or a boolean (old format). For backward compatibility with older clients, the API continues to use booleans for "off" and "stop" in responses.* "off" or false - Do not autostop the Machine.* "stop" or true - Automatically stop the Machine.* "suspend" - Automatically suspend the Machine, falling back to a full stop if this is not possible.
      */
-    private Boolean autostop;
+    private MachineServiceAutostop autostop;
     /**
      * The checks property
      */
@@ -86,11 +86,11 @@ public class MachineService implements AdditionalDataHolder, Parsable {
         return this.autostart;
     }
     /**
-     * Gets the autostop property value. The autostop property
-     * @return a {@link Boolean}
+     * Gets the autostop property value. Accepts a string (new format) or a boolean (old format). For backward compatibility with older clients, the API continues to use booleans for "off" and "stop" in responses.* "off" or false - Do not autostop the Machine.* "stop" or true - Automatically stop the Machine.* "suspend" - Automatically suspend the Machine, falling back to a full stop if this is not possible.
+     * @return a {@link MachineServiceAutostop}
      */
     @jakarta.annotation.Nullable
-    public Boolean getAutostop() {
+    public MachineServiceAutostop getAutostop() {
         return this.autostop;
     }
     /**
@@ -117,7 +117,7 @@ public class MachineService implements AdditionalDataHolder, Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(10);
         deserializerMap.put("autostart", (n) -> { this.setAutostart(n.getBooleanValue()); });
-        deserializerMap.put("autostop", (n) -> { this.setAutostop(n.getBooleanValue()); });
+        deserializerMap.put("autostop", (n) -> { this.setAutostop(n.getEnumValue(MachineServiceAutostop::forValue)); });
         deserializerMap.put("checks", (n) -> { this.setChecks(n.getCollectionOfObjectValues(MachineCheck::createFromDiscriminatorValue)); });
         deserializerMap.put("concurrency", (n) -> { this.setConcurrency(n.getObjectValue(MachineServiceConcurrency::createFromDiscriminatorValue)); });
         deserializerMap.put("force_instance_description", (n) -> { this.setForceInstanceDescription(n.getStringValue()); });
@@ -183,7 +183,7 @@ public class MachineService implements AdditionalDataHolder, Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeBooleanValue("autostart", this.getAutostart());
-        writer.writeBooleanValue("autostop", this.getAutostop());
+        writer.writeEnumValue("autostop", this.getAutostop());
         writer.writeCollectionOfObjectValues("checks", this.getChecks());
         writer.writeObjectValue("concurrency", this.getConcurrency());
         writer.writeStringValue("force_instance_description", this.getForceInstanceDescription());
@@ -209,10 +209,10 @@ public class MachineService implements AdditionalDataHolder, Parsable {
         this.autostart = value;
     }
     /**
-     * Sets the autostop property value. The autostop property
+     * Sets the autostop property value. Accepts a string (new format) or a boolean (old format). For backward compatibility with older clients, the API continues to use booleans for "off" and "stop" in responses.* "off" or false - Do not autostop the Machine.* "stop" or true - Automatically stop the Machine.* "suspend" - Automatically suspend the Machine, falling back to a full stop if this is not possible.
      * @param value Value to set for the autostop property.
      */
-    public void setAutostop(@jakarta.annotation.Nullable final Boolean value) {
+    public void setAutostop(@jakarta.annotation.Nullable final MachineServiceAutostop value) {
         this.autostop = value;
     }
     /**

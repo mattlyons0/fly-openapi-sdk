@@ -18,6 +18,10 @@ public class StaticEscaped implements AdditionalDataHolder, Parsable {
      */
     private String guestPath;
     /**
+     * The index_document property
+     */
+    private String indexDocument;
+    /**
      * The tigris_bucket property
      */
     private String tigrisBucket;
@@ -55,8 +59,9 @@ public class StaticEscaped implements AdditionalDataHolder, Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
         deserializerMap.put("guest_path", (n) -> { this.setGuestPath(n.getStringValue()); });
+        deserializerMap.put("index_document", (n) -> { this.setIndexDocument(n.getStringValue()); });
         deserializerMap.put("tigris_bucket", (n) -> { this.setTigrisBucket(n.getStringValue()); });
         deserializerMap.put("url_prefix", (n) -> { this.setUrlPrefix(n.getStringValue()); });
         return deserializerMap;
@@ -68,6 +73,14 @@ public class StaticEscaped implements AdditionalDataHolder, Parsable {
     @jakarta.annotation.Nullable
     public String getGuestPath() {
         return this.guestPath;
+    }
+    /**
+     * Gets the index_document property value. The index_document property
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getIndexDocument() {
+        return this.indexDocument;
     }
     /**
      * Gets the tigris_bucket property value. The tigris_bucket property
@@ -92,6 +105,7 @@ public class StaticEscaped implements AdditionalDataHolder, Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("guest_path", this.getGuestPath());
+        writer.writeStringValue("index_document", this.getIndexDocument());
         writer.writeStringValue("tigris_bucket", this.getTigrisBucket());
         writer.writeStringValue("url_prefix", this.getUrlPrefix());
         writer.writeAdditionalData(this.getAdditionalData());
@@ -109,6 +123,13 @@ public class StaticEscaped implements AdditionalDataHolder, Parsable {
      */
     public void setGuestPath(@jakarta.annotation.Nullable final String value) {
         this.guestPath = value;
+    }
+    /**
+     * Sets the index_document property value. The index_document property
+     * @param value Value to set for the index_document property.
+     */
+    public void setIndexDocument(@jakarta.annotation.Nullable final String value) {
+        this.indexDocument = value;
     }
     /**
      * Sets the tigris_bucket property value. The tigris_bucket property
